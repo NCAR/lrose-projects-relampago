@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- 
+ A JNLP File for the Jazz (Jadeite-based) Data Visualization Application
+--> 
+
+<!-- The host on which the application will be fielded must be hard-coded as the "codebase" attribute
+     so we can sign this file to satisfy Oracle's new security requirements. -->
+<jnlp 
+ spec="1.0+" 
+ codebase="http://ral.ucar.edu/projects/pecan/apps/jazz"
+ href="jazz.jnlp">
+
+  <!-- General application information -->
+  <information> 
+    <title>Jazz Data Visualization Application</title> 
+    <vendor>NCAR - RAL</vendor> 
+    <homepage href="http://ral.ucar.edu/projects/pecan"/> 
+    <description kind="tooltip">Jazz App</description> 
+    <description kind="one-line">Jazz Application</description>
+    <description kind="short">Scientific display, based on the JADE framework</description> 
+    <icon href="jadeButton.gif"/>
+    <!-- Hint to the OS to install a shortcut for an online app and provide uninstall hooks in menus -->
+    <shortcut online="true" install="true">
+      <desktop/>
+      <menu submenu="Desktop Apps"/>
+    </shortcut> 
+  </information>
+
+  <!-- Request all permissions, since we need to initiate connections, read/write local prefs, send to printer, etc -->
+  <security>
+      <all-permissions/>
+  </security>         
+
+  <!-- Always check for an updated app and let the user exit -->
+  <update check="always" policy="prompt-run"/>
+
+  <!-- Designate the required resources -->
+  <resources> 
+    <j2se version="1.7+" initial-heap-size="64m" max-heap-size="1200m"/>
+    <!-- These are for JVM optimization -->
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="sun.java2d.d3d" value="false"/>
+    <!-- These are the jars to load -->
+    <jar href="lib/jazz_JazzPecan137.jar" download="eager"/>
+    <jar href="lib/glf_JazzPecan137.jar" download="eager"/>  
+    <jar href="lib/images_JazzPecan137.jar" download="eager"/>  
+    <jar href="lib/jai_codec_JazzPecan137.jar" download="eager"/>  
+    <jar href="lib/jaxen-full_JazzPecan137.jar" download="eager"/>  
+    <jar href="lib/jdom_JazzPecan137.jar" download="eager"/> 
+    <jar href="lib/JTS-1.3_JazzPecan137.jar" download="eager"/>
+    <jar href="lib/resources-2.0-B1_JazzPecan137.jar" download="eager"/>
+    <jar href="lib/resources_JazzPecan137.jar" download="eager"/>
+    <jar href="lib/saxpath_JazzPecan137.jar" download="eager"/>
+    <jar href="lib/shapefile-2.0-B1_JazzPecan137.jar" download="eager"/>
+    <jar href="lib/xmlConfig_JazzPecan137.jar" download="eager"/> 
+  </resources> 
+
+  <!-- Designate the starting class -->
+  <application-desc main-class="edu.ucar.rap.jazz.apps.jazz.Jazz">
+    <!-- Identify the location of the starting Jazz config file -->
+    <argument>http://ral.ucar.edu/projects/pecan/apps/jazz/jazz4pecan.xml</argument>
+  </application-desc>
+
+</jnlp>
+
+
+
+
+

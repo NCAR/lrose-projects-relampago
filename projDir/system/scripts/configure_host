@@ -1,0 +1,209 @@
+#! /bin/bash
+
+#--------------------------------------------------------------------
+#
+# script to configure a host for the HAWK data system
+#
+# Mike Dixon, EOL, NCAR, Boulder, CO, USA
+# Dec 2010
+#
+#--------------------------------------------------------------------
+#
+# Makes links to the proc_list, data_list and crontab files
+#
+#--------------------------------------------------------------------
+
+# set the path
+
+export PATH=.:/bin:/usr/bin:/sbin:/usr/sbin:/usr/bin/X11:/usr/local/bin:/usr/local/sbin
+
+#--------------------------------------------------------------------
+# usage function
+#
+
+function usage() {
+    echo
+    echo "Usage: configure_host [ -debug -h ]"
+    echo
+    echo "  -h:     produce this usage list"
+    echo "  -debug: turn debugging on"
+    echo
+}
+
+#--------------------------------------------------------------------
+# check args
+
+if [ $# -gt 2 ]
+then
+    echo "ERROR - bad command line"
+    usage
+    exit -1
+fi
+
+if [ "$1" == -h -o "$2" == -h ] 
+then
+    usage
+    exit 0
+fi
+
+debug=false
+if [ "$1" == -debug -o "$2" == -debug ] 
+then
+    debug=true
+fi
+
+# set directory paths
+
+cvs_dir=$BUILD_DIR
+cvs_hawk_dir=$cvs_dir/projects/hawk/spol
+cvs_proj_dir=$cvs_hawk_dir/projDir
+system_dir=$cvs_proj_dir/system
+
+#-- get current host type if possible -------------------------------
+#
+# This is stored in the file ~/.host_type
+
+installed_host_type=display
+if [ -e $HOME/.host_type ]
+then
+  installed_host_type=`cat $HOME/.host_type`
+  echo "  Found installed host type: '$installed_host_type'"
+  echo
+fi
+
+#-- get host type ---------------------------------------------------
+
+while [ "$host_type" != mgen -a \
+        "$host_type" != pgen -a \
+        "$host_type" != control -a \
+        "$host_type" != rvp8 -a \
+        "$host_type" != kadrx -a \
+        "$host_type" != server -a \
+        "$host_type" != dmgt -a \
+        "$host_type" != dmgt2 -a \
+        "$host_type" != display ]
+
+do
+
+echo "Choose host type from the following list"
+echo " or hit enter to use existing host type as shown:"
+echo
+echo "    mgen"
+echo "    pgen"
+echo "    control"
+echo "    rvp8"
+echo "    kadrx"
+echo "    server"
+echo "    dmgt"
+echo "    dmgt2"
+echo "    display"
+read -ep "    ......($installed_host_type)? " host_type
+test "$host_type" || host_type=$installed_host_type
+echo
+
+if [ "$host_type" != mgen -a \
+     "$host_type" != pgen -a \
+     "$host_type" != control -a \
+     "$host_type" != rvp8 -a \
+     "$host_type" != kadrx -a \
+     "$host_type" != dmgt -a \
+     "$host_type" != dmgt2 -a \
+     "$host_type" != server -a \
+     "$host_type" != display ]
+
+then
+
+    echo -n X | tr X '\07'	# Beep.
+    echo
+    echo "  ERROR - invalid host type ..."
+    echo "          try again ..."
+
+fi
+
+done
+
+# save the host type
+
+echo $host_type > $HOME/.host_type
+
+echo
+echo "*********************************************************************"
+echo
+echo "  configure_host for HAWK"
+echo
+echo "  `date`"
+echo
+echo "  host type: $host_type"
+echo
+echo "*********************************************************************"
+echo
+
+# create directory for backup links
+
+backup_links_dir=$HOME/.backup_links
+/bin/rm -rf $backup_links_dir
+mkdir -p $backup_links_dir
+
+# make links to dotfiles in cvs
+
+cd $HOME
+for dotfile in cshrc bashrc emacs cvsignore Xdefaults sigmet_env
+do
+    echo "/bin/mv -f .$dotfile $backup_links_dir"
+    /bin/mv -f .$dotfile $backup_links_dir
+    ln -s $system_dir/dotfiles/$dotfile .$dotfile
+done
+
+# make link to projDir
+
+cd $HOME
+/bin/mv -f projDir $backup_links_dir
+ln -s $cvs_proj_dir
+
+############################################
+# data dir - specific to the host type
+# copy data dir into /data/spol,
+#   which must be writable by spol
+# make link to data dir
+
+cvs_data_dir=$cvs_hawk_dir/data_dirs/data.${host_type}
+inst_data_dir=/data/spol/data.${host_type}
+
+cd $HOME/projDir
+/bin/cp -r $cvs_data_dir /data/spol
+/bin/mv -f data $backup_links_dir
+ln -s $inst_data_dir data
+
+# log dir
+
+/bin/mv -f logs $backup_links_dir
+ln -s data/logs
+
+# set current to raid dir
+#
+#cd $HOME/projDir/data
+#/bin/rm -f _current
+#ln -s /net/data/PGEN/current _current
+
+# display config directory
+
+cd $HOME
+/bin/rm -f .display
+ln -s projDir/gtkdisplay/params .display
+
+#####################
+# set up control dir
+
+cd $HOME/projDir/control
+
+# make backups as required
+
+/bin/mv -f crontab $backup_links_dir
+/bin/mv -f proc_list $backup_links_dir
+/bin/mv -f data_list $backup_links_dir
+
+# set links based on host type
+
+ln -s proc_list.$host_type proc_list
+ln -s data_list.$host_type data_list
+ln -s crontab.$host_type crontab

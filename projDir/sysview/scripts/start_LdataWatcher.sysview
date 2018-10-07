@@ -1,0 +1,9 @@
+#!/bin/csh 
+
+cd $PROJ_DIR/sysview/params
+
+running "LdataWatcher -params LdataWatcher.sysview"
+if ($status == 1) then
+    LdataWatcher -params LdataWatcher.sysview |& \
+    LogFilter -d $ERRORS_LOG_DIR -p LdataWatcher -i sysview >& /dev/null &
+endif

@@ -1,0 +1,5 @@
+#! /bin/csh
+
+snuff "java -jar $RAP_JAR_DIR/sysview.jar -instance ops"
+snuff Xvfb
+

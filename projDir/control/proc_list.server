@@ -1,0 +1,27 @@
+######################################################################
+# FRONT - on eldora
+#
+######################################################################
+# SYSTEM processes
+#
+Janitor           logs     start_Janitor.logs        snuff_inst
+Janitor           raw      start_Janitor.raw         snuff_inst
+Scout             primary  start_Scout               kill_Scout
+DataMapper        primary  start_DataMapper          kill_DataMapper
+#
+######################################################################
+# SERVER processes
+#
+DsServerMgr       primary  start_inst(no-params)     snuff_inst
+DsProxyServer     primary  start_inst(no-params)     snuff_inst
+DsMdvServer       manager  start_inst(no-params)     snuff_inst
+NcMdvServer       manager  start_inst(no-params)     snuff_inst
+DsFmqServer       manager  start_inst(no-params)     snuff_inst
+DsSpdbServer      manager  start_inst(no-params)     snuff_inst
+DsFCopyServer     manager  start_inst(no-params)     snuff_inst
+Metar2Symprod     manager  start_inst(no-params)     snuff_inst
+Rhi2Symprod       manager  start_inst(no-params)     snuff_inst
+AcTrack2Symprod   manager  start_inst(no-params)     snuff_inst
+SunCal2Symprod    manager  start_inst(no-params)     snuff_inst
+Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
+#

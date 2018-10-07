@@ -1,0 +1,278 @@
+## Minimal sample pound.cfg
+##
+## see pound(8) for details
+# RCS: $Id: pound.cfg.front,v 1.1 2014/02/28 23:00:49 dixon Exp $
+
+# This file goes in /usr/local/etc
+
+######################################################################
+## global options:
+
+User		"pound"
+Group		"pound"
+#RootJail	"/chroot/pound"
+Daemon		1
+
+## Logging: (goes to daemon log by default)
+##	0	no logging
+##	1	normal
+##	2	extended
+##	3	Apache-style (common log format)
+
+# Log in Apache common log format, plus pound service and backend.  See pound(8).
+LogLevel	5
+
+# Log facility (must be one of the standard facilities defined in syslog.h)
+LogFacility local0
+# for debugging
+#LogFacility -
+
+## How long to wait for backend servers to respond
+## This is the global setting. Can be overriden for individual backends
+## Default is 15 seconds
+TimeOut         5
+
+## check backend every X secs:
+Alive		30
+
+## use hardware-accelleration card supported by openssl(1):
+#SSLEngine	"<hw>"
+
+# poundctl control socket
+Control "/var/run/pound/poundctl.socket"
+
+
+######################################################################
+## Redirect all requests on port 80 of the local webserver.
+######################################################################
+ListenHTTP
+	Address front.eol.ucar.edu
+	Port	8080
+
+  # Add support for passing 302 Location Changed headers
+  # from realservers back through Pound. Needed by SSL protocol switching.
+  #  RewriteLocation 2
+  
+  #########################################################
+  ##  Files coming in from DsFileDist
+  ##  go to DsFCopyServer on eldora (port 5445)
+  #########################################################
+
+  Service
+
+    URL ".*(incoming_spol|incoming_chll).*cfradial.*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+     BackEnd
+       Address  eldora.eol.ucar.edu
+       Port     5445
+     End
+
+  End
+
+  #########################################################
+  ##  SPDB data coming in from DsSpdbServer
+  ##  go to DsSpdbServer on eldora (port 5441)
+  #########################################################
+
+  Service
+
+    URL ".*(incoming_spol|incoming_chll).*spdb.*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+     BackEnd
+       Address  eldora.eol.ucar.edu
+       Port     5441
+     End
+
+  End
+
+  #########################################################
+  ##  CfRadial radar data for dynamo
+  #########################################################
+
+  Service
+
+    URL ".*dynamo.*cfradial.*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+     BackEnd
+       Address  tesla.eol.ucar.edu
+       Port     5440
+     End
+
+  End
+
+  #########################################################
+  ##  SPDB RHI2Symprod for Dynamo
+  #########################################################
+
+  Service
+
+    URL ".*dynamo.*spdb.*rhi.*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+    BackEnd
+      Address  tesla.eol.ucar.edu
+      Port     5473
+    End
+
+  End
+  #########################################################
+  ##  SPDB Metar2Symprod for dynamo
+  #########################################################
+
+  Service
+
+    URL ".*dynamo.*spdb.*(metar_ship_obs|synop_obs).*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+    BackEnd
+      Address  tesla.eol.ucar.edu
+      Port     5456
+    End
+
+  End
+
+  #########################################################
+  ##  SPDB Ltg2Symprod for dynamo
+  #########################################################
+
+  Service
+
+    URL ".*dynamo.*spdb.*wwlln.*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+    BackEnd
+      Address  tesla.eol.ucar.edu
+      Port     5450
+    End
+
+  End
+
+  #########################################################
+  ##  SPDB AcTrack2Symprod for dynamo
+  #########################################################
+
+  Service
+
+    URL ".*dynamo.*spdb.*(ac_posn|revelleposn).*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+    BackEnd
+      Address  tesla.eol.ucar.edu
+      Port     5451
+    End
+
+  End
+
+  ############################################################################
+  ##  TIMREX data
+  ############################################################################
+
+  #########################################################
+  ##  MDV radar data
+  #########################################################
+
+  Service
+
+    URL ".*timrex/mdv.*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+     BackEnd
+       Address  front.eol.ucar.edu
+       Port     5440
+     End
+
+  End
+
+  #########################################################
+  ##  SPDB RHI2Symprod
+  #########################################################
+
+  Service
+
+    URL ".*timrex/spdb/spol/rhi.*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+    BackEnd
+      Address  front.eol.ucar.edu
+      Port     5473
+    End
+
+  End
+  #########################################################
+  ##  SPDB Metar2Symprod
+  #########################################################
+
+  Service
+
+    URL ".*timrex.*spdb.*(cwb/aws|precip).*"
+
+    Session
+      Type IP
+      TTL  120
+    End
+
+    BackEnd
+      Address  front.eol.ucar.edu
+      Port     5456
+    End
+
+  End
+
+  #####################################################
+  ##     All other requests (static web pages)       ##
+  ##    fall through to the web content server       ##
+  #####################################################
+  Service
+    
+    Session
+      Type IP
+      TTL  120
+    End
+
+    BackEnd
+      Address  front.eol.ucar.edu
+      Port     80
+    End
+
+  End
+
+End

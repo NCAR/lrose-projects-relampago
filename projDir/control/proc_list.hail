@@ -1,0 +1,213 @@
+######################################################################
+# EOLBASE - on hail
+#
+######################################################################
+# SYSTEM processes
+#
+Janitor           logs     start_Janitor.logs        snuff_inst
+Janitor           raw      start_Janitor.raw         snuff_inst
+Scout             primary  start_Scout               kill_Scout
+DataMapper        primary  start_DataMapper          kill_DataMapper
+#
+######################################################################
+# SERVER processes
+#
+DsServerMgr       primary  start_inst(no-params)     snuff_inst
+DsProxyServer     primary  start_inst(no-params)     snuff_inst
+DsMdvServer       manager  start_inst(no-params)     snuff_inst
+NcMdvServer       manager  start_inst(no-params)     snuff_inst
+DsFmqServer       manager  start_inst(no-params)     snuff_inst
+DsSpdbServer      manager  start_inst(no-params)     snuff_inst
+DsFCopyServer     manager  start_inst(no-params)     snuff_inst
+Metar2Symprod     manager  start_inst(no-params)     snuff_inst
+Rhi2Symprod       manager  start_inst(no-params)     snuff_inst
+AcTrack2Symprod   manager  start_inst(no-params)     snuff_inst
+SunCal2Symprod    manager  start_inst(no-params)     snuff_inst
+Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
+#
+######################################################################
+# moments FMQ relay from SPOL
+#
+Fmq2Fmq relay.spol.marshall  start_inst(ingest)      snuff_inst
+######################################################################
+# Base observations ingest - from LDM
+#
+InputWatcher        mrms_conus_plus    start_inst(ingest)  snuff_inst 
+Metar2Spdb          ops                start_inst(ingest)  snuff_inst 
+LdmDynamic2Static   metar              start_inst(ingest)  snuff_inst
+LdmDynamic2Static   sounding           start_inst(ingest)  snuff_inst
+madis2Spdb          ops                start_inst(ingest)  snuff_inst 
+NWSsoundingIngest   ops                start_inst(ingest)  snuff_inst 
+InputWatcher        mesonet1           start_inst(ingest)  snuff_inst 
+#MrmsGribIngest     ops                start_inst(ingest)  snuff_inst 
+#MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst
+InputWatcher        ruc                start_inst(ingest)  snuff_inst 
+Grib2toMdv          ruc                start_inst(ingest)  snuff_inst 
+Grib2toMdv          ruc_fcasts         start_inst(ingest)  snuff_inst 
+Mdv2SoundingSpdb    ruc                start_inst(ingest)  snuff_inst
+#NcGeneric2Mdv      sat_1km            start_inst(ingest)  snuff_inst 
+#NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
+Ltg2Spdb            nldn               start_inst(ingest)  snuff_inst
+LtgSpdb2Mdv         nldn               start_inst(ingest)  snuff_inst
+NcarAcPosn2Spdb     ops                start_inst(ingest)  snuff_inst
+#NcarAcPosn2Spdb    mobile             start_inst(ingest)  snuff_inst
+#
+######################################################################
+# SNOWIE ingest
+#
+#MrmsGribIngest      snowie             start_inst(ingest)  snuff_inst 
+#MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
+######################################################################
+# PECAN ingest
+#
+#InputWatcher       KSMeso             start_inst(ingest)  snuff_inst 
+#KSMesonet2Spdb     ops                start_inst(ingest)  snuff_inst 
+######################################################################
+# Interpolate surface data
+#
+SurfInterp         ops                start_inst(alg)     snuff_inst
+######################################################################
+#
+# NEXRAD file ingest - from LDM
+#
+# FRONT RANGE
+RadxConvert   kcys    start_RadxConvert.kcys   snuff_inst
+RadxConvert   kftg    start_RadxConvert.kftg   snuff_inst
+RadxConvert   kgjx    start_RadxConvert.kgjx   snuff_inst
+RadxConvert   kgld    start_RadxConvert.kgld   snuff_inst
+RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
+# PECAN
+#RadxConvert  kabx    start_RadxConvert.kabx   snuff_inst
+#RadxConvert  kama    start_RadxConvert.kama   snuff_inst
+#RadxConvert  kddc    start_RadxConvert.kddc   snuff_inst
+#RadxConvert  keax    start_RadxConvert.keax   snuff_inst
+#RadxConvert  kict    start_RadxConvert.kict   snuff_inst
+#RadxConvert  kinx    start_RadxConvert.kinx   snuff_inst
+#RadxConvert  klnx    start_RadxConvert.klnx   snuff_inst
+#RadxConvert  koax    start_RadxConvert.koax   snuff_inst
+#RadxConvert  kriw    start_RadxConvert.kriw   snuff_inst
+#RadxConvert  ksgf    start_RadxConvert.ksgf   snuff_inst
+#RadxConvert  ktlx    start_RadxConvert.ktlx   snuff_inst
+#RadxConvert  ktwx    start_RadxConvert.ktwx   snuff_inst
+#RadxConvert  kuex    start_RadxConvert.kuex   snuff_inst
+#RadxConvert  kvnx    start_RadxConvert.kvnx   snuff_inst
+#
+######################################################################
+# NEXRAD ingest for OLYMPEX
+#
+#DsFileDist   olympex start_inst(system)       snuff_inst
+#RadxConvert  katx    start_RadxConvert.katx   snuff_inst
+#RadxConvert  klgx    start_RadxConvert.klgx   snuff_inst
+#
+######################################################################
+# Convective/stratiform partitioning
+#
+#StratFinder        mrms                start_inst(alg)     snuff_inst
+######################################################################
+# Storm tracking
+#
+#Titan           mrms_conv             start_inst(alg)     snuff_inst
+#Tstorms2Spdb    mrms_conv             start_inst(alg)     snuff_inst
+#OpticalFlow     mrms                  start_inst(alg)     snuff_inst
+######################################################################
+#
+# PID and rain rate
+#
+#LdataMultWatcher  partrain.nexrad   start_inst(alg)   snuff_inst
+#LdataMultWatcher  partrain.spol     start_inst(alg)   snuff_inst
+######################################################################
+# SPOL PID and rain rate
+#
+#RadxPartRain       spol.sur           start_inst(alg)     snuff_inst
+#RadxPartRain       spol.rhi           start_inst(alg)     snuff_inst
+#RadxPartRain       chill.sur          start_inst(alg)     snuff_inst
+#RadxPartRain       chill.rhi          start_inst(alg)     snuff_inst
+######################################################################
+#
+# Radx2Grid for low-level PPI grids and 3D grids
+#
+#LdataMultWatcher  lowppi.nexrad   start_inst(ingest)      snuff_inst
+#Radx2Grid         lowppi.spol     start_Radx2Grid.lowppi.spol  snuff_inst
+#LdataMultWatcher  3D.nexrad1      start_inst(ingest)      snuff_inst
+#LdataMultWatcher  3D.nexrad2      start_inst(ingest)      snuff_inst
+#LdataMultWatcher  3D.nexrad3      start_inst(ingest)      snuff_inst
+#Radx2Grid         3D.spol         start_Radx2Grid.3D.spol snuff_inst
+#MdvMerge2      lowppi_mosaic  start_MdvMerge2.lowppi_mosaic  snuff_inst
+#MdvMerge2         3D_mosaic   start_MdvMerge2.3D_mosaic      snuff_inst
+#MdvConvert        3D_comp          start_inst(ingest)  snuff_inst
+######################################################################
+#
+# QPE
+#
+#LdataMultWatcher  RadxQpe          start_inst(qpe)   snuff_inst
+#MdvMerge2         qpe              start_inst(qpe)   snuff_inst
+#RateAccum         running          start_inst(qpe)   snuff_inst
+#RateAccum         daily            start_inst(qpe)   snuff_inst
+##RadxQpe          spol             start_inst(qpe)   snuff_inst
+##RadxQpe          chill            start_inst(qpe)   snuff_inst
+#
+######################################################################
+#
+# MultiDoppler
+#
+#LdataMultWatcher  Radx2Grid.multidop   start_inst(multidop)  snuff_inst
+#LdataMultWatcher  make_links.multidop  start_inst(multidop)  snuff_inst
+######################################################################
+#
+# Refract
+#
+#Radx2Grid          refract_spol   start_Radx2Grid.refract_spol   snuff_inst
+#Refract            spol           start_Refract.spol             snuff_inst
+#CalcMoisture       pecan          start_CalcMoisture.pecan       snuff_inst
+######################################################################
+######################################################################
+# UF files for Dual Doppler
+#
+#RadxConvert   moments.sur.uf  start_inst(ingest)     snuff_inst
+#RadxConvert   moments.rhi.uf  start_inst(ingest)     snuff_inst
+#DsFileDist    uf              start_inst(system)     snuff_inst
+#cedric2mdv    chill_spol         start_inst(ingest)  snuff_inst
+#
+######################################################################
+# Generate images for catalog
+#
+#LdataMultWatcher    catalog.mrms_comp_snowie start_inst(catalog) snuff_inst
+#LdataMultWatcher    catalog.dow              start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.nexrad           start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.mosaics          start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.spol             start_inst(catalog) snuff_inst
+######################################################################
+# Push images to catalog
+#
+#LdataWatcher       catalog.images           start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.dow_images       start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.dow_rhi_images   start_inst(catalog) snuff_inst
+#
+######################################################################
+# HAWAII
+#
+# NEXRAD moments ingest
+RadxConvert   phki    start_RadxConvert.phki   snuff_inst
+RadxConvert   phmo    start_RadxConvert.phmo   snuff_inst
+RadxConvert   phkm    start_RadxConvert.phkm   snuff_inst
+RadxConvert   phwa    start_RadxConvert.phwa   snuff_inst
+#
+# GFS GRIB data to MDV
+#
+Grib2toMdv    gfs.hawaii  start_inst(ingest)   snuff_inst
+#
+# model soundings at each radar
+#
+Mdv2SoundingSpdb  hawaii  start_inst(ingest)  snuff_inst
+#
+# NEXRAD precip and pid
+RadxPartRain   phki    start_RadxPartRain.phki   snuff_inst
+RadxPartRain   phmo    start_RadxPartRain.phmo   snuff_inst
+RadxPartRain   phkm    start_RadxPartRain.phkm   snuff_inst
+RadxPartRain   phwa    start_RadxPartRain.phwa   snuff_inst
+#
+# SURFACE OBS
+#
+Metar2Spdb        hawaii  start_inst(ingest)   snuff_inst 
+madis2Spdb        hawaii  start_inst(ingest)   snuff_inst 
+######################################################################

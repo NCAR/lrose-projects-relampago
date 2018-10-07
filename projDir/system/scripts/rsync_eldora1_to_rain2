@@ -1,0 +1,6 @@
+#! /bin/csh
+#
+
+cd /scr/eldora1/rsfdata
+rsync -av * /scr/rain2/rsfdata/eldora1 >& /tmp/rsync_eldora1_to_rain2.log &
+

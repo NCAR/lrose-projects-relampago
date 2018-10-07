@@ -1,0 +1,7 @@
+NOTES ON INSTALLING POUND ON CENTOS 7
+-------------------------------------
+
+1. In /etc/pound.cgf, set Address to host name
+
+2. In /usr/lib/systemd/system/pound.service, comment out PID line.
+

@@ -1,0 +1,6 @@
+#! /bin/csh
+#
+
+cd /scr/hail1/rsfdata
+rsync -av * /scr/rain1/rsfdata/hail1 >& /tmp/rsync_hail1_to_rain1.log &
+

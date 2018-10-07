@@ -1,0 +1,18 @@
+#! /bin/csh
+#
+
+# DIAL2
+rsync_dial_data_from_field.py --debug \
+    --rsyncSource rsync://128.117.47.87/wvdial2/Warnings/ \
+    --targetDir /export/eldora1/wvdial_2_data/ |& \
+    LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field_Warn.dial2 -i cron >& /dev/null 
+
+rsync_dial_data_from_field.py --debug \
+    --rsyncSource rsync://128.117.47.87/wvdial2/Errors/ \
+    --targetDir /export/eldora1/wvdial_2_data/ |& \
+    LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field_Err.dial2 -i cron >& /dev/null 
+
+rsync_dial_data_from_field.py --debug \
+    --rsyncSource rsync://128.117.47.87/wvdial2/NetCDFOutput/ \
+    --targetDir /export/eldora1/wvdial_2_data/ |& \
+    LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field_Data.dial2 -i cron >& /dev/null 

@@ -1,0 +1,36 @@
+######################################################################
+# EOL BASE crontab - on hail
+#
+#
+####################################################################
+# ============= DO NOT  edit with crontab -e  ======================
+# master copy is:
+#   github.com/NCAR/lrose-projects-eolbase/projDir/control/crontab
+# install with install_crontab
+####################################################################
+# SYSTEM
+#
+# Process restarters
+*/1 * * * *  csh -c "start_auto_restart_check_cron" 1> /dev/null 2> /dev/null
+*/1 * * * *  csh -c "start_procmap_check_cron"      1> /dev/null 2> /dev/null
+#
+# Build links to log date subdirs
+*/5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
+#
+####################################################################
+# Maintain ssh tunnel from FL to Marshall for Moments data FMQ
+#
+#*/1 * * * * csh -c "create_spol_relay_tunnel" 1> /dev/null 2> /dev/null
+####################################################################
+# BACK UP DATA TO ELDORA
+#
+#*/5 * * * *   csh -c "rsync_pecan_to_eldora" 1> /dev/null 2> /dev/null
+#
+# backup camera images to hail
+#*/2 * * * * csh -c "sync_pecan_weather_cams" >/dev/null 2>&1
+# backup weather station data from S-Pol
+#*/10 * * * *   csh -c "rsync_nidas.spol" 1> /dev/null 2> /dev/null
+####################################################################
+# TRANSFER IMAGES FROM RAL WEATHER PAGE TO CATALOG
+#
+#*/10 * * * *   csh -c "retrieve_ral_products" 1> /dev/null 2> /dev/null

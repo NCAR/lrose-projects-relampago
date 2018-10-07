@@ -1,0 +1,12 @@
+#! /bin/sh
+
+# rsync pecan data from hail to eldora
+
+cd /scr/hail2/rsfdata/pecan
+
+snuff "rsync -av cfradial mdv spdb titan www"
+
+rsync -av cfradial mdv spdb titan www eldora:/export/eldora2/rsfdata/pecan |& LogFilter -d $ERRORS_LOG_DIR -p rsync -i pecan_to_eldora &
+
+
+

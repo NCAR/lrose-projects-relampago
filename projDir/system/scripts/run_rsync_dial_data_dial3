@@ -1,0 +1,18 @@
+#! /bin/csh
+#
+
+# DIAL3's computer is conviently called wvdial04, just to confuse us. 
+rsync_dial_data_from_field.py --debug \
+    --rsyncSource rsync://128.117.47.159/wvdial04/Warnings/ \
+    --targetDir /export/eldora1/wvdial_3_data/ |& \
+    LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field_Warn.dial3 -i cron >& /dev/null 
+
+rsync_dial_data_from_field.py --debug \
+    --rsyncSource rsync://128.117.47.159/wvdial04/Errors/ \
+    --targetDir /export/eldora1/wvdial_3_data/ |& \
+    LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field_Err.dial3 -i cron >& /dev/null 
+
+rsync_dial_data_from_field.py --debug \
+    --rsyncSource rsync://128.117.47.159/wvdial04/NetCDFOutput/ \
+    --targetDir /export/eldora1/wvdial_3_data/ |& \
+    LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field_Data.dial3 -i cron >& /dev/null 

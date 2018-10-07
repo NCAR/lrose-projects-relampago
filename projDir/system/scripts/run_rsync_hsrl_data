@@ -1,0 +1,6 @@
+#! /bin/csh
+#
+
+set prog = 'rsync_hsrl_data_from_field.py'
+$prog --debug |& LogFilter -d $ERRORS_LOG_DIR -p $prog -i cron >& /dev/null &
+

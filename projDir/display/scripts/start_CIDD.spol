@@ -1,0 +1,16 @@
+#! /bin/csh
+
+setenv DATA_HOST eldora.eol.ucar.edu
+
+setenv PROJ_DIR ~/projDir
+if (-e /opt/local/front/projDir) then
+  setenv PROJ_DIR  /opt/local/front/projDir
+endif
+
+set_font_path >& /dev/null
+
+source $PROJ_DIR/system/params/site_info.front
+cd $PROJ_DIR/display/params
+
+CIDD -p CIDD.spol -font fixed >& /dev/null &
+
