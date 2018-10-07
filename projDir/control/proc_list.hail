@@ -211,3 +211,18 @@ RadxPartRain   phwa    start_RadxPartRain.phwa   snuff_inst
 Metar2Spdb        hawaii  start_inst(ingest)   snuff_inst 
 madis2Spdb        hawaii  start_inst(ingest)   snuff_inst 
 ######################################################################
+######################################################################
+# RELAMPAGO
+#
+# GFS GRIB data to MDV
+#
+Grib2toMdv    gfs.relampago start_inst(ingest)   snuff_inst
+#
+# model soundings at each radar
+#
+#Mdv2SoundingSpdb  relampago  start_inst(ingest)  snuff_inst
+#
+# SURFACE OBS
+#
+#Metar2Spdb   relampago  start_inst(ingest)   snuff_inst 
+######################################################################
