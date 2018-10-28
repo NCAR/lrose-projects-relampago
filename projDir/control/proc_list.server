@@ -1,11 +1,10 @@
 ######################################################################
-# FRONT - on eldora
+# RELAMPAGO - server
 #
 ######################################################################
 # SYSTEM processes
 #
 Janitor           logs     start_Janitor.logs        snuff_inst
-Janitor           raw      start_Janitor.raw         snuff_inst
 Scout             primary  start_Scout               kill_Scout
 DataMapper        primary  start_DataMapper          kill_DataMapper
 #

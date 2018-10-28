@@ -38,7 +38,7 @@ def main():
                       dest='gitDir', default=defaultGitDir,
                       help='Path of main directory in git')
     parser.add_option('--dataDir',
-                      dest='dataDir', default='/data/relampago',
+                      dest='dataDir', default='/data/relamp',
                       help='Path of installed data dir')
     (options, args) = parser.parse_args()
     

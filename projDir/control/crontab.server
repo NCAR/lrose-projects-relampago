@@ -1,12 +1,6 @@
 ######################################################################
-# EOL BASE crontab - on rain
+# crontab - RELAMPAGO
 #
-#
-####################################################################
-# ============= DO NOT  edit with crontab -e  ======================
-# master copy is:
-#   github.com/NCAR/lrose-projects-eolbase/projDir/control/crontab
-# install with install_crontab
 ####################################################################
 # SYSTEM
 #
