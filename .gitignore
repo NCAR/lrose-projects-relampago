@@ -34,4 +34,10 @@
 # links
 
 projDir/logs
+projDir/data
+projDir/control/proc_list
+projDir/control/data_list
+projDir/control/crontab
+
+
 
