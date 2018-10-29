@@ -129,9 +129,8 @@ if ( -d $PROJ_DIR ) then
   end
 endif
 
-set path = ($path $LROSE_INSTALL_DIR/bin)
-
-set path = ($path $PROJ_DIR/dial/Matlab)
+set path = ($path ~/lrose/bin)
+set path = ($path ~/cidd/bin)
 
 set path = ($path ~/bin $QTDIR/bin \
         ~/anaconda2/bin \
@@ -214,7 +213,10 @@ if ($?prompt) then
   alias gdiff 'git diff '
   alias gdt 'git difftool -g -y '
 
-  alias gate 'ssh -a -XY -C -L 2401:cvs.rap.ucar.edu:2401 -L 8888:svn.eol.ucar.edu:80 dixon@gate.ucar.edu'
+  alias relamp 'ssh -XY relamp@relampago'
+  alias ops1 'ssh -XY sci@ops1'
+  alias ops2 'ssh -XY sci@ops2'
+  alias ops3 'ssh -XY sci@ops3'
 
   alias spol_fmq_tunnel 'ssh -p20022 -L 15443:localhost:5443 spol@spol.dyndns.org'
 
