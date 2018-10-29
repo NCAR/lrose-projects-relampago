@@ -132,32 +132,6 @@ useAcceptedStationsList = FALSE;
 
 acceptedStations = {
  "RCTP",
- "RCFG",
- "RCSS",
- "RCGM",
- "RCNO",
- "RCQC",
- "RCBS",
- "RCUK",
- "RCKH",
- "RCFN",
- "RCNN",
- "RCAY",
- "RCKU",
- "RCMJ",
- "RCDC",
- "RCLG",
- "RCKW",
- "RCPO",
- "RCSQ",
- "RCQS",
- "RCLY",
- "RCYU",
- "RCMS",
- "RCDI",
- "RCMQ",
- "RCFS",
- "RCGI",
  "RCMT",
  "RCLM"
 };
@@ -187,9 +161,6 @@ useRejectedStationsList = FALSE;
 
 rejectedStations = {
  "RCFN",
- "RCAY",
- "RCQS",
- "RCFS",
  "RCMT"
 };
 
@@ -776,7 +747,7 @@ wind_gust_label = {
 
 ceiling_label = {
     do_draw = TRUE,
-    color = "cyan",
+    color = "gray30",
     background_color = "",
     override_color_from_flight_cat = FALSE,
     font_name = "8x13",
@@ -849,7 +820,7 @@ wind_units = WIND_KTS;
 
 visibility_label = {
     do_draw = TRUE,
-    color = "magenta",
+    color = "gray30",
     background_color = "",
     override_color_from_flight_cat = FALSE,
     font_name = "8x13",
