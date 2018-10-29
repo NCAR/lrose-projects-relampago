@@ -1,0 +1,6 @@
+#! /bin/csh
+
+createParamLinks.py --verbose --template ~/git/lrose-projects-relampago/data_dirs/data.server --installDir ~/projDir/data/relampago
+
+
+

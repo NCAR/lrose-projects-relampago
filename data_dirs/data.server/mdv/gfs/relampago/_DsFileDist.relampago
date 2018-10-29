@@ -1,0 +1,195 @@
+/**********************************************************************
+ * TDRP params for DsFileDist
+ **********************************************************************/
+
+//======================================================================
+//
+// LOCAL DISTRIBUTION PARAMETERS.
+//
+// Only set these parameters in the local _DsFileDist files in the data 
+//   directory tree. To avoid confusing behavior, it is good practice not 
+//   to override the DEBUGGING or DIRECTORY SEARCH parameters.
+//  
+// DsFileDist searches recursively down from the top dir, looking for 
+//   _DsFileDist parameter files or _latest_data_info files - see 
+//   'find_mode' for a more detailed explanation. When a _DsFileDist file 
+//   is found, it overrides the gobal parameters.
+//  
+// If 'process' in the local params is FALSE, DsFileDist does not 
+//   distribute files from that directory or any below it. This is useful 
+//   for marking areas as off-limits so that they are not included in the 
+//   search.
+//
+//======================================================================
+ 
+///////////// check_file_ext //////////////////////////
+//
+// Option to only copy files with a given extension.
+// If TRUE, only files with extensions which match the parameter 
+//   'data_file_ext' will be copied.
+// Type: boolean
+//
+
+check_file_ext = TRUE;
+
+///////////// data_file_ext ///////////////////////////
+//
+// Specified data file extension before distribution.
+// See 'check_file_ext'.
+// Type: string
+//
+
+data_file_ext = "nc";
+
+///////////// allow_redistribution ////////////////////
+//
+// Option to allow redistribution of DsFileDist files.
+// If TRUE, allows files which have already been distributed by 
+//   DsFileDist to be forwarded on. If FALSE, does not allow the 
+//   redistribution of files which have already been distributed once. 
+//   This is useful to prevent infinte loops in distribution of files 
+//   between redundant hosts.
+// Type: boolean
+//
+
+allow_redistribution = TRUE;
+
+///////////// force_copy //////////////////////////////
+//
+// Option to force copy. Uses single TCP/IP message.
+// If TRUE, a single put message will be sent from the client to the 
+//   server. The file will always be written, even if it already exists. 
+//   If FALSE, the client will request the server to tell it whether to 
+//   send the file. This request is made via an 'enquire' message. The 
+//   server will tell the client whether to send the file. It will decline 
+//   the copy request if the file already exists, and if the age of the 
+//   file is less than the 'overwrite-age' parameter. This mode is 
+//   intended for use with redundant data sources in which the file may be 
+//   sent from more than one client.
+// Type: boolean
+//
+
+force_copy = FALSE;
+
+///////////// overwrite_age ///////////////////////////
+//
+// Overwrite age for existing file on target machine (secs).
+// If force_copy is true, the copy will be forced even if file exists on 
+//   target machine. If force_copy is false, the file age on target 
+//   machine will be checked. If the age exceeds 'overwrite_age', the file 
+//   will be copied over existing file. If overwrite_age is -1, the file 
+//   will never be overwritten.
+// Type: int
+//
+
+overwrite_age = -1;
+
+///////////// max_age_at_copy_time ////////////////////
+//
+// Max allowable age of files when copying starts (secs).
+// Before the program starts to copy a file, it will check the file age. 
+//   If the age exceeds this maximum, the file will not be copied. See 
+//   also 'max_valid_age'. The problem is that sometimes the network 
+//   connection is bad or goes down, and the copying gets behind. When 
+//   that happens, it may be that the program will try to copy files which 
+//   are old. This parameter allows you to prevent old files from being 
+//   copied. Set to -1 to disable checking, i.e., to force copying 
+//   irrespective of the file age.
+// Type: int
+//
+
+max_age_at_copy_time = 3600;
+
+///////////// remove_after_copy ///////////////////////
+//
+// Option to remove the file after copying.
+// Normally the file is not removed after copying. Setting this to TRUE 
+//   will cause the file to be removed after a successful copy. This will 
+//   only apply for a single URL destination. If you have more than 1 
+//   destination this parameter will be ignored and an error message will 
+//   be generated.
+// Type: boolean
+//
+
+remove_after_copy = FALSE;
+
+///////////// write_ldata_to_input_dir ////////////////
+//
+// Option to write the latest data file to the input dir.
+// This is useful for keeping the data mapper up to date for external 
+//   data sets which do not have a _latest_data_info file. This will only 
+//   apply if 'latest_data_info_avail' is false.
+// Type: boolean
+//
+
+write_ldata_to_input_dir = FALSE;
+
+///////////// compression_type ////////////////////////
+//
+// Compression type for transfer.
+// RLE - simple run-length encoding, fastest. LZO - fast, not very 
+//   compact, better than RLE. ZLIB - same as gzip, but without headers. 
+//   Not as fast as LZO, better than RLE. More compact than RLE and LZO. 
+//   BZIP - slow, very compact. GZIP - recommended.
+//
+// Type: enum
+// Options:
+//     COMPRESSION_NONE
+//     COMPRESSION_RLE
+//     COMPRESSION_LZO
+//     COMPRESSION_ZLIB
+//     COMPRESSION_BZIP
+//     COMPRESSION_GZIP
+//
+
+compression_type = COMPRESSION_NONE;
+
+///////////// use_dest_host_list_file /////////////////
+//
+// Use host list in the file to create the destination urls.
+// The host list file contains a list of destination hosts. Each entry 
+//   in this list is merged with the url_template to create a list of 
+//   destination urls.
+// Type: boolean
+//
+
+use_dest_host_list_file = FALSE;
+
+///////////// dest_url_list ///////////////////////////
+//
+// Specified URL list for destination hosts.
+//  
+// This is only used if parameter 'use_dest_host_list_file' is FALSE.
+//  
+// URL format: fcopyp:://targethost:port:dir
+//  
+// The files will be distributed to this list of hosts.
+//  
+// If the directory part is empty, the target directory will be the same 
+//   as the source directory, relative to RAP_DATA_DIR or DATA_DIR.
+//  
+// If the directory part is set, the target directory will be as 
+//   specified, relative to RAP_DATA_DIR or DATA_DIR, unless the dir 
+//   starts with /, in which case it is taken as the absolute path.
+//  
+// For FIND_LATEST_DATA_INFO mode: if the directory part is empty, the 
+//   target directory will be the same as the source directory, relative 
+//   to $DATA_DIR. If the directory part is set, the target directory will 
+//   be $DATA_DIR + specified-dir + 
+//   source-dir-relative-to-_DsFileDist-file.
+//  
+// DsFileDist will NOT distribute files to either 'localhost' or the IP 
+//   address of the local host, unless you specify the target directory. 
+//   This behavior prevents an infinite loop caused by recursively writing 
+//   data to a directory, then distributing it to itself. If you want to 
+//   copy files to a different directory, MAKE SURE you have set a 
+//   different directory, to prevent the infinit loop problem.
+//  .
+// Type: string
+// 1D array - variable length.
+//
+
+dest_url_list = { 
+  "fcopyp:://$(RELAMP_SERVER_IPADDR)::"
+};
+
