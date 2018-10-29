@@ -1050,7 +1050,7 @@ wind_ticks_angle_to_shaft = 60;
 // Type: boolean
 //
 
-draw_flight_category = FALSE;
+draw_flight_category = TRUE;
 
 ///////////// flight_category /////////////////////////
 //
@@ -1078,14 +1078,21 @@ draw_flight_category = FALSE;
 flight_category = {
   {
     label = VFR,
-    color = "green",
+    color = "seagreen",
     ceiling_threshold = 1500,
     visibility_threshold = 5
   }
   ,
   {
+    label = MVFR,
+    color = "blue",
+    ceiling_threshold = 500,
+    visibility_threshold = 1.6
+  }
+  ,
+  {
     label = IFR,
-    color = "gold",
+    color = "orange",
     ceiling_threshold = 0,
     visibility_threshold = 0
   }
@@ -1097,7 +1104,7 @@ flight_category = {
 // Type: int
 //
 
-flight_category_circle_radius = 3;
+flight_category_circle_radius = 5;
 
 //======================================================================
 //
