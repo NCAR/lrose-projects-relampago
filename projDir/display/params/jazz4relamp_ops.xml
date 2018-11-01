@@ -175,35 +175,35 @@
 
 <!-- MDV Layers -->
 
-<Layer vis="on" type="MDV" name="GOES16 CH13" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch13"
+<Layer vis="on" type="MDV" name="GOES16-CH13" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch13"
        field="GOESR_CH13" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_tempC.colors" 
        menuName="GOES16-CH13" menuGroup="GOES16" />
 
-<Layer vis="off" type="MDV" name="GOES16 CH15" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch15"
+<Layer vis="off" type="MDV" name="GOES16-CH15" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch15"
        field="GOESR_CH15" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_tempC.colors" 
        menuName="GOES16-CH15" menuGroup="GOES16" />
 
-<Layer vis="off" type="MDV" name="GOES16 SWD" location="mdvp::swd//181.30.169.202::relampago/mdv/goes16_ch13"
+<Layer vis="off" type="MDV" name="GOES16-SWD" location="mdvp::swd//181.30.169.202::relampago/mdv/goes16_ch13"
        field="GOESR_SWD" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/goesr_swd.colors" 
        menuName="GOES16-SWD" menuGroup="GOES16" />
 
-<Layer vis="off" type="MDV" name="GOES16 CH10" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch10"
+<Layer vis="off" type="MDV" name="GOES16-CH10" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch10"
        field="GOESR_CH10" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_tempC.colors" 
        menuName="GOES16-CH10" menuGroup="GOES16" />
 
-<Layer vis="off" type="MDV" name="GOES16 CH01" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch01"
+<Layer vis="off" type="MDV" name="GOES16-CH01" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch01"
        field="GOESR_CH01" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_cloud.colors" 
        menuName="GOES16-CH01" menuGroup="GOES16" />
 
-<Layer vis="off" type="MDV" name="GOES16 CH02" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch02"
+<Layer vis="off" type="MDV" name="GOES16-CH02" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch02"
        field="GOESR_CH02" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_cloud.colors" 
        menuName="GOES16-CH02" menuGroup="GOES16" />
 
-<Layer vis="off" type="MDV" name="GOES16 CH03" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch03"
+<Layer vis="off" type="MDV" name="GOES16-CH03" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch03"
        field="GOESR_CH03" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_cloud.colors" 
        menuName="GOES16-CH03" menuGroup="GOES16" />
 
-<Layer vis="off" type="MDV" name="GOES16 CH06" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch06"
+<Layer vis="off" type="MDV" name="GOES16-CH06" location="mdvp:://181.30.169.202::relampago/mdv/goes16_ch06"
        field="GOESR_CH06" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_cloud.colors" 
        menuName="GOES16-CH06" menuGroup="GOES16" />
 
@@ -323,55 +323,55 @@
        field="CIN" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/cin.colors" 
        menuName="WRF-CIN" menuGroup="WRF-ILLINOIS" />
 
-<Layer vis="off" type="MDV" name="SURF Temp" location="mdvp:://181.30.169.202::relampago/mdv/surf_interp"
+<Layer vis="off" type="MDV" name="SURF-Temp" location="mdvp:://181.30.169.202::relampago/mdv/surf_interp"
        field="Temp" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors" 
        menuName="SURF-Temp" menuGroup="SURF-INTERP" />
 
-<Layer vis="off" type="MDV" name="SURF DewPt" location="mdvp:://181.30.169.202::relampago/mdv/surf_interp"
+<Layer vis="off" type="MDV" name="SURF-DewPt" location="mdvp:://181.30.169.202::relampago/mdv/surf_interp"
        field="DewPoint" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors" 
        menuName="SURF-DewPt" menuGroup="SURF-INTERP" />
 
-<Layer vis="off" type="MDV" name="SURF Conv" location="mdvp:://181.30.169.202::relampago/mdv/surf_interp"
+<Layer vis="off" type="MDV" name="SURF-Conv" location="mdvp:://181.30.169.202::relampago/mdv/surf_interp"
        field="Convergence" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/conv.colors" 
        menuName="SURF-Conv" menuGroup="SURF-INTERP" />
 
-<Layer vis="off" type="MDV" name="CORD DBZ" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
+<Layer vis="off" type="MDV" name="CORD-DBZ" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
        field="DBZH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
        menuName="CORD-DBZ" menuGroup="RADAR" />
 
-<Layer vis="off" type="MDV" name="CORD DBZ LONG" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/long_range"
+<Layer vis="off" type="MDV" name="CORD-DBZ-LONG" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/long_range"
        field="DBZH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
        menuName="CORD-DBZ-LONG" menuGroup="RADAR" />
 
-<Layer vis="off" type="MDV" name="CORD ZDR" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
+<Layer vis="off" type="MDV" name="CORD-ZDR" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
        field="ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors" 
        menuName="CORD-ZDR" menuGroup="RADAR" />
 
-<Layer vis="off" type="MDV" name="CORD KDP" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
+<Layer vis="off" type="MDV" name="CORD-KDP" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
        field="KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp.colors" 
        menuName="CORD-KDP" menuGroup="RADAR" />
 
-<Layer vis="off" type="MDV" name="CORD VEL" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
+<Layer vis="off" type="MDV" name="CORD-VEL" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
        field="VEL" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors" 
        menuName="CORD-VEL" menuGroup="RADAR" />
 
-<Layer vis="off" type="MDV" name="CORD WIDTH" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
+<Layer vis="off" type="MDV" name="CORD-WIDTH" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
        field="WIDTH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/width.colors" 
        menuName="CORD-WIDTH" menuGroup="RADAR" />
 
-<Layer vis="off" type="MDV" name="CORD PHIDP" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
+<Layer vis="off" type="MDV" name="CORD-PHIDP" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
        field="PHIDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp.colors" 
        menuName="CORD-PHIDP" menuGroup="RADAR" />
 
-<Layer vis="off" type="MDV" name="CORD RHOHV" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
+<Layer vis="off" type="MDV" name="CORD-RHOHV" location="mdvp:://181.30.169.202::relampago/cfradial/RMA1/short_range"
        field="RHOHV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors" 
        menuName="CORD-RHOHV" menuGroup="RADAR" />
 
-<Layer vis="off" type="MDV" name="SAN MARTIN DBZ" location="mdvp:://181.30.169.202::relampago/mdv/radar/SanMartin"
+<Layer vis="off" type="MDV" name="SAN-MARTIN-DBZ" location="mdvp:://181.30.169.202::relampago/mdv/radar/SanMartin"
        field="DBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
        menuName="SAN-MARTIN-DBZ" menuGroup="RADAR" />
 
-<Layer vis="off" type="MDV" name="SAN RAFAEL DBZ" location="mdvp:://181.30.169.202::relampago/mdv/radar/SanRafael"
+<Layer vis="off" type="MDV" name="SAN-RAFAEL-DBZ" location="mdvp:://181.30.169.202::relampago/mdv/radar/SanRafael"
        field="DBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
        menuName="SAN-RAFAEL-DBZ" menuGroup="RADAR" />
 

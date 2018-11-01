@@ -249,6 +249,8 @@ Counties       Counties       ARG_adm2.map                0  0.0 1000000.0  pink
 CordobaRings   CordobaRings   cordoba_rings.map           1  0.0 1000000.0  white
 SanMartinRings SanMartinRings san_martin_rings.map        0  0.0 1000000.0  white
 SanRafaelRings SanRafaelRings san_rafael_rings.map        0  0.0 1000000.0  white
+Points         Points         relampago_points.map        1  0.0 1000000.0  yellow
+
 </MAPS>
 
 <WINDS>
