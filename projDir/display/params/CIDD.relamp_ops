@@ -305,8 +305,7 @@ Rivers         Rivers         ARG_water_lines_dcw.map     0  0.0 1000000.0  blue
 Lakes          Lakes          ARG_water_areas_dcw.map     0  0.0 1000000.0  blue
 #Admin0        Admin0         ARG_adm0.map                0  0.0 1000000.0  orange
 
-
-RMA1Rings      RMA1Rings      rma1_rings.map              1  0.0 1000000.0  white
+RMA1Rings      RMA1Rings      rma1_rings.map              0  0.0 1000000.0  white
 RMA2Rings      RMA2Rings      rma2_rings.map              0  0.0 1000000.0  white
 AngRings       AngRings       ang_rings.map               0  0.0 1000000.0  white
 ParRings       ParRings       par_rings.map               0  0.0 1000000.0  white
@@ -926,6 +925,7 @@ cidd.azmith_radius:         200.0
 
 # Toggles to turn on/off  Extras features on startup
 cidd.range_rings:             1
+cidd.range_ring_for_radar_only: 1
 cidd.azmith_lines:            1
 
 # Starting state of the All Winds ON/OFF feature
