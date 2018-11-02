@@ -24,3 +24,10 @@ AcTrack2Symprod   manager  start_inst(no-params)     snuff_inst
 SunCal2Symprod    manager  start_inst(no-params)     snuff_inst
 Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 #
+######################################################################
+# ingesting the quicklooks from the DOW radars
+InputWatcher      radar_dow6    start_inst(ingest)    snuff_inst
+InputWatcher      radar_dow7    start_inst(ingest)    snuff_inst
+InputWatcher      radar_dow8    start_inst(ingest)    snuff_inst
+InputWatcher      radar_dowc    start_inst(ingest)    snuff_inst
+######################################################################
