@@ -116,60 +116,51 @@ GOES16_CH06  GOES16_CH06  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch06&GOE
 ############################
 # GFS Model data
 
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-
 GFS-TMP   GFS-TMP  mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&TMP  temp.colors   C   -5   80  5  dcont   1 0
 GFS-RH    GFS-RH   mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&RH   rh.colors   %   -5   80  5  dcont   1 0
 GFS-PRES  GFS-PRES mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
 SURF_Terrain Terrain  mdvp::terrain//181.30.169.202:0:relampago/mdv/terrain&Elevation terrain_relampago.colors m -5 80 5 dcont 1 0
 
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
 ############################
 # WRF Model data
-
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 WRF-Temp   WRF-Temp   mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Temp    temp.colors     C    -5   80  5  dcont   1 0
 WRF-THETAE WRF-THETAE mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&THETA   theta_e.colors  K    -5   80  5  dcont   1 0
 WRF-RH     WRF-RH     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&RH      rh.colors       %    -5   80  5  dcont   1 0
 WRF-W      WRF-W      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&W       wvel_new.colors m/s  -5   80  5  dcont   1 0
+WRF-WSPD     WRF-WSPD     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Wspeed   wind_speed.colors  m/s     -5   80  5  dcont   1 0
+WRF-Press    WRF-Press    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&P        press_pert_pa.colors   Pa      -5   80  5  dcont   1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 WRF-QVAPOR   WRF-QVAPOR   mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QVAPOR   mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
 WRF-QCLOUD   WRF-QCLOUD   mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QCLOUD   mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
 WRF-QRAIN    WRF-QRAIN    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QRAIN    mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
 WRF-QICE     WRF-QICE     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QICE     mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-
 WRF-QSNOW    WRF-QSNOW    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QSNOW    mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
 WRF-QGRAUPEL WRF-QGRAUPEL mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QGRAUP   mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-WRF-WSPD     WRF-WSPD     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Wspeed   wind_speed.colors  m/s     -5   80  5  dcont   1 0
-WRF-Press    WRF-Press    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&P        press_pert_pa.colors   Pa      -5   80  5  dcont   1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
+WRF-DBZ3D    WRF-DBZ3D    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&DBZ      dbz.colors         dBZ     -5   80  5  dcont   1 0
+WRF-DBZ2D    WRF-DBZ2D    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&dbz_2d   dbz.colors         dBZ     -5   80  5  dcont   1 0
 WRF-T2m      WRF-T2m      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&T2C      temp.colors            C    -5   80  5  dcont   1 0
 WRF-Q2m      WRF-Q2m      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Q2       mixr_kgpkg.colors  kg/kg    -5   80  5  dcont   1 0
 WRF-PBLHT    WRF-PBLHT    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&PBLH     pblht_m.colors         M       -5   80  5  dcont   1 0
 WRF-PSFC     WRF-PSFC     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&PSFC     press_sfc_pa.colors   Pa      -5   80  5  dcont   1 0
-
-WRF-DBZ3D    WRF-DBZ3D    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&DBZ      dbz.colors         dBZ     -5   80  5  dcont   1 0
-WRF-DBZ2D    WRF-DBZ2D    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&dbz_2d   dbz.colors         dBZ     -5   80  5  dcont   1 0
 WRF-VIL      WRF-VIl      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&vil      vil.colors         kg/m2   -5   80  5  dcont   1 0
 WRF-FZLEVEL  WRF-FZLEVEL  mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&FZLevel  fzlevel.colors         m       -5   80  5  dcont   1 0
 
 WRF-LCL      WRF-LCL      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&LCL      lcl.colors             m       -5   80  5  dcont   1 0
 WRF-LFC      WRF-LFC      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&LFC      lfc.colors             m       -5   80  5  dcont   1 0
 WRF-EL       WRF-EL       mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&EL       el.colors              m       -5   80  5  dcont   1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-
 WRF-CAPE     WRF-CAPE     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&CAPE     cape.colors            J/kg    -5   80  5  dcont   1 0
 WRF-CIN      WRF-CIN      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&CIN      cin.colors             J/kg    -5   80  5  dcont   1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
@@ -193,32 +184,22 @@ SURF_Conv  SURF_Conv  mdvp:://181.30.169.202:0:relampago/mdv/surf_interp&Converg
 RMA1_DBZ  RMA1_DBZ   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
 RMA1_VEL   RMA1_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL      vel.colors   m/s -5 80 5 radial 1 0
 RMA1_WIDTH RMA1_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&WIDTH      width.colors m/s -5 80 5 radial 1 0
-RMA1_DBZ_LONG  RMA1_DBZ_LONG   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
+RMA1_DBZ_LR  RMA1_DBZ_LR   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
 
 RMA1_ZDR   RMA1_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
 RMA1_RHOHV RMA1_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 RMA1_PHIDP RMA1_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&PHIDP       phidp.colors deg -5 80 5 radial 1 0
 RMA1_KDP   RMA1_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&KDP       kdp.colors   dB  -5 80 5 radial 1 0
 
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-
 RMA2_DBZ  RMA2_DBZ   mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
 RMA2_VEL   RMA2_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&VEL      vel.colors   m/s -5 80 5 radial 1 0
 RMA2_WIDTH RMA2_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&WIDTH      width.colors m/s -5 80 5 radial 1 0
-RMA2_DBZ_LONG  RMA2_DBZ_LONG   mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/long_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
+RMA2_DBZ_LR  RMA2_DBZ_LR  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/long_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
 
 RMA2_ZDR   RMA2_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
 RMA2_RHOHV RMA2_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 RMA2_PHIDP RMA2_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&PHIDP       phidp.colors deg -5 80 5 radial 1 0
 RMA2_KDP   RMA2_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&KDP       kdp.colors   dB  -5 80 5 radial 1 0
-
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 ANG_DBZ   ANG_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&dBZ     dbz.colors   dBZ -5 80 5 radial 1 0
 ANG_VEL   ANG_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&V       vel.colors   m/s -5 80 5 radial 1 0
@@ -230,11 +211,6 @@ ANG_RHOHV ANG_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/ANG&RhoHV   rho
 ANG_PHIDP ANG_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/ANG&PhiDP   phidp.colors deg -5 80 5 radial 1 0
 ANG_KDP   ANG_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&KDP     kdp.colors   dB  -5 80 5 radial 1 0
 
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-
 PAR_DBZ   PAR_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&dBZ     dbz.colors   dBZ -5 80 5 radial 1 0
 PAR_VEL   PAR_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&V       vel.colors   m/s -5 80 5 radial 1 0
 PAR_WIDTH PAR_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&W       width.colors m/s -5 80 5 radial 1 0
@@ -245,16 +221,37 @@ PAR_RHOHV PAR_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&RhoHV   rho
 PAR_PHIDP PAR_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&PhiDP   phidp.colors deg -5 80 5 radial 1 0
 PAR_KDP   PAR_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&KDP     kdp.colors   dB  -5 80 5 radial 1 0
 
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-
 PER_DBZ   PER_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/PER&dBZ     dbz.colors   dBZ -5 80 5 radial 1 0
 PER_VEL   PER_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/PER&V       vel.colors   m/s -5 80 5 radial 1 0
 PER_WIDTH PER_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/PER&W       width.colors m/s -5 80 5 radial 1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
+DOW6_DBZ   DOW6_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&DBZHC_F  dbz.colors   dBZ -5 80 5 radial 1 0
+DOW6_VEL   DOW6_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&VEL_F    vel.colors   m/s -5 80 5 radial 1 0
+DOW6_WIDTH DOW6_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&WIDTH_F  width.colors m/s -5 80 5 radial 1 0
+DOW6_ZDR   DOW6_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&ZDR_F    zdr.colors   dB  -5 80 5 radial 1 0
+DOW6_RHOHV DOW6_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&RHOHV_F  rhohv.colors -   -5 80 5 radial 1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+DOW7_DBZ   DOW7_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&DBZHC  dbz.colors   dBZ -5 80 5 radial 1 0
+DOW7_VEL   DOW7_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&VEL    vel.colors   m/s -5 80 5 radial 1 0
+DOW7_WIDTH DOW7_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&WIDTH  width.colors m/s -5 80 5 radial 1 0
+DOW7_ZDR   DOW7_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&ZDR    zdr.colors   dB  -5 80 5 radial 1 0
+DOW7_RHOHV DOW7_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&RHOHV  rhohv.colors -   -5 80 5 radial 1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+DOW8_DBZ   DOW8_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow8&DBZ  dbz.colors   dBZ -5 80 5 radial 1 0
+DOW8_VEL   DOW8_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow8&VEL  vel.colors   m/s -5 80 5 radial 1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
@@ -262,6 +259,10 @@ PER_WIDTH PER_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/PER&W       wid
 
 SAN_MARTIN_DBZ  SAN_MARTIN_DBZ   mdvp:://181.30.169.202:0:relampago/mdv/radar/SanMartin&DBZ      dbz.colors   dBZ -5 80 5 radial 1 0
 SAN_RAFAEL_DBZ  SAN_RAFAEL_DBZ   mdvp:://181.30.169.202:0:relampago/mdv/radar/SanRafael&DBZ      dbz.colors   dBZ -5 80 5 radial 1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
@@ -909,7 +910,7 @@ cidd.vert_right_margin:      30
 
 # Set range_ring_spacing to a negative value to dynamically determing spacing.
 cidd.range_ring_spacing:     25.0
-cidd.max_ring_range:     150.0
+cidd.max_ring_range:        150.0
 
 #  Render Range rings at the origin of the data, instead of the origin of the display.
 cidd.range_ring_follows_data: 1
@@ -924,8 +925,8 @@ cidd.azmith_interval:       30.0
 cidd.azmith_radius:         200.0
 
 # Toggles to turn on/off  Extras features on startup
-cidd.range_rings:             0
-cidd.azmith_lines:            0
+cidd.range_rings:             1
+cidd.azmith_lines:            1
 
 # Starting state of the All Winds ON/OFF feature
 cidd.all_winds_on: 0
@@ -1086,7 +1087,7 @@ cidd.click_posn_rel_to_origin: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 4
+cidd.num_field_menu_cols: 8
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.
