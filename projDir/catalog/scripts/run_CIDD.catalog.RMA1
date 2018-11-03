@@ -29,7 +29,7 @@ setenv MISSING_DATA_COLOR gray20
 setenv RANGE_RING_FLAG 0
 setenv SHOW_HEIGHT_SEL 0
 setenv TIME_INTERVAL 10.0
-setenv IMAGE_DIR ${DATA_DIR}/${project}/images/catalog/cidd
+setenv IMAGE_DIR ${DATA_DIR}/${project}/images/catalog/radar
 setenv OUTPUT_GEO_XML 1
 setenv HORIZ_DEFAULT_HEIGHT 1300
 setenv COLOR_SCALE_WIDTH 0
