@@ -81,8 +81,10 @@ RMA1-DBZ    DBZ$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/s
 RMA1-VEL    VEL$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL    vel.colors   m/s -5 80 5 radial 1 0
 RMA1-WIDTH  WIDTH$(IS_TRANS)  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&WIDTH  width.colors m/s -5 80 5 radial 1 0
 RMA1-ZDR    ZDR$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&ZDR    zdr.colors   dB  -5 80 5 radial 1 0
-RMA1-RHOHV  RHOHV$(IS_TRANS)  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&RHOHV  rhohv.colors -   -5 80 5 radial 1 0
-RMA1-KDP    KDP$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&KDP    kdp.colors   dB  -5 80 5 radial 1 0
+#RMA1-RHOHV  RHOHV$(IS_TRANS)  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&RHOHV  rhohv.colors -   -5 80 5 radial 1 0
+#RMA1-KDP    KDP$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&KDP    kdp.colors   dB  -5 80 5 radial 1 0
+
+#RMA1_DBZ  RMA1_DBZ   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
 
 </GRIDS>
 
@@ -185,13 +187,13 @@ Points         Points         relampago_points.map        0             0.0 1000
 # parameters. Example : -v7 turns on all three -v 3, the first two
 
 # General informational messages - Initialization messages
-cidd.debug_flag:            0
+cidd.debug_flag:            1
 
 # Data flow related messages  - More verbose
-cidd.debug1_flag:           0
+cidd.debug1_flag:           1
 
 # Verbose diagnostics - developer debugging info - 
-cidd.debug2_flag:           0
+cidd.debug2_flag:           1
 
 # Uncomment the next parameter to start up cidd in archival mode
 #  Starting at the indicated time. Enter HH:MM MM/DD/YY format time string
