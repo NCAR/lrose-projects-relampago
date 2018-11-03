@@ -77,12 +77,13 @@ field_list = {
 #----------------------------------------------------------------------------------------------------------
 #
 
-RMA2-DBZ    DBZ$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&DBZH   dbz.colors   dBZ    -5 80 5 radial 1 0
-RMA2-VEL    VEL$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&VEL    vel.colors   m/s    -5 80 5 radial 1 0
-RMA2-WIDTH  WIDTH$(IS_TRANS)  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&WIDTH  width.colors m/s    -5 80 5 radial 1 0
-RMA2-ZDR    ZDR$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&ZDR    zdr.colors   deg/km -5 80 5 radial 1 0
-RMA2-RHOHV  RHOHV$(IS_TRANS)  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&RHOHV  rhohv.colors -      -5 80 5 radial 1 0
-RMA2-KDP    KDP$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&KDP    kdp.colors   dB     -5 80 5 radial 1 0
+PAR-DBZ     DBZ$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&dBZ    dbz.colors   dBZ    -5 80 5 radial 1 0
+PAR-VEL     VEL$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&V      vel.colors   m/s    -5 80 5 radial 1 0
+PAR-WIDTH   WIDTH$(IS_TRANS)  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&W      width.colors m/s    -5 80 5 radial 1 0
+PAR-ZDR     ZDR$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&ZDR    zdr.colors   dB     -5 80 5 radial 1 0
+#PAR-RHOHV   RHOHV$(IS_TRANS)  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&RhoHV  rhohv.colors -      -5 80 5 radial 1 0
+#PAR-PHIDP   PHIDP$(IS_TRANS)  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&PhiDP  phidp.colors deg    -5 80 5 radial 1 0
+#PAR-KDP     KDP$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&KDP    kdp.colors   deg/km -5 80 5 radial 1 0
 
 </GRIDS>
 

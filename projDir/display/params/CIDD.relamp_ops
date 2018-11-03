@@ -181,45 +181,41 @@ SURF_Conv  SURF_Conv  mdvp:://181.30.169.202:0:relampago/mdv/surf_interp&Converg
 #############################
 # RADAR DATA
 
-RMA1_DBZ  RMA1_DBZ   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
-RMA1_VEL   RMA1_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL      vel.colors   m/s -5 80 5 radial 1 0
-RMA1_WIDTH RMA1_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&WIDTH      width.colors m/s -5 80 5 radial 1 0
-RMA1_DBZ_LR  RMA1_DBZ_LR   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
+RMA1_DBZ    RMA1_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&DBZH  dbz.colors   dBZ   -5 80 5 radial 1 0
+RMA1_VEL    RMA1_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL   vel.colors   m/s   -5 80 5 radial 1 0
+RMA1_WIDTH  RMA1_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&WIDTH width.colors m/s   -5 80 5 radial 1 0
+RMA1_DBZ_LR RMA1_DBZ_LR mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
+RMA1_ZDR   RMA1_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&ZDR    zdr.colors   dB    -5 80 5 radial 1 0
+RMA1_RHOHV RMA1_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&RHOHV  rhohv.colors -     -5 80 5 radial 1 0
+RMA1_PHIDP RMA1_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&PHIDP  phidp.colors deg   -5 80 5 radial 1 0
+RMA1_KDP   RMA1_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&KDP    kdp.colors  deg/km -5 80 5 radial 1 0
 
-RMA1_ZDR   RMA1_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-RMA1_RHOHV RMA1_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
-RMA1_PHIDP RMA1_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-RMA1_KDP   RMA1_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&KDP       kdp.colors   dB  -5 80 5 radial 1 0
-
-RMA2_DBZ  RMA2_DBZ   mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
-RMA2_VEL   RMA2_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&VEL      vel.colors   m/s -5 80 5 radial 1 0
-RMA2_WIDTH RMA2_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&WIDTH      width.colors m/s -5 80 5 radial 1 0
-RMA2_DBZ_LR  RMA2_DBZ_LR  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/long_range&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
-
-RMA2_ZDR   RMA2_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-RMA2_RHOHV RMA2_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
-RMA2_PHIDP RMA2_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-RMA2_KDP   RMA2_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&KDP       kdp.colors   dB  -5 80 5 radial 1 0
+RMA2_DBZ  RMA2_DBZ   mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&DBZH     dbz.colors   dBZ    -5 80 5 radial 1 0
+RMA2_VEL   RMA2_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&VEL    vel.colors   m/s    -5 80 5 radial 1 0
+RMA2_WIDTH RMA2_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&WIDTH  width.colors m/s    -5 80 5 radial 1 0
+RMA2_DBZ_LR  RMA2_DBZ_LR  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/long_range&DBZH dbz.colors   dBZ    -5 80 5 radial 1 0
+RMA2_ZDR   RMA2_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&ZDR    zdr.colors   dB     -5 80 5 radial 1 0
+RMA2_RHOHV RMA2_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&RHOHV  rhohv.colors -      -5 80 5 radial 1 0
+RMA2_PHIDP RMA2_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&PHIDP  phidp.colors deg    -5 80 5 radial 1 0
+RMA2_KDP   RMA2_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&KDP    kdp.colors   deg/km -5 80 5 radial 1 0
 
 ANG_DBZ   ANG_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&dBZ     dbz.colors   dBZ -5 80 5 radial 1 0
 ANG_VEL   ANG_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&V       vel.colors   m/s -5 80 5 radial 1 0
 ANG_WIDTH ANG_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/ANG&W       width.colors m/s -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-
-ANG_ZDR   ANG_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&ZDR     zdr.colors   dB  -5 80 5 radial 1 0
-ANG_RHOHV ANG_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/ANG&RhoHV   rhohv.colors -   -5 80 5 radial 1 0
-ANG_PHIDP ANG_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/ANG&PhiDP   phidp.colors deg -5 80 5 radial 1 0
-ANG_KDP   ANG_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&KDP     kdp.colors   dB  -5 80 5 radial 1 0
+========   ========  mdvp::static//181.30.169.202:0:/spacer/moments&Elev     none.colors  m   -5 80 5 dcont  1 0
+ANG_ZDR   ANG_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&ZDR     zdr.colors   dB    -5 80 5 radial 1 0
+ANG_RHOHV ANG_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/ANG&RhoHV   rhohv.colors -     -5 80 5 radial 1 0
+ANG_PHIDP ANG_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/ANG&PhiDP   phidp.colors deg   -5 80 5 radial 1 0
+ANG_KDP   ANG_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&KDP     kdp.colors   dg/km -5 80 5 radial 1 0
 
 PAR_DBZ   PAR_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&dBZ     dbz.colors   dBZ -5 80 5 radial 1 0
 PAR_VEL   PAR_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&V       vel.colors   m/s -5 80 5 radial 1 0
 PAR_WIDTH PAR_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&W       width.colors m/s -5 80 5 radial 1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-
-PAR_ZDR   PAR_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&ZDR     zdr.colors   dB  -5 80 5 radial 1 0
-PAR_RHOHV PAR_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&RhoHV   rhohv.colors -   -5 80 5 radial 1 0
-PAR_PHIDP PAR_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&PhiDP   phidp.colors deg -5 80 5 radial 1 0
-PAR_KDP   PAR_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&KDP     kdp.colors   dB  -5 80 5 radial 1 0
+PAR_ZDR   PAR_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&ZDR     zdr.colors   dB      -5 80 5 radial 1 0
+PAR_RHOHV PAR_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&RhoHV   rhohv.colors -       -5 80 5 radial 1 0
+PAR_PHIDP PAR_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&PhiDP   phidp.colors deg     -5 80 5 radial 1 0
+PAR_KDP   PAR_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&KDP     kdp.colors   deg/km  -5 80 5 radial 1 0
 
 PER_DBZ   PER_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/PER&dBZ     dbz.colors   dBZ -5 80 5 radial 1 0
 PER_VEL   PER_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/PER&V       vel.colors   m/s -5 80 5 radial 1 0

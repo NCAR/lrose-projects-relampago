@@ -151,6 +151,36 @@ data_sets = {
     late_data_secs = 3600,
     trailing_args = ""
   }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/relampago/cfradial/ANG",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.ANG",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600,
+    trailing_args = ""
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/relampago/cfradial/PAR",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.PAR",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600,
+    trailing_args = ""
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/relampago/cfradial/PER",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.PER",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600,
+    trailing_args = ""
+  }
 };
 
 ///////////// trailing_args_delimiter /////////////////
