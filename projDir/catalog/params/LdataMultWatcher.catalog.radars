@@ -141,6 +141,16 @@ data_sets = {
     late_data_secs = 3600,
     trailing_args = ""
   }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/relampago/cfradial/RMA2/short_range",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.RMA2",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600,
+    trailing_args = ""
+  }
 };
 
 ///////////// trailing_args_delimiter /////////////////
