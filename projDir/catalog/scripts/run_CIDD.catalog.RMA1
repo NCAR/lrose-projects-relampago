@@ -40,10 +40,10 @@ setenv ZOOM_LIMITS_IN_LATLON 1
 setenv ORIGIN_LAT 0.0
 setenv ORIGIN_LON -16.9191
 
-setenv MINX -66.5
-setenv MAXX -61.7
-setenv MINY -33.8
-setenv MAXY -29.5
+setenv MINX -66.9
+setenv MAXX -61.5
+setenv MINY -33.7
+setenv MAXY -29.2
 
 mkdir -p $IMAGE_DIR
 cd $PROJ_DIR/catalog/params
