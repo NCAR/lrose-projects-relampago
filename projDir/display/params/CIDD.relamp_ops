@@ -1509,19 +1509,45 @@ prod_info = {
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
   }
-  // ,                        
-  // {
-  //   menu_label = "Falcon Track 10-min",
-  //   url = "spdbp:AcTrack2Symprod:10_min//181.30.169.202:0:relampago/spdb/spol/ac_posn/falcon",
-  //   data_type = 0,
-  //   render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-  //   on_by_default = FALSE,
-  //   minutes_allow_before = 15.0,
-  //   minutes_allow_after = 15.0,
-  //   text_off_threshold = 0.4,
-  //   FALSE,
-  //   FALSE
-  // }
+  ,                        
+  {
+    menu_label = "G1-5min",
+    url = "spdbp:AcTrack2Symprod:05_min//181.30.169.202:0:relampago/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    FALSE,
+    FALSE
+  }
+  ,                        
+  {
+    menu_label = "G1-10min",
+    url = "spdbp:AcTrack2Symprod:10_min//181.30.169.202:0:relampago/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = TRUE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    FALSE,
+    FALSE
+  }
+  ,                        
+  {
+    menu_label = "G1-20min",
+    url = "spdbp:AcTrack2Symprod:20_min//181.30.169.202:0:relampago/spdb/ac_posn",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    FALSE,
+    FALSE
+  }
 };
 
 </SYMPRODS> 
