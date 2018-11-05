@@ -132,35 +132,35 @@ procmap_register_interval = 60;
 //
 
 data_sets = {
+  // {
+  //   input_dir = "$(DATA_DIR)/incoming_dow6/cfradial/quicklook/high/sur",
+  //   call_new_data_script = TRUE,
+  //   new_data_script_name = "$(PROJ_DIR)/catalog/scripts/create_dow_images.py",
+  //   call_late_data_script = FALSE,
+  //   late_data_script_name = "test_script",
+  //   late_data_secs = 3600,
+  //   trailing_args = "--radar_name,dow6,--min_fixed_angle,0.25,--max_fixed_angle,2.25,--max_range_km,60.0"
+  // }
+  // ,
   {
-    input_dir = "$(DATA_DIR)/incoming_dow6/cfradial/quicklook/high/sur",
+    input_dir = "$(DATA_DIR)/relampago/cfradial/quicklook/rotated_dow7",
     call_new_data_script = TRUE,
     new_data_script_name = "$(PROJ_DIR)/catalog/scripts/create_dow_images.py",
     call_late_data_script = FALSE,
     late_data_script_name = "test_script",
     late_data_secs = 3600,
-    trailing_args = "--radar_name,dow6,--min_fixed_angle,0.25,--max_fixed_angle,2.25,--max_range_km,60.0"
+    trailing_args = "--radar_name,dow7,--min_fixed_angle,0.25,--max_fixed_angle,2.25,--max_range_km,100.0"
   }
-  ,
-  {
-    input_dir = "$(DATA_DIR)/incoming_dow7/cfradial/quicklook/high/sur",
-    call_new_data_script = TRUE,
-    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/create_dow_images.py",
-    call_late_data_script = FALSE,
-    late_data_script_name = "test_script",
-    late_data_secs = 3600,
-    trailing_args = "--radar_name,dow7,--min_fixed_angle,0.25,--max_fixed_angle,2.25,--max_range_km,60.0"
-  }
-  ,
-  {
-    input_dir = "$(DATA_DIR)/incoming_dow7/cfradial/quicklook/high/rhi",
-    call_new_data_script = TRUE,
-    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/create_dow_images.rhi.py",
-    call_late_data_script = FALSE,
-    late_data_script_name = "test_script",
-    late_data_secs = 3600,
-    trailing_args = "--debug,--radar_name,dow7,--max_range_km,60.0"
-  }
+  // ,
+  // {
+  //   input_dir = "$(DATA_DIR)/incoming_dow7/cfradial/quicklook/high/rhi",
+  //   call_new_data_script = TRUE,
+  //   new_data_script_name = "$(PROJ_DIR)/catalog/scripts/create_dow_images.rhi.py",
+  //   call_late_data_script = FALSE,
+  //   late_data_script_name = "test_script",
+  //   late_data_secs = 3600,
+  //   trailing_args = "--debug,--radar_name,dow7,--max_range_km,60.0"
+  // }
   // ,
   // {
   //   input_dir = "$(DATA_DIR)/incoming_dow8/cfradial/quicklook/high/sur",

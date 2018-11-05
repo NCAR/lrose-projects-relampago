@@ -2007,7 +2007,7 @@ write_individual_sweeps = FALSE;
 // Type: boolean
 //
 
-write_latest_data_info = FALSE;
+write_latest_data_info = TRUE;
 
 ///////////// write_using_proposed_standard_name_attr /
 //
