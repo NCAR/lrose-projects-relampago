@@ -35,6 +35,7 @@ InputWatcher      radar_dowc    start_inst(ingest)    snuff_inst
 # Catalog images
 LdataWatcher      catalog.radar_images  start_inst(catalog) snuff_inst
 LdataMultWatcher  catalog.radars        start_inst(catalog) snuff_inst
+LdataWatcher      soundings             start_inst(catalog) snuff_inst
 ######################################################################
 ######################################################################
 # Rotating DOW quicklooks
