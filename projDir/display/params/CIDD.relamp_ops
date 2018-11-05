@@ -230,26 +230,39 @@ DOW6_DBZ   DOW6_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow
 DOW6_VEL   DOW6_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&VEL_F    vel.colors   m/s -5 80 5 radial 1 0
 DOW6_WIDTH DOW6_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&WIDTH_F  width.colors m/s -5 80 5 radial 1 0
 DOW6_ZDR   DOW6_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&ZDR_F    zdr.colors   dB  -5 80 5 radial 1 0
-DOW6_RHOHV DOW6_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&RHOHV_F  rhohv.colors -   -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+DOW6_DBZ_R   DOW6_DBZ_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow6&DBZHC_F  dbz.colors   dBZ -5 80 5 radial 1 0
+DOW6_VEL_R   DOW6_VEL_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow6&VEL_F    vel.colors   m/s -5 80 5 radial 1 0
+DOW6_WIDTH_R DOW6_WIDTH_R  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow6&WIDTH_F  width.colors m/s -5 80 5 radial 1 0
+DOW6_ZDR_R   DOW6_ZDR_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow6&ZDR_F    zdr.colors   dB  -5 80 5 radial 1 0
+
+# DOW6_RHOHV DOW6_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&RHOHV_F  rhohv.colors -   -5 80 5 radial 1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 DOW7_DBZ   DOW7_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&DBZHC  dbz.colors   dBZ -5 80 5 radial 1 0
 DOW7_VEL   DOW7_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&VEL    vel.colors   m/s -5 80 5 radial 1 0
 DOW7_WIDTH DOW7_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&WIDTH  width.colors m/s -5 80 5 radial 1 0
 DOW7_ZDR   DOW7_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&ZDR    zdr.colors   dB  -5 80 5 radial 1 0
-DOW7_RHOHV DOW7_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&RHOHV  rhohv.colors -   -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+DOW7_DBZ_R   DOW7_DBZ_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow7&DBZHC  dbz.colors   dBZ -5 80 5 radial 1 0
+DOW7_VEL_R   DOW7_VEL_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow7&VEL    vel.colors   m/s -5 80 5 radial 1 0
+DOW7_WIDTH_R DOW7_WIDTH_R  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow7&WIDTH  width.colors m/s -5 80 5 radial 1 0
+DOW7_ZDR_R   DOW7_ZDR_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow7&ZDR    zdr.colors   dB  -5 80 5 radial 1 0
+
+#DOW7_RHOHV DOW7_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&RHOHV  rhohv.colors -   -5 80 5 radial 1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 DOW8_DBZ   DOW8_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow8&DBZ  dbz.colors   dBZ -5 80 5 radial 1 0
 DOW8_VEL   DOW8_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow8&VEL  vel.colors   m/s -5 80 5 radial 1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+DOW8_DBZ_R   DOW8_DBZ_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow8&DBZ  dbz.colors   dBZ -5 80 5 radial 1 0
+DOW8_VEL_R   DOW8_VEL_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow8&VEL  vel.colors   m/s -5 80 5 radial 1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
