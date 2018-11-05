@@ -27,10 +27,10 @@ def main():
 
     # initialize
     
-    if (options.debug == True):
-        print >>sys.stderr, "======================================================="
+    if (options.debug):
+        print >>sys.stderr, "======================================================"
         print >>sys.stderr, "BEGIN: " + appName + " " + str(datetime.datetime.now())
-        print >>sys.stderr, "======================================================="
+        print >>sys.stderr, "======================================================"
 
     #   compute valid time string
 
@@ -55,7 +55,7 @@ def main():
     #   <category>.<legend_label>.<button_label>.<platform>.<time>.png.
     
     file_tokens = options.fileName.split(".")
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "filename toks: "
         print >>sys.stderr, file_tokens
 
@@ -109,12 +109,13 @@ def main():
     
     #  # put the associated XML file
     #  xmlFilePath = os.path.join(options.imageDir, options.fileName[:-3] + "xml")
-    #  xmlCatalogName = options.category + "." + platform + "." + validTimeStr + "." + product + ".xml"
+    #  xmlCatalogName = options.category + "." + platform + \
+    #                   "." + validTimeStr + "." + product + ".xml"
     #  putFile(xmlFilePath, xmlCatalogName)
 
     # let the user know we are done
 
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "======================================================="
         print >>sys.stderr, "END: " + appName + " " + str(datetime.datetime.now())
         print >>sys.stderr, "======================================================="
@@ -126,7 +127,7 @@ def main():
 
 def putFile(filePath, catalogFileName):
     
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "Handling file: ", filePath
         print >>sys.stderr, "  catalogFileName: ", catalogFileName
 
@@ -136,7 +137,7 @@ def putFile(filePath, catalogFileName):
     imageDir = os.path.join(catalog_name, "raw/tmp/images")
     dataDir = os.environ['DATA_DIR']
     tmpDir = os.path.join(dataDir, imageDir)
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "  tmpDir: ", tmpDir
     if not os.path.exists(tmpDir):
         os.makedirs(tmpDir, 0775)
@@ -162,7 +163,7 @@ def putFile(filePath, catalogFileName):
 
 def ftpFile(incomingFilePath, catalogFileName):
     
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "==>> doing ftp <<=="
         print >>sys.stderr, "  incomingFilePath: ", incomingFilePath
         print >>sys.stderr, "  catalogFileName: " + catalogFileName
@@ -170,7 +171,7 @@ def ftpFile(incomingFilePath, catalogFileName):
 
     # set ftp debug level
 
-    if (options.debug == True):
+    if (options.debug):
         ftpDebugLevel = 2
     else:
         ftpDebugLevel = 0
@@ -182,7 +183,7 @@ def ftpFile(incomingFilePath, catalogFileName):
     
     # go to target dir
 
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "ftp cwd to: " + options.ftpDir
     
     ftp.cwd(options.ftpDir)
@@ -269,7 +270,7 @@ def parseArgs():
 
     (options, args) = parser.parse_args()
     
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "Options:"
         print >>sys.stderr, "  debug? ", options.debug
         print >>sys.stderr, "  unixTime: ", options.unixTime
@@ -288,7 +289,7 @@ def parseArgs():
 
 def runCommand(cmd):
 
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "running cmd:",cmd
     
     try:
@@ -296,7 +297,7 @@ def runCommand(cmd):
         if retcode < 0:
             print >>sys.stderr, "Child was terminated by signal: ", -retcode
         else:
-            if (options.debug == True):
+            if (options.debug):
                 print >>sys.stderr, "Child returned code: ", retcode
     except OSError, e:
         print >>sys.stderr, "Execution failed:", e

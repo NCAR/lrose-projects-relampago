@@ -301,6 +301,7 @@ cidd.transparent_images: $(TRANSPARENT_IMAGES)
 # Image Generation related resources
 # Set this to a value to get cidd to output imagery in this directory
 cidd.image_dir: $(IMAGE_DIR)
+cidd.save_images_to_day_subdir: 1
 # CATALOG NOTE: horiz prefix is used as category in catalog
 cidd.image_horiz_prefix: $(CATEGORY)
 cidd.image_vert_prefix: RHI

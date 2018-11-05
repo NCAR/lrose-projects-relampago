@@ -65,7 +65,7 @@ procmap_register_interval = 60;
 // Type: string
 //
 
-inputPath = "$(DATA_DIR)/$(catalog_name)/raw/dow_images";
+inputPath = "$(DATA_DIR)/relampago/images/catalog/dow";
 
 ///////////// use_url /////////////////////////////////
 //
@@ -319,7 +319,7 @@ script_options = {
 // Type: string
 //
 
-script_to_call = "put_dow_images_to_catalog.py";
+script_to_call = "PutDowImagesToCatalog.py";
 
 ///////////// include_input_path //////////////////////
 //
@@ -390,8 +390,6 @@ script_min_interval_secs = 0;
 
 supplementary_args = {
   "--ftp_server", "catalog.eol.ucar.edu",
-  "--target_dir", "pub/incoming/catalog/$(catalog_name)",
-  "--move_after_copy",
   "--debug"
 };
 
