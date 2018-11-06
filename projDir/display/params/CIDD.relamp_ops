@@ -1600,8 +1600,8 @@ id_label = "Terrain";
 // Type: string
 //
 
-// terrain_url = "mdvp::terrain//181.30.169.202:0:relampago/mdv/terrain&Elevation";
-terrain_url = "";
+terrain_url = "mdvp::terrain//181.30.169.202:0:relampago/mdv/terrain&Elevation";
+// terrain_url = "";
 
 ///////////// height_scaler ///////////////////////////
 //
