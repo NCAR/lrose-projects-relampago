@@ -858,7 +858,8 @@ apply_azimuth_offset = TRUE;
 //
 
 // azimuth_offset = 104.6; // 2018/11/02
-azimuth_offset = 340.0; // 2018/11/05
+// azimuth_offset = 340.0; // 2018/11/05
+azimuth_offset = 0.0; // 2018/11/06
 
 ///////////// apply_elevation_offset //////////////////
 //

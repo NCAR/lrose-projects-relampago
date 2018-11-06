@@ -39,6 +39,7 @@ LdataWatcher      soundings             start_inst(catalog) snuff_inst
 ######################################################################
 ######################################################################
 # Rotating DOW quicklooks
+#RadxConvert      rotate_dow67         start_inst(ingest)    snuff_inst
 RadxConvert      rotate_dow7         start_inst(ingest)    snuff_inst
 RadxConvert      rotate_dow8         start_inst(ingest)    snuff_inst
 ######################################################################
