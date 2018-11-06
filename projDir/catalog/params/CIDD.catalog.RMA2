@@ -77,7 +77,7 @@ field_list = {
 #----------------------------------------------------------------------------------------------------------
 #
 
-RMA2-DBZ    DBZ$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&DBZH   dbz.colors   dBZ    -5 80 5 radial 1 0
+RMA2-DBZ    DBZ$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/long_range&DBZH   dbz.colors   dBZ    -5 80 5 radial 1 0
 RMA2-VEL    VEL$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&VEL    vel.colors   m/s    -5 80 5 radial 1 0
 RMA2-WIDTH  WIDTH$(IS_TRANS)  mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&WIDTH  width.colors m/s    -5 80 5 radial 1 0
 RMA2-ZDR    ZDR$(IS_TRANS)    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&ZDR    zdr.colors   deg/km -5 80 5 radial 1 0
