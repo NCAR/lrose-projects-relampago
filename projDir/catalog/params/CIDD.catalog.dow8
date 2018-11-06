@@ -77,8 +77,8 @@ field_list = {
 #----------------------------------------------------------------------------------------------------------
 #
 
-DOW8-DBZ  DBZ$(IS_TRANS) mdvp:://localhost:0:$(DATA_DIR)/$(project)/cfradial/dow8/quicklook/dow8/sur&DBZ dbz.colors dBZ -5 80 5 radial 1 1
-DOW8-VEL VEL$(IS_TRANS) mdvp:://localhost:0:$(DATA_DIR)/$(project)/cfradial/dow8/quicklook/dow8/sur&VEL vel.colors m/s -5 80 5 radial 1 1
+DOW8-DBZ  DBZ$(IS_TRANS) mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow8&DBZ dbz.colors dBZ -5 80 5 radial 1 1
+DOW8-VEL VEL$(IS_TRANS) mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow8&VEL vel.colors m/s -5 80 5 radial 1 1
 
 </GRIDS>
 
@@ -299,6 +299,7 @@ cidd.transparent_images: $(TRANSPARENT_IMAGES)
 # Image Generation related resources
 # Set this to a value to get cidd to output imagery in this directory
 cidd.image_dir: $(IMAGE_DIR)
+cidd.save_images_to_day_subdir: 1
 # CATALOG NOTE: horiz prefix is used as category in catalog
 cidd.image_horiz_prefix: $(CATEGORY)
 cidd.image_vert_prefix: RHI

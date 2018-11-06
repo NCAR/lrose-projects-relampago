@@ -97,22 +97,17 @@ def main():
 
     # field
         
-    field_name = file_tokens[2]
+    catalogFieldName = file_tokens[2]
 
     # platform name
 
     platform = file_tokens[3]
 
-    # compute catalog file name
-
-    catalogFieldName = field_name
-    
     # extension
 
     extension = file_tokens[5]
 
-    catalogFileName = (options.catalogCategory + "." +
-                       platform + "." +
+    catalogFileName = ("radar." + platform + "." +
                        validTimeStr + "." +
                        catalogFieldName + "." +
                        extension)
@@ -128,13 +123,13 @@ def main():
 
     if (catalogFieldName.find("-TRANS") >= 0):
 
-        # gis.DOW#.YYYYMMDDHHmm.field_name.kml
+        # gis.DOW#.YYYYMMDDHHmm.catalogFieldName.kml
 
         xmlFilePath = incomingFilePath[:-3] + "xml"
 
         kmlCatalogName = "gis." + platform + "." + \
                          yyyymmdd + hh + mm + "." + \
-                         field_name + ".kml"
+                         catalogFieldName + ".kml"
         
         kmlFilePath = os.path.join(options.tempDir, kmlCatalogName)
         
@@ -142,13 +137,13 @@ def main():
             print >>sys.stderr, "creating kml file: ", kmlFilePath
             
         createKmlFile(xmlFilePath, kmlFilePath,
-                      options.catalogCategory, platform, yyyymmdd, hh, mm, field_name)
+                      options.catalogCategory, platform, yyyymmdd, hh, mm, catalogFieldName)
         ftpFile(kmlFilePath, kmlCatalogName)
 
         # Delete the temporary KML file
         
-        cmd = 'rm ' + kmlFilePath
-        runCommand(cmd)
+        #cmd = 'rm ' + kmlFilePath
+        #runCommand(cmd)
 
     # let the user know we are done
 
@@ -164,7 +159,7 @@ def main():
 # by CIDD.
 
 def createKmlFile(xmlPath, kmlPath, category, platform,
-                  yyyymmdd, hh, mm, field_name):
+                  yyyymmdd, hh, mm, catalogFieldName):
 
     # Pull the lat/lon limits of the image from the XML file.
 
@@ -187,10 +182,9 @@ def createKmlFile(xmlPath, kmlPath, category, platform,
     href_platform = platform.lower()
     catalog_name = options.catalogName
     
-    href = 'http://catalog.eol.ucar.edu/' + catalog_name + '/' \
-           + category + '/' + href_platform + '/' \
-           + yyyymmdd + '/' + hh + '/' \
-           + category + '.' + platform + '.' + yyyymmdd + hh + mm + '.' + field_name + '.png'
+    href = 'http://catalog.eol.ucar.edu/' + catalog_name + '/radar/' \
+           + href_platform + '/' + yyyymmdd + '/' + hh \
+           + '/radar.' + platform + '.' + yyyymmdd + hh + mm + '.' + catalogFieldName + '.png'
 
     if (options.debug):
         print '  href: ', href
@@ -262,8 +256,8 @@ def ftpFile(incomingFilePath, catalogFileName):
         
     # put the file
 
-    #fp = open(incomingFilePath, 'rb')
-    #ftp.storbinary('STOR ' + catalogFileName, fp)
+    fp = open(incomingFilePath, 'rb')
+    ftp.storbinary('STOR ' + catalogFileName, fp)
     
     # close ftp connection
                 

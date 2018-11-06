@@ -73,10 +73,10 @@ def main():
     os.environ['FLAT_MINX'] = '%f' % (options.max_range_km * -1.0)
     os.environ['FLAT_MAXX'] = '%f' % (options.max_range_km)
 
-    os.environ['MERCATOR_MINLAT'] = '%f' % (radar_lat - 0.75)
-    os.environ['MERCATOR_MAXLAT'] = '%f' % (radar_lat + 0.75)
-    os.environ['MERCATOR_MINLON'] = '%f' % (radar_lon - 0.75)
-    os.environ['MERCATOR_MAXLON'] = '%f' % (radar_lon + 0.75)
+    os.environ['MERCATOR_MINLAT'] = '%f' % (radar_lat - options.max_delta_lat)
+    os.environ['MERCATOR_MAXLAT'] = '%f' % (radar_lat + options.max_delta_lat)
+    os.environ['MERCATOR_MINLON'] = '%f' % (radar_lon - options.max_delta_lon)
+    os.environ['MERCATOR_MAXLON'] = '%f' % (radar_lon + options.max_delta_lon)
     
     # create the images
     
@@ -155,8 +155,20 @@ def parseArgs():
     parser.add_option('--max_range_km',
                       dest='max_range_km',
                       type='float',
-                      default='90.0',
+                      default='130.0',
                       help='Max range for data.')
+
+    parser.add_option('--max_delta_lat',
+                      dest='max_delta_lat',
+                      type='float',
+                      default='1.25',
+                      help='Delta latitude to max range - for Mercator images.')
+
+    parser.add_option('--max_delta_lon',
+                      dest='max_delta_lon',
+                      type='float',
+                      default='1.50',
+                      help='Delta longitude to max range - for Mercator images.')
 
     (options, args) = parser.parse_args()
     
