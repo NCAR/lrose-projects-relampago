@@ -11,3 +11,7 @@
 # Build links to log date subdirs
 */5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
 #
+######################################################################
+# rsync the data to the ftp download area
+#
+*/1 * * * *   csh -c "rsync_relamp_data_to_ftp_download" 1> /dev/null 2> /dev/null
