@@ -41,7 +41,11 @@ LdataWatcher      catalog.dow_images    start_inst(catalog) snuff_inst
 ######################################################################
 ######################################################################
 # Rotating DOW quicklooks
-#RadxConvert      rotate_dow67         start_inst(ingest)    snuff_inst
+RadxConvert      rotate_dow6         start_inst(ingest)    snuff_inst
 RadxConvert      rotate_dow7         start_inst(ingest)    snuff_inst
 RadxConvert      rotate_dow8         start_inst(ingest)    snuff_inst
 ######################################################################
+######################################################################
+# Cartesian transforms, conv/strat
+Radx2Grid         RMA1.long_range   start_inst(alg)    snuff_inst
+stratiform_filter RMA1              start_inst(alg)    snuff_inst
