@@ -24,7 +24,7 @@ tick_color = "yellow";
 // Type: int
 //
 
-tick_line_width = 3;
+tick_line_width = 2;
 
 ///////////// tick_line_style /////////////////////////
 //
