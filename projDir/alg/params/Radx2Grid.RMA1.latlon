@@ -154,7 +154,7 @@ end_time = "2010 12 16 00 00 00";
 // Type: string
 //
 
-output_dir = "$(DATA_DIR)/relampago/mdv/radarCart/RMA1/long_range";
+output_dir = "$(DATA_DIR)/relampago/mdv/radarCart/RMA1/latlon";
 
 ///////////// output_format ///////////////////////////
 //
@@ -565,7 +565,7 @@ grid_origin_lon = 0;
 // Type: boolean
 //
 
-auto_remap_flat_to_latlon = FALSE;
+auto_remap_flat_to_latlon = TRUE;
 
 ///////////// grid_lat1 ///////////////////////////////
 //
