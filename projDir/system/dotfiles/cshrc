@@ -15,7 +15,7 @@ set autologout=0
 
 umask 002
 setenv TAPE /dev/st0
-setenv PRINTER nwcolor
+setenv PRINTER hp477
 
 # Set the build environment
 
