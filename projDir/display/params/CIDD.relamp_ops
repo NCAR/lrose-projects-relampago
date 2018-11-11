@@ -211,11 +211,11 @@ RMA1_KDP_SR   RMA1_KDP_SR   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/sho
 
 RMA1_DBZ_CART   RMA1_DBZ_CART  mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&DBZ dbz.colors   dBZ   -5 80 5 cont 1 0
 RMA1_DBZ_COMP   RMA1_DBZ_COMP  mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&DBZ dbz.colors   dBZ   -5 80 5 cont,comp 1 0
-RMA1_ZDR_CART   RMA1_ZDR_CART  mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&ZDR zdr.colors   dB   -5 80 5 cont 1 0
 RMA1_CONVSTRAT  RMA1_CONVSTRAT mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&ConvStrat  conv_strat.colors   dBZ   -5 80 5 cart 1 0
 RMA1_STEINER    RMA1_STEINER   mdvp:://181.30.169.202:0:relampago/mdv/ConvStrat/steiner&ConvStrat          conv_strat.colors   dBZ   -5 80 5 cart 1 0
 RMA1_DBZTEXT    RMA1_DBZTEXT   mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&DbzTextureMean dbz.colors   dBZ   -5 80 5 cart 1 0
 RMA1_DBZCONV    RMA1_DBZCONV   mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&DbzConv   dbz.colors   dBZ   -5 80 5 cart 1 0
+RMA1_ZDR_CART   RMA1_ZDR_CART  mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&ZDR zdr.colors   dB   -5 80 5 cont 1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 RMA2_DBZ     RMA2_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/long_range&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
@@ -351,13 +351,6 @@ SanMartinRings SanMartinRings san_martin_rings.map        0  0.0 1000000.0  whit
 SanRafaelRings SanRafaelRings san_rafael_rings.map        0  0.0 1000000.0  white
 
 Points         Points         relampago_points.map        1  0.0 1000000.0  yellow
-
-POINTS        POINTS        ATMS-POINTS.map         1  .0 1000000.0 red
-
-UAE-OMAN      UAE-OMAN      ATMS-UAE-OMAN.map       1  .0 1000000.0 yellow
-
-IRAN-ISLANDS  IRAN-ISLANDS  ATMS-IRAN-ISLANDS.map   1  .0 1000000.0 green
-
 
 </MAPS>
 
