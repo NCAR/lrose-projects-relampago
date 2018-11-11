@@ -103,92 +103,102 @@ field_list = {
 ############################
 # Satellite data
 
-GOES16_CH13  GOES16_CH13  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch13&GOESR_CH13 sat_tempC.colors C  -5   80  5  dcont   1 0
-GOES16_CH15  GOES16_CH15  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch15&GOESR_CH15 sat_tempC.colors C  -5   80  5  dcont   1 0
-GOES16_SWD  GOES16_SWD  mdvp::swd//181.30.169.202:0:relampago/mdv/goes16_ch13&GOESR_SWD goesr_swd.colors C  -5   80  5  dcont   1 0
-GOES16_CH10  GOES16_CH10  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch10&GOESR_CH10 sat_tempC.colors C  -5   80  5  dcont   1 0
+GOES16_CH13  GOES16_CH13  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch13&GOESR_CH13 sat_tempC.colors C  -5   80  5  cart   1 0
+GOES16_CH15  GOES16_CH15  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch15&GOESR_CH15 sat_tempC.colors C  -5   80  5  cart   1 0
+GOES16_SWD  GOES16_SWD  mdvp::swd//181.30.169.202:0:relampago/mdv/goes16_ch13&GOESR_SWD goesr_swd.colors C  -5   80  5  cart   1 0
+GOES16_CH10  GOES16_CH10  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch10&GOESR_CH10 sat_tempC.colors C  -5   80  5  cart   1 0
 
-GOES16_CH01  GOES16_CH01  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch01&GOESR_CH01 sat_cloud.colors  %   -5   80  5  dcont   1 0
-GOES16_CH02  GOES16_CH02  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch02&GOESR_CH02 sat_cloud.colors  %   -5   80  5  dcont   1 0
-GOES16_CH03  GOES16_CH03  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch03&GOESR_CH03 sat_cloud.colors  %   -5   80  5  dcont   1 0
-GOES16_CH06  GOES16_CH06  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch06&GOESR_CH06 sat_cloud.colors  %   -5   80  5  dcont   1 0
+GOES16_CH01  GOES16_CH01  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch01&GOESR_CH01 sat_cloud.colors  %   -5   80  5  cart   1 0
+GOES16_CH02  GOES16_CH02  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch02&GOESR_CH02 sat_cloud.colors  %   -5   80  5  cart   1 0
+GOES16_CH03  GOES16_CH03  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch03&GOESR_CH03 sat_cloud.colors  %   -5   80  5  cart   1 0
+GOES16_CH06  GOES16_CH06  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch06&GOESR_CH06 sat_cloud.colors  %   -5   80  5  cart   1 0
+
+#GOES16_CH13  GOES16_CH13  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch13&GOESR_CH13 sat_tempC.colors C  -5   80  5  cont   1 0
+#GOES16_CH15  GOES16_CH15  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch15&GOESR_CH15 sat_tempC.colors C  -5   80  5  cont   1 0
+#GOES16_SWD  GOES16_SWD  mdvp::swd//181.30.169.202:0:relampago/mdv/goes16_ch13&GOESR_SWD goesr_swd.colors C  -5   80  5  cont   1 0
+#GOES16_CH10  GOES16_CH10  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch10&GOESR_CH10 sat_tempC.colors C  -5   80  5  cont   1 0
+
+#GOES16_CH01  GOES16_CH01  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch01&GOESR_CH01 sat_cloud.colors  %   -5   80  5  cont   1 0
+#GOES16_CH02  GOES16_CH02  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch02&GOESR_CH02 sat_cloud.colors  %   -5   80  5  cont   1 0
+#GOES16_CH03  GOES16_CH03  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch03&GOESR_CH03 sat_cloud.colors  %   -5   80  5  cont   1 0
+#GOES16_CH06  GOES16_CH06  mdvp:://181.30.169.202:0:relampago/mdv/goes16_ch06&GOESR_CH06 sat_cloud.colors  %   -5   80  5  cont   1 0
 
 ############################
 # GFS Model data
 
-GFS-TMP   GFS-TMP  mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&TMP  temp.colors   C   -5   80  5  dcont   1 0
-GFS-RH    GFS-RH   mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&RH   rh.colors   %   -5   80  5  dcont   1 0
-GFS-PRES  GFS-PRES mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
-SURF_Terrain Terrain  mdvp::terrain//181.30.169.202:0:relampago/mdv/terrain&Elevation terrain_relampago.colors m -5 80 5 dcont 1 0
+GFS-TMP   GFS-TMP  mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&TMP  temp.colors   C   -5   80  5  cont   1 0
+GFS-RH    GFS-RH   mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&RH   rh.colors   %   -5   80  5  cont   1 0
+GFS-PRES  GFS-PRES mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&Pressure pressure_mb.colors   m/s   -5   80  5  cont   1 0
+SURF_Terrain Terrain  mdvp::terrain//181.30.169.202:0:relampago/mdv/terrain&Elevation terrain_relampago.colors m -5 80 5 cont 1 0
 
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 ############################
 # WRF Model data
 
-WRF-Temp   WRF-Temp   mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Temp    temp.colors     C    -5   80  5  dcont   1 0
-WRF-THETAE WRF-THETAE mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&THETA   theta_e.colors  K    -5   80  5  dcont   1 0
-WRF-RH     WRF-RH     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&RH      rh.colors       %    -5   80  5  dcont   1 0
-WRF-W      WRF-W      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&W       wvel_new.colors m/s  -5   80  5  dcont   1 0
-WRF-WSPD     WRF-WSPD     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Wspeed   wind_speed.colors  m/s     -5   80  5  dcont   1 0
-WRF-Press    WRF-Press    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&P        press_pert_pa.colors   Pa      -5   80  5  dcont   1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+WRF-Temp   WRF-Temp   mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Temp    temp.colors     C    -5   80  5  cont   1 0
+WRF-THETAE WRF-THETAE mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&THETA   theta_e.colors  K    -5   80  5  cont   1 0
+WRF-RH     WRF-RH     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&RH      rh.colors       %    -5   80  5  cont   1 0
+WRF-W      WRF-W      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&W       wvel_new.colors m/s  -5   80  5  cont   1 0
+WRF-WSPD     WRF-WSPD     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Wspeed   wind_speed.colors  m/s     -5   80  5  cont   1 0
+WRF-Press    WRF-Press    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&P        press_pert_pa.colors   Pa      -5   80  5  cont   1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
-WRF-QVAPOR   WRF-QVAPOR   mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QVAPOR   mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-WRF-QCLOUD   WRF-QCLOUD   mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QCLOUD   mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-WRF-QRAIN    WRF-QRAIN    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QRAIN    mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-WRF-QICE     WRF-QICE     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QICE     mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-WRF-QSNOW    WRF-QSNOW    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QSNOW    mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-WRF-QGRAUPEL WRF-QGRAUPEL mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QGRAUP   mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+WRF-QVAPOR   WRF-QVAPOR   mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QVAPOR   mixr_kgpkg.colors  kg/kg   -5   80  5  cont   1 0
+WRF-QCLOUD   WRF-QCLOUD   mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QCLOUD   mixr_kgpkg.colors  kg/kg   -5   80  5  cont   1 0
+WRF-QRAIN    WRF-QRAIN    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QRAIN    mixr_kgpkg.colors  kg/kg   -5   80  5  cont   1 0
+WRF-QICE     WRF-QICE     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QICE     mixr_kgpkg.colors  kg/kg   -5   80  5  cont   1 0
+WRF-QSNOW    WRF-QSNOW    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QSNOW    mixr_kgpkg.colors  kg/kg   -5   80  5  cont   1 0
+WRF-QGRAUPEL WRF-QGRAUPEL mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&QGRAUP   mixr_kgpkg.colors  kg/kg   -5   80  5  cont   1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
-WRF-DBZ3D    WRF-DBZ3D    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&DBZ      dbz.colors         dBZ     -5   80  5  dcont   1 0
-WRF-DBZ2D    WRF-DBZ2D    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&dbz_2d   dbz.colors         dBZ     -5   80  5  dcont   1 0
-WRF-T2m      WRF-T2m      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&T2C      temp.colors            C    -5   80  5  dcont   1 0
-WRF-Q2m      WRF-Q2m      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Q2       mixr_kgpkg.colors  kg/kg    -5   80  5  dcont   1 0
-WRF-PBLHT    WRF-PBLHT    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&PBLH     pblht_m.colors         M       -5   80  5  dcont   1 0
-WRF-PSFC     WRF-PSFC     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&PSFC     press_sfc_pa.colors   Pa      -5   80  5  dcont   1 0
-WRF-VIL      WRF-VIl      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&vil      vil.colors         kg/m2   -5   80  5  dcont   1 0
-WRF-FZLEVEL  WRF-FZLEVEL  mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&FZLevel  fzlevel.colors         m       -5   80  5  dcont   1 0
+WRF-DBZ3D    WRF-DBZ3D    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&DBZ      dbz.colors         dBZ     -5   80  5  cont   1 0
+WRF-DBZ2D    WRF-DBZ2D    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&dbz_2d   dbz.colors         dBZ     -5   80  5  cont   1 0
+WRF-T2m      WRF-T2m      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&T2C      temp.colors            C    -5   80  5  cont   1 0
+WRF-Q2m      WRF-Q2m      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&Q2       mixr_kgpkg.colors  kg/kg    -5   80  5  cont   1 0
+WRF-PBLHT    WRF-PBLHT    mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&PBLH     pblht_m.colors         M       -5   80  5  cont   1 0
+WRF-PSFC     WRF-PSFC     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&PSFC     press_sfc_pa.colors   Pa      -5   80  5  cont   1 0
+WRF-VIL      WRF-VIl      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&vil      vil.colors         kg/m2   -5   80  5  cont   1 0
+WRF-FZLEVEL  WRF-FZLEVEL  mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&FZLevel  fzlevel.colors         m       -5   80  5  cont   1 0
 
-WRF-LCL      WRF-LCL      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&LCL      lcl.colors             m       -5   80  5  dcont   1 0
-WRF-LFC      WRF-LFC      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&LFC      lfc.colors             m       -5   80  5  dcont   1 0
-WRF-EL       WRF-EL       mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&EL       el.colors              m       -5   80  5  dcont   1 0
-WRF-CAPE     WRF-CAPE     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&CAPE     cape.colors            J/kg    -5   80  5  dcont   1 0
-WRF-CIN      WRF-CIN      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&CIN      cin.colors             J/kg    -5   80  5  dcont   1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+WRF-LCL      WRF-LCL      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&LCL      lcl.colors             m       -5   80  5  cont   1 0
+WRF-LFC      WRF-LFC      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&LFC      lfc.colors             m       -5   80  5  cont   1 0
+WRF-EL       WRF-EL       mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&EL       el.colors              m       -5   80  5  cont   1 0
+WRF-CAPE     WRF-CAPE     mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&CAPE     cape.colors            J/kg    -5   80  5  cont   1 0
+WRF-CIN      WRF-CIN      mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois&CIN      cin.colors             J/kg    -5   80  5  cont   1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 ############################
 # Surfce data
 
-SURF_Temp  SURF_Temp  mdvp:://181.30.169.202:0:relampago/mdv/surf_interp&Temp        temp.colors m -5 80 5 dcont 1 0
-SURF_DewPt SURF_DewPt mdvp:://181.30.169.202:0:relampago/mdv/surf_interp&DewPoint    temp.colors m -5 80 5 dcont 1 0
-SURF_Conv  SURF_Conv  mdvp:://181.30.169.202:0:relampago/mdv/surf_interp&Convergence conv.colors m -5 80 5 dcont 1 0
-========   =========  mdvp::static//181.30.169.202:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+SURF_Temp  SURF_Temp  mdvp:://181.30.169.202:0:relampago/mdv/surf_interp&Temp        temp.colors m -5 80 5 cont 1 0
+SURF_DewPt SURF_DewPt mdvp:://181.30.169.202:0:relampago/mdv/surf_interp&DewPoint    temp.colors m -5 80 5 cont 1 0
+SURF_Conv  SURF_Conv  mdvp:://181.30.169.202:0:relampago/mdv/surf_interp&Convergence conv.colors m -5 80 5 cont 1 0
+========   =========  mdvp::static//181.30.169.202:0:/spacer&Elevation  none.colors   m   -5   80  5  cont   1 0
 
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 #############################
 # RADAR DATA
 
-RMA1_DBZ     RMA1_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
-RMA1_VEL     RMA1_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL   vel.colors   m/s   -5 80 5 radial 1 0
-RMA1_WIDTH   RMA1_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&WIDTH width.colors m/s   -5 80 5 radial 1 0
-RMA1_ZDR     RMA1_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&ZDR    zdr.colors   dB    -5 80 5 radial 1 0
-RMA1_RHOHV   RMA1_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&RHOHV  rhohv.colors -     -5 80 5 radial 1 0
-RMA1_PHIDP   RMA1_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&PHIDP  phidp.colors deg   -5 80 5 radial 1 0
-RMA1_KDP     RMA1_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&KDP    kdp.colors  deg/km -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+RMA1_DBZ      RMA1_DBZ      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
+RMA1_VEL      RMA1_VEL      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL   vel.colors   m/s   -5 80 5 radial 1 0
+RMA1_WIDTH    RMA1_WIDTH    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&WIDTH width.colors m/s   -5 80 5 radial 1 0
+RMA1_ZDR      RMA1_ZDR      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&ZDR    zdr.colors   dB    -5 80 5 radial 1 0
+RMA1_RHOHV    RMA1_RHOHV    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&RHOHV  rhohv.colors -     -5 80 5 radial 1 0
+RMA1_PHIDP    RMA1_PHIDP    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&PHIDP  phidp.colors deg   -5 80 5 radial 1 0
+RMA1_KDP      RMA1_KDP      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&KDP    kdp.colors  deg/km -5 80 5 radial 1 0
+RMA1_DBZ_COMP RMA1_DBZ_COMP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZH   dbz.colors   dBZ   -5 80 5 comp 1 0
 
 RMA1_DBZ_SR   RMA1_DBZ_SR   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
 RMA1_VEL_SR   RMA1_VEL_SR   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL   vel.colors   m/s   -5 80 5 radial 1 0
@@ -197,7 +207,16 @@ RMA1_ZDR_SR   RMA1_ZDR_SR   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/sho
 RMA1_RHOHV_SR RMA1_RHOHV_SR mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&RHOHV  rhohv.colors -     -5 80 5 radial 1 0
 RMA1_PHIDP_SR RMA1_PHIDP_SR mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&PHIDP  phidp.colors deg   -5 80 5 radial 1 0
 RMA1_KDP_SR   RMA1_KDP_SR   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&KDP    kdp.colors  deg/km -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+
+RMA1_DBZ_CART   RMA1_DBZ_CART  mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&DBZ dbz.colors   dBZ   -5 80 5 cont 1 0
+RMA1_DBZ_COMP   RMA1_DBZ_COMP  mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&DBZ dbz.colors   dBZ   -5 80 5 cont,comp 1 0
+RMA1_CONVSTRAT  RMA1_CONVSTRAT mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&ConvStrat  conv_strat.colors   dBZ   -5 80 5 cart 1 0
+RMA1_STEINER    RMA1_STEINER   mdvp:://181.30.169.202:0:relampago/mdv/ConvStrat/steiner&ConvStrat          conv_strat.colors   dBZ   -5 80 5 cart 1 0
+RMA1_DBZTEXT    RMA1_DBZTEXT   mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&DbzTextureMean dbz.colors   dBZ   -5 80 5 cart 1 0
+RMA1_DBZCONV    RMA1_DBZCONV   mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&DbzConv   dbz.colors   dBZ   -5 80 5 cart 1 0
+RMA1_ZDR_CART   RMA1_ZDR_CART  mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&ZDR zdr.colors   dB   -5 80 5 cont 1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 RMA2_DBZ     RMA2_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/long_range&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
 RMA2_VEL     RMA2_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/RMA2/short_range&VEL   vel.colors   m/s   -5 80 5 radial 1 0
@@ -215,7 +234,7 @@ ANG_ZDR   ANG_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&ZDR     zdr
 ANG_RHOHV ANG_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/ANG&RhoHV   rhohv.colors -     -5 80 5 radial 1 0
 ANG_PHIDP ANG_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/ANG&PhiDP   phidp.colors deg   -5 80 5 radial 1 0
 ANG_KDP   ANG_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/ANG&KDP     kdp.colors   dg/km -5 80 5 radial 1 0
-========   ========  mdvp::static//181.30.169.202:0:/spacer/moments&Elev     none.colors  m   -5 80 5 dcont  1 0
+========   ========  mdvp::static//181.30.169.202:0:/spacer/moments&Elev     none.colors  m   -5 80 5 cont  1 0
 
 PAR_DBZ   PAR_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&dBZ     dbz.colors   dBZ -5 80 5 radial 1 0
 PAR_VEL   PAR_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&V       vel.colors   m/s -5 80 5 radial 1 0
@@ -224,16 +243,16 @@ PAR_ZDR   PAR_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&ZDR     zdr
 PAR_RHOHV PAR_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&RhoHV   rhohv.colors -       -5 80 5 radial 1 0
 PAR_PHIDP PAR_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/PAR&PhiDP   phidp.colors deg     -5 80 5 radial 1 0
 PAR_KDP   PAR_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/PAR&KDP     kdp.colors   deg/km  -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 PER_DBZ   PER_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/PER&dBZ     dbz.colors   dBZ -5 80 5 radial 1 0
 PER_VEL   PER_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/PER&V       vel.colors   m/s -5 80 5 radial 1 0
 PER_WIDTH PER_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/PER&W       width.colors m/s -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 DOW6_DBZ   DOW6_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&DBZHC_F  dbz.colors   dBZ -5 80 5 radial 1 0
 DOW6_VEL   DOW6_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&VEL_F    vel.colors   m/s -5 80 5 radial 1 0
@@ -246,9 +265,9 @@ DOW6_WIDTH_R DOW6_WIDTH_R  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook
 DOW6_ZDR_R   DOW6_ZDR_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow6&ZDR_F    zdr.colors   dB  -5 80 5 radial 1 0
 
 # DOW6_RHOHV DOW6_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow6&RHOHV_F  rhohv.colors -   -5 80 5 radial 1 0
-#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 DOW7_DBZ   DOW7_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&DBZHC  dbz.colors   dBZ -5 80 5 radial 1 0
 DOW7_VEL   DOW7_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&VEL    vel.colors   m/s -5 80 5 radial 1 0
@@ -261,41 +280,31 @@ DOW7_WIDTH_R DOW7_WIDTH_R  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook
 DOW7_ZDR_R   DOW7_ZDR_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow7&ZDR    zdr.colors   dB  -5 80 5 radial 1 0
 
 #DOW7_RHOHV DOW7_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow7&RHOHV  rhohv.colors -   -5 80 5 radial 1 0
-#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 DOW8_DBZ   DOW8_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow8&DBZ  dbz.colors   dBZ -5 80 5 radial 1 0
 DOW8_VEL   DOW8_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow8&VEL  vel.colors   m/s -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 DOW8_DBZ_R   DOW8_DBZ_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow8&DBZ  dbz.colors   dBZ -5 80 5 radial 1 0
 DOW8_VEL_R   DOW8_VEL_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow8&VEL  vel.colors   m/s -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
-SAN_MARTIN_DBZ  SAN_MARTIN_DBZ   mdvp:://181.30.169.202:0:relampago/mdv/radar/SanMartin&DBZ      dbz.colors   dBZ -5 80 5 radial 1 0
-SAN_RAFAEL_DBZ  SAN_RAFAEL_DBZ   mdvp:://181.30.169.202:0:relampago/mdv/radar/SanRafael&DBZ      dbz.colors   dBZ -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+S-MARTIN_DBZ  S-MARTIN_DBZ   mdvp:://181.30.169.202:0:relampago/mdv/radar/SanMartin&DBZ      dbz.colors   dBZ -5 80 5 cont 1 0
+S-RAFAEL_DBZ  S-RAFAEL_DBZ   mdvp:://181.30.169.202:0:relampago/mdv/radar/SanRafael&DBZ      dbz.colors   dBZ -5 80 5 cont 1 0
+S-MARTIN_Comp S-MARTIN_Comp  mdvp:://181.30.169.202:0:relampago/mdv/radar/SanMartin&DBZ      dbz.colors   dBZ -5 80 5 cont,comp 1 0
+S-RAFAEL_Comp S-RAFAEL_Comp  mdvp:://181.30.169.202:0:relampago/mdv/radar/SanRafael&DBZ      dbz.colors   dBZ -5 80 5 cont,comp 1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
-RMA1_DBZ_C   RMA1_DBZ_C  mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&DBZ dbz.colors   dBZ   -5 80 5 radial 1 0
-RMA1_ZDR_C   RMA1_ZDR_C  mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&ZDR zdr.colors   dB   -5 80 5 radial 1 0
-RMA1_CONVSTRAT  RMA1_CONVSTRAT mdvp:://181.30.169.202:0:relampago/mdv/radarCart/RMA1/long_range&ConvStrat   conv_strat.colors   dBZ   -5 80 5 radial 1 0
-RMA1_CONVSTRAT2  RMA1_CONVSTRAT2 mdvp:://181.30.169.202:0:relampago/mdv/convStrat/RMA1/long_range&ConvStrat   conv_strat.colors   dBZ   -5 80 5 radial 1 0
-RMA1_DBZCONV  RMA1_DBZCONV mdvp:://181.30.169.202:0:relampago/mdv/convStrat/RMA1/long_range&DbzConv   dbz.colors   dBZ   -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-
-
-#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
-#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 dcont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
 ############################
 # NEXRAD PID AND PRECIP RATE
@@ -342,13 +351,6 @@ SanMartinRings SanMartinRings san_martin_rings.map        0  0.0 1000000.0  whit
 SanRafaelRings SanRafaelRings san_rafael_rings.map        0  0.0 1000000.0  white
 
 Points         Points         relampago_points.map        1  0.0 1000000.0  yellow
-
-POINTS        POINTS        ATMS-POINTS.map         1  .0 1000000.0 red
-
-UAE-OMAN      UAE-OMAN      ATMS-UAE-OMAN.map       1  .0 1000000.0 yellow
-
-IRAN-ISLANDS  IRAN-ISLANDS  ATMS-IRAN-ISLANDS.map   1  .0 1000000.0 green
-
 
 </MAPS>
 
