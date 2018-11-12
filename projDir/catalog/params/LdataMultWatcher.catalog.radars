@@ -181,6 +181,16 @@ data_sets = {
     late_data_secs = 3600,
     trailing_args = ""
   }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/relampago/cfradial/csu_chivo/sur",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.CSU",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600000,
+    trailing_args = "--radar_name,csu,--min_fixed_angle,2.0,--max_fixed_angle,3.0,--max_range_km,150.0"
+  }
 };
 
 ///////////// trailing_args_delimiter /////////////////
