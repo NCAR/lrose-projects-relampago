@@ -37,7 +37,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "Rho2Spdb";
+instance = "csu_chivo";
 
 ///////////// mode ////////////////////////////////////
 //

@@ -54,7 +54,7 @@ polar_rhi = TRUE;
 // Type: int
 //
 
-rhi_time_margin = 900;
+rhi_time_margin = 1200;
 
 ///////////// rhi_max_az_error ////////////////////////
 //
