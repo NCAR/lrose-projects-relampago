@@ -3,6 +3,12 @@
 # Process any command line arguments.  The only allowed argument is a time
 # string to be sent to CIDD for processing archive data.
 
+if ($1 == "") then
+  set time_string = ""
+else
+  set time_string = "-t $1"
+endif
+
 # Ensure virtual X server is running and set display accordingly. 
 
 start_Xvfb
@@ -29,8 +35,8 @@ setenv MISSING_DATA_COLOR gray20
 setenv RANGE_RING_FLAG 0
 setenv SHOW_HEIGHT_SEL 0
 setenv TIME_INTERVAL 10.0
-#setenv IMAGE_DIR ${DATA_DIR}/${project}/images/catalog/radar
-setenv IMAGE_DIR ${DATA_DIR}/${project}/images/catalog/csu_test
+setenv IMAGE_DIR ${DATA_DIR}/${project}/images/catalog/radar
+#setenv IMAGE_DIR ${DATA_DIR}/${project}/images/catalog/csu_test
 setenv OUTPUT_GEO_XML 1
 setenv HORIZ_DEFAULT_HEIGHT 1300
 setenv COLOR_SCALE_WIDTH 0
@@ -49,7 +55,7 @@ setenv MAXY -30.1
 mkdir -p $IMAGE_DIR
 cd $PROJ_DIR/catalog/params
 Prepare4Cidd
-CIDD -p CIDD.catalog.${RADAR_NAME} -i ${RADAR_NAME}.web.transparent -fn fixed
+CIDD -p CIDD.catalog.${RADAR_NAME} -i ${RADAR_NAME}.web.transparent -fn fixed ${time_string}
 
 # use CIDD to create normal images
 
