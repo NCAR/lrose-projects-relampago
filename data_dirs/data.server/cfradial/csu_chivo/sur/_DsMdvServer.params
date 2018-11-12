@@ -27,7 +27,7 @@ serve_rhi_data = TRUE;
 // Type: string
 //
 
-rhi_url = "mdvp:://localhost:0:relampago/cfradial/csu_chivo/rhi";
+rhi_url = "mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/rhi";
 
 ///////////// polar_rhi ///////////////////////////////
 //
@@ -71,7 +71,7 @@ rhi_time_margin = 1200;
 // Type: double
 //
 
-rhi_max_az_error = 2;
+rhi_max_az_error = 3;
 
 ///////////// respect_user_rhi_distance ///////////////
 //

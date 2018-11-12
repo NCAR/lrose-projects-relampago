@@ -25,7 +25,7 @@
 //     DEBUG_VERBOSE
 //
 
-debug = DEBUG_OFF;
+debug = DEBUG_VERBOSE;
 
 ///////////// instance ////////////////////////////////
 //
@@ -71,7 +71,7 @@ mode = REALTIME;
 // Type: int
 //
 
-max_realtime_data_age_secs = 600;
+max_realtime_data_age_secs = 900;
 
 ///////////// time_between_checks_secs ////////////////
 //
@@ -96,7 +96,7 @@ time_between_checks_secs = 5;
 // Type: int
 //
 
-mdv_search_margin_secs = 180;
+mdv_search_margin_secs = 900;
 
 ///////////// input_url ///////////////////////////////
 //
