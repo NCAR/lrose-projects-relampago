@@ -200,14 +200,14 @@ CSU_ZDR_QC   CSU_ZDR_QC   mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/
 CSU_ZDR      CSU_ZDR      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&ZDR2   zdr.colors   dB     -5 80 5 radial 1 0
 CSU_RHOHV    CSU_RHOHV    mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&RHOHV2 rhohv.colors -      -5 80 5 radial 1 0
 
-CSU_PHIDP    CSU_PHIDP    mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&PHIDP2  phidp.colors deg    -5 80 5 radial 1 0
+CSU_PHIDP    CSU_PHIDP    mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&PHIDP2  phidp_360.colors deg    -5 80 5 radial 1 0
 CSU_FDP      CSU_FDP      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&FDP     phidp.colors deg    -5 80 5 radial 1 0
 CSU_KDP      CSU_KDP      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&KDP     kdp.colors   deg/km -5 80 5 radial 1 0
 CSU_KDP2     CSU_KDP2     mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&KDP2    kdp.colors   deg/km -5 80 5 radial 1 0
-CSU_SQI      CSU_SQI      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&SQI2    ncp.colors   -      -5 80 5 comp 1 0
-CSU_SNR      CSU_SNR      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&SNR16   snr.colors   dB     -5 80 5 comp 1 0
-CSU_HCA      CSU_HCA      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&HCLASS2 pid.colors   -      -5 80 5 comp 1 0
-CSU_SDP      CSU_SDP      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&SDP   phidp.colors   deg/km -5 80 5 comp 1 0
+CSU_SQI      CSU_SQI      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&SQI2    ncp.colors   -      -5 80 5 radial 1 0
+CSU_SNR      CSU_SNR      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&SNR16   snr.colors   dB     -5 80 5 radial 1 0
+CSU_HCA      CSU_HCA      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&HCLASS2 pid.colors   -      -5 80 5 radial 1 0
+CSU_SDP      CSU_SDP      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&SDP   phidp.colors   deg/km -5 80 5 radial 1 0
 
 RMA1_DBZ      RMA1_DBZ      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
 RMA1_VEL      RMA1_VEL      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL   vel.colors   m/s   -5 80 5 radial 1 0
