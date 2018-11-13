@@ -131,8 +131,8 @@ GFS-RH    GFS-RH   mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&RH   rh.
 GFS-PRES  GFS-PRES mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago&Pressure pressure_mb.colors   m/s   -5   80  5  cont   1 0
 SURF_Terrain Terrain  mdvp::terrain//181.30.169.202:0:relampago/mdv/terrain&Elevation terrain_relampago.colors m -5 80 5 cont 1 0
 
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+LTG_RATE LTG_RATE  mdvp:://181.30.169.202:0:relampago/mdv/ltg/glm&Ltg_Strikes ltg_rate.colors /300s -5 80 5 cont 1 0
+LTG_DBZ LTG_DBZ  mdvp:://181.30.169.202:0:relampago/mdv/ltg/glm&DBZ dbz.colors dBZ -5 80 5 cont 1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
