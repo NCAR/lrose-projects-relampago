@@ -220,6 +220,7 @@ if ($?prompt) then
   alias storm 'ssh -XY meso@storm'
   alias updraft 'ssh -XY meso@updraft'
   alias smn 'ssh -XY relampago@smn'
+  alias csu 'ssh -XY radaruser@csu'
 
   alias spol_fmq_tunnel 'ssh -p20022 -L 15443:localhost:5443 spol@spol.dyndns.org'
 
