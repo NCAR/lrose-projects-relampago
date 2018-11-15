@@ -161,6 +161,16 @@ data_sets = {
     late_data_secs = 3600000,
     trailing_args = "--radar_name,dow8,--min_fixed_angle,0.25,--max_fixed_angle,3.5,--max_range_km,100.0"
   }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/relampago/cfradial/quicklook/dowc",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/create_dow_images.py",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600000,
+    trailing_args = "--radar_name,dowc,--min_fixed_angle,0.25,--max_fixed_angle,3.5,--max_range_km,120.0"
+  }
   // ,
   // {
   //   input_dir = "$(DATA_DIR)/incoming_dow7/cfradial/quicklook/high/rhi",

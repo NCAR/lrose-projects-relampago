@@ -54,3 +54,6 @@ RadxConvert      rotate_dow8         start_inst(ingest)    snuff_inst
 # Cartesian transforms, conv/strat
 Radx2Grid         RMA1.long_range   start_inst(alg)    snuff_inst
 stratiform_filter RMA1              start_inst(alg)    snuff_inst
+######################################################################
+# Lightning rate grid
+LtgSpdb2Mdv       relampago         start_inst(alg)    snuff_inst

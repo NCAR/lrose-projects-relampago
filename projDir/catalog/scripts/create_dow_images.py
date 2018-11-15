@@ -14,7 +14,6 @@ import time
 import datetime
 from datetime import timedelta
 import string
-#import paramiko
 import subprocess
 from optparse import OptionParser
 from stat import *
@@ -32,7 +31,7 @@ def main():
 
     # initialize
     
-    appName = "create_dow_images.py"
+    appName = __file__
     print "==========================================================="
     print "BEGIN: " + appName + " at " + str(datetime.datetime.now())
     print "==========================================================="
@@ -40,7 +39,7 @@ def main():
     # Extract the radar latitutde/longitude from the volume
     
     radar_lat, radar_lon, fixed_angle = getRadarLatLon(fullFilePath);
-    if (options.debug == True):
+    if (options.debug):
         print '==>> radar lat, lon, fixed_angle: ', radar_lat, ', ', radar_lon, ", ", fixed_angle
 
     # Check the fixed anlgle.  We only process files between the sepcified fixed angles
@@ -54,7 +53,7 @@ def main():
     # latitude of 0.0 and longitude of the radar longitude
 
     radar_x, radar_y = getRadarXY(radar_lat, radar_lon)
-    if (options.debug == True):
+    if (options.debug):
         print 'radar_x = ', radar_x, ', radar_y = ', radar_y
 
     # Set the environment variables that will be used in the CIDD
@@ -105,12 +104,12 @@ def parseArgs():
     parser = OptionParser(usage)
 
     parser.add_option('--debug',
-                      dest='debug', default='False',
+                      dest='debug', default=True,
                       action="store_true",
                       help='Set debugging on')
 
     parser.add_option('--verbose',
-                      dest='verbose', default='False',
+                      dest='verbose', default=False,
                       action="store_true",
                       help='Set verbose debugging on')
 
@@ -179,10 +178,10 @@ def parseArgs():
     (year, month, day, hour, min, sec) = options.valid_time.split(',')
     validTimeStr = year + month + day + hour + min + sec
     
-    if (options.verbose == True):
+    if (options.verbose):
         options.debug = True
 
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "Options:"
         print >>sys.stderr, "  debug? ", options.debug
         print >>sys.stderr, "  verbose? ", options.verbose
@@ -257,7 +256,7 @@ def getRadarXY(radar_lat, radar_lon):
 
 def runCommand(cmd):
 
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "running cmd:",cmd
     
     try:
@@ -265,7 +264,7 @@ def runCommand(cmd):
         if retcode < 0:
             print >>sys.stderr, "Child was terminated by signal: ", -retcode
         else:
-            if (options.debug == True):
+            if (options.debug):
                 print >>sys.stderr, "Child returned code: ", retcode
     except OSError, e:
         print >>sys.stderr, "Execution failed:", e

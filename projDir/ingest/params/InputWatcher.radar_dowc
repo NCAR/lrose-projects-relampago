@@ -66,7 +66,7 @@ instance = "radar_dowc";
 // Type: string
 //
 
-input_dir = "/data/ftp/upload/dowc";
+input_dir = "/data/ftp/upload/cow1";
 
 ///////////// wait_between_checks /////////////////////
 //
@@ -240,7 +240,7 @@ search_ext = "nc";
 // Type: string
 //
 
-search_substr = "DOWC";
+search_substr = "COW1";
 
 ///////////// save_latest_read_time ///////////////////
 //
