@@ -31,10 +31,12 @@ InputWatcher      radar_dow7    start_inst(ingest)    snuff_inst
 InputWatcher      radar_dow8    start_inst(ingest)    snuff_inst
 InputWatcher      radar_dowc    start_inst(ingest)    snuff_inst
 ######################################################################
-# ingesting the quicklooks from the CSU radar
+# ingesting the CSU radar
 InputWatcher      csu_chivo     start_inst(ingest)    snuff_inst
 RadxConvert       csu_chivo     start_inst(ingest)    snuff_inst
 Rhi2Spdb          csu_chivo     start_inst(ingest)    snuff_inst
+RadxConvert       csu_raw       start_inst(ingest)    snuff_inst
+Rhi2Spdb          csu_raw       start_inst(ingest)    snuff_inst
 ######################################################################
 ######################################################################
 # Catalog images
