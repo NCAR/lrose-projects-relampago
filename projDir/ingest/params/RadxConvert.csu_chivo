@@ -29,7 +29,7 @@
 //     DEBUG_EXTRA
 //
 
-debug = DEBUG_OFF;
+debug = DEBUG_NORM;
 
 ///////////// instance ////////////////////////////////
 //
@@ -94,7 +94,7 @@ mode = REALTIME;
 // Type: int
 //
 
-max_realtime_data_age_secs = 300;
+max_realtime_data_age_secs = 3600;
 
 ///////////// latest_data_info_avail //////////////////
 //
@@ -177,7 +177,7 @@ file_quiescence = 5;
 // Type: string
 //
 
-search_ext = "nc";
+search_ext = "";
 
 ///////////// gematronik_realtime_mode ////////////////
 //

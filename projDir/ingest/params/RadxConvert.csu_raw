@@ -29,7 +29,7 @@
 //     DEBUG_EXTRA
 //
 
-debug = DEBUG_OFF;
+debug = DEBUG_NORM;
 
 ///////////// instance ////////////////////////////////
 //
@@ -94,7 +94,7 @@ mode = REALTIME;
 // Type: int
 //
 
-max_realtime_data_age_secs = 300;
+max_realtime_data_age_secs = 3600;
 
 ///////////// latest_data_info_avail //////////////////
 //
@@ -107,7 +107,7 @@ max_realtime_data_age_secs = 300;
 // Type: boolean
 //
 
-latest_data_info_avail = FALSE;
+latest_data_info_avail = TRUE;
 
 ///////////// search_recursively //////////////////////
 //
@@ -1532,14 +1532,14 @@ apply_censoring = FALSE;
 
 censoring_fields = {
   {
-    name = "SNR",
-    min_valid_value = 0,
+    name = "DBZ",
+    min_valid_value = -20,
     max_valid_value = 1000,
     combination_method = LOGICAL_OR
   }
   ,
   {
-    name = "NCP",
+    name = "SQI",
     min_valid_value = 0.15,
     max_valid_value = 1000,
     combination_method = LOGICAL_OR

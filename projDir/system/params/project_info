@@ -1,23 +1,23 @@
 #############################################
-# project-specific parameters for EOL BASE
+# project-specific parameters for RELAMPAGO
 #
-# Mike Dixon Dec 2016
+# Mike Dixon Nov 2018
 #############################################
 
 # PROJECT
 
-setenv PROJECT_NAME               "EOLBASE"
-setenv project                    "eolbase"
-setenv catalog_name               "snowie"
+setenv PROJECT_NAME               "RELAMPAGO"
+setenv project                    "relampago"
+setenv catalog_name               "relampago"
 
 # Marshall
 
-setenv RADAR_SITE_NAME            "MARSHALL"
-setenv RADAR_NAME                 "SPOL"
-setenv RADAR_LAT                  39.9502
-setenv RADAR_LON                  -105.1951
-setenv RADAR_ALT_KM               1.748
-setenv RADAR_ALT_M                1748
+setenv RADAR_SITE_NAME            "CSU_CHIVO"
+setenv RADAR_NAME                 "CSU_CHIVO"
+setenv RADAR_LAT                  -31.6342
+setenv RADAR_LON                  -64.1686
+setenv RADAR_ALT_KM               0.429
+setenv RADAR_ALT_M                429
 
 #############################################
 
@@ -54,4 +54,6 @@ setenv HIDRO_ZDR_THRESHOLD 0.5
 setenv BRINGI_DBZ_THRESHOLD 40
 setenv BRINGI_KDP_THRESHOLD 0.15
 setenv BRINGI_ZDR_THRESHOLD 0.1
+
+setenv PID_RATE_KDP_THRESHOLD 0.3
 

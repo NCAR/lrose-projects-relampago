@@ -35,6 +35,7 @@ InputWatcher      radar_dowc    start_inst(ingest)    snuff_inst
 InputWatcher      csu_chivo     start_inst(ingest)    snuff_inst
 RadxConvert       csu_chivo     start_inst(ingest)    snuff_inst
 Rhi2Spdb          csu_chivo     start_inst(ingest)    snuff_inst
+InputWatcher      csu_raw       start_inst(ingest)    snuff_inst
 RadxConvert       csu_raw       start_inst(ingest)    snuff_inst
 Rhi2Spdb          csu_raw       start_inst(ingest)    snuff_inst
 ######################################################################
