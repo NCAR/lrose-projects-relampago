@@ -49,6 +49,7 @@ LdataWatcher      catalog.dow_images    start_inst(catalog) snuff_inst
 RadxConvert      rotate_dow6         start_inst(ingest)    snuff_inst
 RadxConvert      rotate_dow7         start_inst(ingest)    snuff_inst
 RadxConvert      rotate_dow8         start_inst(ingest)    snuff_inst
+RadxConvert      rotate_dowc         start_inst(ingest)    snuff_inst
 ######################################################################
 ######################################################################
 # Cartesian transforms, conv/strat
