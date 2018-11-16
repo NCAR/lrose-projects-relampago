@@ -3595,7 +3595,7 @@ write_output_volume = TRUE;
 // Type: string
 //
 
-output_dir = "$(DATA_DIR)/relampago/cfradial/pid/csu";
+output_dir = "$(DATA_DIR)/relampago/cfradial/pid_csu/sur";
 
 ///////////// output_filename_mode ////////////////////
 //
