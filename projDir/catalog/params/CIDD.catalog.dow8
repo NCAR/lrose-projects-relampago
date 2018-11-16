@@ -188,7 +188,7 @@ cidd.temporal_rounding:    1
 
 #  This determines how many movie frames are in the loop to start with
 #  Setting this high will cause the X server to hog memory.
-cidd.starting_movie_frames:     12
+cidd.starting_movie_frames:     1
 
 # minutes per movie frame on startup
 # The display will automatically update every this interval, throwing away its

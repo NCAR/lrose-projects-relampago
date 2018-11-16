@@ -857,7 +857,8 @@ apply_azimuth_offset = TRUE;
 // Type: double
 //
 
-azimuth_offset = 149.0;
+// azimuth_offset = 149.0; // 2018/11/15
+azimuth_offset = 0.0;
 
 ///////////// apply_elevation_offset //////////////////
 //

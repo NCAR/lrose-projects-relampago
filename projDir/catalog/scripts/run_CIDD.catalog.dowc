@@ -33,7 +33,7 @@ setenv BACKGROUND_COLOR black
 setenv MISSING_DATA_COLOR gray20
 setenv RANGE_RING_FLAG 1
 setenv SHOW_HEIGHT_SEL 0
-setenv TIME_INTERVAL 10.0
+setenv TIME_INTERVAL 1.0
 setenv IMAGE_DIR ${DATA_DIR}/relampago/images/catalog/dow
 #setenv IMAGE_DIR /tmp/relampago/images/catalog/dow
 setenv OUTPUT_GEO_XML 0
@@ -66,7 +66,7 @@ setenv BACKGROUND_COLOR black
 setenv MISSING_DATA_COLOR gray20
 setenv RANGE_RING_FLAG 0
 setenv SHOW_HEIGHT_SEL 0
-setenv TIME_INTERVAL 10.0
+setenv TIME_INTERVAL 1.0
 setenv IMAGE_DIR ${DATA_DIR}/relampago/images/catalog/dow
 #setenv IMAGE_DIR /tmp/relampago/images/catalog/dow
 setenv OUTPUT_GEO_XML 1
