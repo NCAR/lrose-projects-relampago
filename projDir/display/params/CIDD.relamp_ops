@@ -209,9 +209,27 @@ CSU_SNR      CSU_SNR      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/
 CSU_HCA      CSU_HCA      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&HCLASS2 pid.colors   -      -5 80 5 radial 1 0
 CSU_SDP      CSU_SDP      mdvp:://181.30.169.202:0:relampago/cfradial/csu_chivo/sur&SDP   phidp.colors   deg/km -5 80 5 radial 1 0
 
+CSURAW_DBZ    CSURAW_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&DBZ     dbz.colors     dBZ  -5 80 5 radial 1 0
+CSURAW_VEL    CSURAW_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&VEL     vel.colors     m/s  -5 80 5 radial 1 0
+CSURAW_WIDTH  CSURAW_WIDTH  mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&WIDTH   width.colors   m/s  -5 80 5 radial 1 0
+CSURAW_ZDR    CSURAW_ZDR    mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&ZDR     zdr.colors     dB   -5 80 5 radial 1 0
+CSURAW_RHOHV  CSURAW_RHOHV  mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&RHOHV   rhohv.colors   -    -5 80 5 radial 1 0
+CSURAW_PHIDP  CSURAW_PHIDP  mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&PHIDP   phidp_360.colors -  -5 80 5 radial 1 0
+CSURAW_KDP    CSURAW_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&KDP     kdp.colors     -    -5 80 5 radial 1 0
+CSURAW_SQI    CSURAW_SQI    mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&SQI     ncp.colors     -    -5 80 5 radial 1 0
+
+CSURAW_DBZT   CSURAW_DBZT   mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&DBZ_TOT dbz.colors     dBZ  -5 80 5 radial 1 0
+CSURAW_HCLASS CSURAW_HCLASS mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&HCLASS pid.colors     -    -5 80 5 radial 1 0
+CSU_PID       CSU_PID   mdvp:://181.30.169.202:0:relampago/cfradial/csu_pid/sur&PID    pid.colors     -    -5 80 5 radial 1 0
+CSU_TEMP      CSU_TEMP  mdvp:://181.30.169.202:0:relampago/cfradial/csu_pid/sur&TEMP_FOR_PID    temp.colors     C    -5 80 5 radial 1 0
+========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+
 RMA1_DBZ      RMA1_DBZ      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
-RMA1_VEL      RMA1_VEL      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL   vel.colors   m/s   -5 80 5 radial 1 0
-RMA1_WIDTH    RMA1_WIDTH    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&WIDTH width.colors m/s   -5 80 5 radial 1 0
+RMA1_VEL      RMA1_VEL      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&VEL   vel.colors   m/s   -5 80 5 radial 1 0
+RMA1_WIDTH    RMA1_WIDTH    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&WIDTH width.colors m/s   -5 80 5 radial 1 0
 RMA1_ZDR      RMA1_ZDR      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&ZDR    zdr.colors   dB    -5 80 5 radial 1 0
 RMA1_RHOHV    RMA1_RHOHV    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&RHOHV  rhohv.colors -     -5 80 5 radial 1 0
 RMA1_PHIDP    RMA1_PHIDP    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&PHIDP  phidp.colors deg   -5 80 5 radial 1 0
@@ -306,11 +324,20 @@ DOW8_DBZ   DOW8_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow
 DOW8_VEL   DOW8_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dow8&VEL  vel.colors   m/s -5 80 5 radial 1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
-
 DOW8_DBZ_R   DOW8_DBZ_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow8&DBZ  dbz.colors   dBZ -5 80 5 radial 1 0
 DOW8_VEL_R   DOW8_VEL_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dow8&VEL  vel.colors   m/s -5 80 5 radial 1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+
+DOWC_DBZ   DOWC_DBZ    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dowc&DBZHC_F  dbz.colors   dBZ -5 80 5 radial 1 0
+DOWC_VEL   DOWC_VEL    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dowc&VEL_F    vel.colors   m/s -5 80 5 radial 1 0
+DOWC_ZDR DOWC_ZDR  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dowc&ZDR_F  zdr.colors m/s -5 80 5 radial 1 0
+DOWC_RHOHV   DOWC_RHOHV    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/dowc&RHOHV_F    rhohv.colors -  -5 80 5 radial 1 0
+
+DOWC_DBZ_R   DOWC_DBZ_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dowc&DBZHC_F  dbz.colors   dBZ -5 80 5 radial 1 0
+DOWC_VEL_R   DOWC_VEL_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dowc&VEL_F    vel.colors   m/s -5 80 5 radial 1 0
+DOWC_ZDR_R DOWC_ZDR_R  mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dowc&ZDR_F  zdr.colors m/s -5 80 5 radial 1 0
+DOWC_RHOHV_R   DOWC_RHOHV_R    mdvp:://181.30.169.202:0:relampago/cfradial/quicklook/rotated_dowc&RHOHV_F    rhohv.colors -  -5 80 5 radial 1 0
 
 S-MARTIN_DBZ  S-MARTIN_DBZ   mdvp:://181.30.169.202:0:relampago/mdv/radar/SanMartin&DBZ      dbz.colors   dBZ -5 80 5 cont 1 0
 S-RAFAEL_DBZ  S-RAFAEL_DBZ   mdvp:://181.30.169.202:0:relampago/mdv/radar/SanRafael&DBZ      dbz.colors   dBZ -5 80 5 cont 1 0
@@ -1633,6 +1660,19 @@ prod_info = {
     data_type = 0,
     render_type = RENDER_ALL,
     on_by_default = TRUE,
+    minutes_allow_before = 7.5,
+    minutes_allow_after = 7.5,
+    text_off_threshold = 0.4,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,
+  {
+    menu_label = "RHI-CSURAW",
+    url = "spdbp:Rhi2Symprod:ticks//181.30.169.202:0:relampago/spdb/rhi/csu_raw",
+    data_type = 0,
+    render_type = RENDER_ALL,
+    on_by_default = FALSE,
     minutes_allow_before = 7.5,
     minutes_allow_after = 7.5,
     text_off_threshold = 0.4,
