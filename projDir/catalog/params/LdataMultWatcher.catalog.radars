@@ -133,7 +133,7 @@ procmap_register_interval = 60;
 
 data_sets = {
   {
-    input_dir = "$(DATA_DIR)/relampago/cfradial/RMA1/short_range",
+    input_dir = "$(DATA_DIR)/relampago/cfradial/RMA1/long_range",
     call_new_data_script = TRUE,
     new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.RMA1",
     call_late_data_script = FALSE,

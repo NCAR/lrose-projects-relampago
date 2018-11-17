@@ -65,3 +65,6 @@ stratiform_filter RMA1              start_inst(alg)    snuff_inst
 ######################################################################
 # Lightning rate grid
 LtgSpdb2Mdv       relampago         start_inst(alg)    snuff_inst
+######################################################################
+# model-based soundings for PID
+Mdv2SoundingSpdb  relampago         start_inst(ingest) snuff_inst
