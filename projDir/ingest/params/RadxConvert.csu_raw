@@ -2070,7 +2070,7 @@ surveillance_subdir = "sur";
 // Type: string
 //
 
-sector_subdir = "sec";
+sector_subdir = "sur";
 
 ///////////// rhi_subdir //////////////////////////////
 //
