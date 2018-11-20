@@ -51,8 +51,8 @@ setenv MAXX $FLAT_MAXX
 setenv MINY $FLAT_MINY
 setenv MAXY $FLAT_MAXX
 
-#cd $PROJ_DIR/catalog/params
-#CIDD -font fixed -p CIDD.catalog.dowc -v 2 -i ${RADAR_NAME}.web.normal $time_string
+cd $PROJ_DIR/catalog/params
+CIDD -font fixed -p CIDD.catalog.dowc -i -v 2 ${RADAR_NAME}.web.normal $time_string
 
 # use CIDD to create transparent images
 
@@ -60,7 +60,7 @@ setenv CIDD_LABEL relampago-image-generation
 setenv CREATING_IMAGES 1
 setenv TRANSPARENT_IMAGES 1
 setenv IS_TRANS -TRANS
-setenv PLOT_MAPS 1
+setenv PLOT_MAPS 0
 setenv FOREGROUND_COLOR red
 setenv BACKGROUND_COLOR black
 setenv MISSING_DATA_COLOR gray20
@@ -90,5 +90,5 @@ setenv MINY $MERCATOR_MINLAT
 setenv MAXY $MERCATOR_MAXLAT
 
 cd $PROJ_DIR/catalog/params
-CIDD -font fixed -p CIDD.catalog.dowc -v 2 -i ${RADAR_NAME}.web.transparent $time_string
+#CIDD -font fixed -p CIDD.catalog.dowc -i -v 2 ${RADAR_NAME}.web.transparent $time_string
 

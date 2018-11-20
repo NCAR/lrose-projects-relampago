@@ -146,11 +146,10 @@ DOW7-RHOHV RHOHV$(IS_TRANS) mdvp:://localhost:0:relampago/cfradial/quicklook/rot
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-Counties  Counties   us_counties.map    $(PLOT_MAPS)    0.0      10000.0     blue 
-States    States     usa.map            $(PLOT_MAPS)    0.0      10000.0     blue
-ihwys     ihwys  conus_interstates.map  $(PLOT_MAPS)    0.0      10000.0     red
-ushwys    ushwys     conus_ushwys.map   $(PLOT_MAPS)    0.0      10000.0     red
-
+Countries   Countries  world_states.map  $(PLOT_MAPS)  0.0 1000000.0  white
+States      States     ARG_adm1.map      $(PLOT_MAPS)  0.0 1000000.0  brown
+Counties    Counties   ARG_adm2.map      $(PLOT_MAPS)  0.0 1000000.0  pink
+Roads       Roads      ARG_roads.map     $(PLOT_MAPS)  0.0 1000000.0  gray25
 
 </MAPS>
 
