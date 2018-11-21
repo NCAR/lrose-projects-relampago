@@ -1,0 +1,12 @@
+#!/bin/csh
+
+# get posn of hail drone team, using wget
+# this is Josh Soderholm's group    
+
+mkdir -p $DATA_DIR/relampago/raw/hailDronePosn/incoming
+cd $DATA_DIR/relampago/raw/hailDronePosn/incoming
+
+wget \
+    https://www.dropbox.com/s/sgwpxm9gg3nopc2/hailteamcoords.csv |& \
+    LogFilter -d $ERRORS_LOG_DIR -p getHailDronePosn &
+

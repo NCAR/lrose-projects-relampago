@@ -19,3 +19,7 @@
 # backup the data to USB drive
 #
 */5 * * * * csh -c "run_rsync_to_usb_drive.relampago" 1> /dev/null 2> /dev/null
+######################################################################
+# ingest hail drone posn
+#
+*/5 * * * * csh -c "getHailDronePosn" 1> /dev/null 2> /dev/null
