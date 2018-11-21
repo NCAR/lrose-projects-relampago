@@ -20,7 +20,6 @@ sites = ['COR','MDZ','SIS','VMRS']
 ftpCatalogServer = 'catalog.eol.ucar.edu'
 ftpCatalogUser = 'anonymous'
 catalogDestDir = '/pub/incoming/catalog/relampago'
-homeDir = os.getenv("HOME")
 
 # get current date and time
 nowTime = time.gmtime()
@@ -134,16 +133,10 @@ for i in range(0,len(sites)):
                         if debug:
                             print sys.stderr, "  ftped file to ", tmpPath
                     
-                        execPath = os.path.join(homeDir,
-                                                "git/lrose-projects-relampago/projDir/uw/scripts/skewplot_relampago.py")
-
                         # Create sounding
                         if debug:
                             print >>sys.stderr, "  creating skewt plot"
-                            print >>sys.stderr, "  execPath: ", execPath
-                        cmd = 'python -W ignore ' + \
-                        execPath + \
-                        ' --filepath '+tmpDir+' --outpath . --format lst'
+                        cmd = 'python -W ignore /home/storm/brodzik/python/brody/skewplot_relampago.py --filepath '+tmpDir+' --outpath . --format lst'
                         if debug:
                             print >>sys.stderr, " cmd = ",cmd                        
                         os.system(cmd)
