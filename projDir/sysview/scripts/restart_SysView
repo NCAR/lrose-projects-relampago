@@ -1,4 +1,0 @@
-#! /bin/csh
-
-kill_SysView
-start_SysView
