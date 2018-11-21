@@ -1,0 +1,210 @@
+/**********************************************************************
+ * TDRP params for AsciiPosn2Spdb
+ **********************************************************************/
+
+//======================================================================
+//
+// AsciiPosn2Spdb reads ASCII files containing location information for 
+//   mobile assets, and and writes to SPDB as ac_posn data.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+//
+// If set, debug messages will be printed with the appropriate level of 
+//   detail.
+//
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+//
+// Used for registration with procmap.
+//
+//
+// Type: string
+//
+
+instance = "hail_drone";
+
+//======================================================================
+//
+// PROGRAM MODES OF OPERATION.
+//
+//======================================================================
+ 
+///////////// mode ////////////////////////////////////
+//
+// Operating mode.
+//
+// In REALTIME mode, the program waits for a new input file. In this 
+//   mode it is optional to watch for a latest_data_info file. In ARCHIVE 
+//   mode, it processes all of the data files in the input directory 
+//   between the start and end times set on the command line. In FILELIST 
+//   mode, it processes all of the files in the list specified on the 
+//   command line.
+//
+//
+// Type: enum
+// Options:
+//     ARCHIVE
+//     REALTIME
+//     FILELIST
+//
+
+mode = REALTIME;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_dir ///////////////////////////////
+//
+// Input directory.
+//
+// Directory where input data files can be found.
+//
+//
+// Type: string
+//
+
+input_dir = "$(DATA_DIR)/relampago/raw/hailDronePosn";
+
+///////////// latest_data_info_avail //////////////////
+//
+// Set to true if there is a latest_data_info file available in the 
+//   input directory.
+//
+// REALTIME mode only.
+//
+//
+// Type: boolean
+//
+
+latest_data_info_avail = TRUE;
+
+///////////// max_realtime_valid_age //////////////////
+//
+// Max valid age of rdata input files in realtime mode (secs).
+//
+// This the max valid age for an incoming file. The program will wait 
+//   for a data file more recent than this age.
+//
+// Minimum val: 1
+//
+// Type: int
+//
+
+max_realtime_valid_age = 3600;
+
+///////////// file_name_check /////////////////////////
+//
+// When set, check file name contains specified sub-string.
+//
+// See file_match_string.
+//
+//
+// Type: boolean
+//
+
+file_name_check = FALSE;
+
+///////////// file_match_string ///////////////////////
+//
+// Input filename match string.
+//
+// Files must contain this string to be processed.
+//
+//
+// Type: string
+//
+
+file_match_string = "csv";
+
+///////////// input_format ////////////////////////////
+//
+// Format of the file contents.
+//
+
+//
+// GPS_LOGGER_CSV: csv file from phone-based GPS logger posn. e.g:
+//
+// time,lat,lon,elevation,accuracy,bearing,speed,satellites,provider,hdop
+//   ,vdop,pdop,geoidheight,ageofdgpsdata,dgpsid,activity,battery,annotatio
+//   n
+//
+// 2018-11-21T17:00:07.153Z,-31.421027,-64.496740,682.7000122070312,21.72
+//   1,,,0,network,,,,,,,,66,
+//
+// 2018-11-21T17:00:51.519Z,-31.421029,-64.496742,682.5999755859375,21.99
+//   3,,,0,network,,,,,,,,66,.
+//
+//
+// Type: enum
+// Options:
+//     GPS_LOGGER_CSV
+//
+
+input_format = GPS_LOGGER_CSV;
+
+///////////// platform_id_string //////////////////////
+//
+// String for identifying the platform.
+//
+// This is equivalent to an aircraft call sign.
+//
+//
+// Type: string
+//
+
+platform_id_string = "GZ2";
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// output_spdb_url /////////////////////////
+//
+// Output URL for locations.
+//
+// Form: 'spdb::param//host:port:dir'.
+//
+//
+// Type: string
+//
+
+output_spdb_url = "spdbp:://localhost::relampago/spdb/hail_drone";
+
+///////////// expire_seconds //////////////////////////
+//
+// Expire time in seconds for each obs.
+//
+// This value will be added to the obs time to determine the expire time.
+//
+//
+// Type: int
+//
+
+expire_seconds = 3600;
+

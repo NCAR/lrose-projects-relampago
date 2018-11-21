@@ -73,3 +73,4 @@ Mdv2SoundingSpdb  relampago         start_inst(ingest) snuff_inst
 ######################################################################
 # hail drone posn
 InputWatcher      hail_drone        start_inst(ingest)    snuff_inst
+AsciiPosn2Spdb    hail_drone        start_inst(ingest)    snuff_inst
