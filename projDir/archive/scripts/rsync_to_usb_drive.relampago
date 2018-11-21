@@ -3,6 +3,7 @@
 
 cd $PROJ_DIR/data
 rsync -av relampago sci@ops3:/run/media/sci/RSF0001/rsf
+rsync -av relampago sci@ops3:/run/media/sci/HCR158/rsf
 
 
 

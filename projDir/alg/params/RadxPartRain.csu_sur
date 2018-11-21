@@ -1397,7 +1397,7 @@ sounding_search_time_margin_secs = 14400;
 // Type: string
 //
 
-sounding_location_name = "RMA1";
+sounding_location_name = "CSU";
 
 ///////////// sounding_check_pressure_range ///////////
 //
