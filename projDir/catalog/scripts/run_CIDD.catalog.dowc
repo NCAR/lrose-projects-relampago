@@ -90,5 +90,5 @@ setenv MINY $MERCATOR_MINLAT
 setenv MAXY $MERCATOR_MAXLAT
 
 cd $PROJ_DIR/catalog/params
-#CIDD -font fixed -p CIDD.catalog.dowc -i -v 2 ${RADAR_NAME}.web.transparent $time_string
+CIDD -font fixed -p CIDD.catalog.dowc -i -v 2 ${RADAR_NAME}.web.transparent $time_string
 
