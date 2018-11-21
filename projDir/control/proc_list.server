@@ -70,3 +70,6 @@ LtgSpdb2Mdv       relampago         start_inst(alg)    snuff_inst
 ######################################################################
 # model-based soundings for PID
 Mdv2SoundingSpdb  relampago         start_inst(ingest) snuff_inst
+######################################################################
+# hail drone posn
+InputWatcher      hail_drone        start_inst(ingest)    snuff_inst
