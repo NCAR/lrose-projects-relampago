@@ -218,6 +218,7 @@ if ($?prompt) then
   alias ops2 'ssh -XY sci@ops2'
   alias ops3 'ssh -XY sci@ops3'
   alias storm 'ssh -XY meso@storm'
+  alias relops 'ssh -XY relops@storm'
   alias updraft 'ssh -XY meso@updraft'
   alias smn 'ssh -XY relampago@smn'
   alias csu 'ssh -XY radaruser@csu'
