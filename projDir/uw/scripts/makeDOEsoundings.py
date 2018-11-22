@@ -18,7 +18,7 @@ def find_nth(string, substring, n):
         return string.find(substring, find_nth(string, substring, n - 1) + 1)
 
 # User inputs
-debug = 0
+debug = 1
 secsPerDay = 86400
 pastSecs = 108000
 doeServer = 'research-amfc1.amf.arm.gov'
@@ -32,6 +32,7 @@ gifDir = '/home/storm/relops/soundings/DOE/gifs'
 ftpCatalogServer = 'catalog.eol.ucar.edu'
 ftpCatalogUser = 'anonymous'
 catalogDestDir = '/pub/incoming/catalog/relampago'
+homeDir = os.getenv('HOME')
 
 # get current date and time
 nowTime = time.gmtime()
@@ -174,7 +175,7 @@ for i in range(0,len(sites)):
                         # Create sounding
                         if debug:
                             print >>sys.stderr, "  creating skewt plot"
-                        cmd = 'python -W ignore /home/storm/brodzik/python/brody/skewplot_relampago.py --file '+localFile+' --outpath '+localDayDir+' --format raw'
+                        cmd = 'python -W ignore '+homeDir+'/python/skewplot_relampago.py --file '+localFile+' --outpath '+localDayDir+' --format raw'
                         if debug:
                             print >>sys.stderr, " cmd = ",cmd                        
                         os.system(cmd)

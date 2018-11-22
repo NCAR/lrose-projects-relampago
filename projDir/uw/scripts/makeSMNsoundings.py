@@ -17,9 +17,13 @@ ftpUser = 'relampago18'
 ftpPasswd = 'gr@N!20'
 gifDir = '/home/storm/relops/soundings/SMN/gifs'
 sites = ['COR','MDZ','SIS','VMRS']
+#sites = ['VMRS']
 ftpCatalogServer = 'catalog.eol.ucar.edu'
 ftpCatalogUser = 'anonymous'
 catalogDestDir = '/pub/incoming/catalog/relampago'
+homeDir = os.getenv('HOME')
+pythonPath = os.getenv('PYTHONPATH')
+print >>sys.stderr, "  PYTHONPATH: ", pythonPath
 
 # get current date and time
 nowTime = time.gmtime()
@@ -119,6 +123,7 @@ for i in range(0,len(sites)):
                         print >>sys.stderr, "  startDateTimeStr:  ", startDateTimeStr
                 else:
                     if (localFileName not in localFileList):
+#                    if (True):
                         if debug:
                             print >>sys.stderr, localFileName," not in localFileList -- get file"
                         tmpPath = os.path.join(tmpDir, localFileName)
@@ -136,7 +141,7 @@ for i in range(0,len(sites)):
                         # Create sounding
                         if debug:
                             print >>sys.stderr, "  creating skewt plot"
-                        cmd = 'python -W ignore /home/storm/brodzik/python/brody/skewplot_relampago.py --filepath '+tmpDir+' --outpath . --format lst'
+                        cmd = 'python -W ignore '+homeDir+'/python/skewplot_relampago.py --filepath '+tmpDir+' --outpath . --format lst'
                         if debug:
                             print >>sys.stderr, " cmd = ",cmd                        
                         os.system(cmd)
