@@ -1,0 +1,116 @@
+#
+# This file is read each time a C-shell starts up, such as when
+# you log in.  It is read before .login
+#
+# You should not put any commands in here that generate output.
+#
+#
+# First, run the system .cshrc file.  This sets the search path,
+# and so on to what they should be.  If yu leave this line here,
+# then if something changes on the system, it will automatically
+# be included in your environment.  If you take this line out,
+# then you'll have to fend for yourself.  (In simple words, don't
+# take this line out.)
+##if (-r /home/disk/sys/local/linux/etc/system.cshrc) then
+##	source /home/disk/sys/local/linux/etc/system.cshrc
+##else if (-r /usr/local/etc/system.cshrc) \
+##	source /usr/local/etc/system.cshrc
+##endif
+
+# Set environment variables
+#setenv JAVA_HOME /usr/java/latest
+##setenv MANPATH $MANPATH\:/usr/local/ldm/man:/usr/local/ldm/local/man:/home/disk/blitz/man\:/usr/local/gmt/man
+#setenv LD_LIBRARY_PATH ~meso/lrose/lib:${LD_LIBRARY_PATH}
+setenv LD_LIBRARY_PATH /opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64:~meso/lrose/lib
+##setenv NETCDFHOME /usr/lib
+##setenv GEMPAKHOME /home/disk/ldm/NAWIPS-5.6.L/gempak
+##setenv GEMLIB /home/disk/ldm/NAWIPS-5.6.L/lib/linux
+##setenv IDL_DIR /usr/local/exelis/idl
+##setenv IDL_PATH '<IDL_DEFAULT>:+/home/disk/shear2/brodzik/IDL:+/home/disk/blitz/src/idl:/home/disk/radar/trmm/trmm-gv/IDL:/home/disk/blitz/src/rsl_in_idl:+/home/disk/bob/gpm_v03B/code'
+##if (-r /usr/lib/jvm/java-6-sun/jre) \
+##    setenv MATLAB_JAVA /usr/lib/jvm/java-6-sun/jre
+if ( ! $?MANPATH) setenv MANPATH /usr/share/man:/usr/man
+
+# Set default file permissions
+umask 2
+
+##if ($?USER == 0 || $?prompt == 0) exit
+
+# Set options
+#	fignore = Suffixes to ignore on file completion
+#	filec = enable filename completion
+#	history = how many past commands to remember
+#	ignoreeof = don't let CTRL-D log you off
+#	notify = report changes in status of background jobs
+#       noclobber = prevents you from overwriting existing files with the > operator
+#                   (override with >!)
+set fignore	=	(.o ~)
+set filec
+set history	=	100
+set ignoreeof
+set notify
+set noclobber
+
+# Make sure TERMCAP entry for xterm is correct
+if ($?TERM) then
+    set sys = `uname`
+    if($TERM == "xterm-r6" && $sys != Linux) then
+	setenv TERM xterm
+    endif
+    if($TERM == "xterm") then
+	if ($sys == Linux) then
+	    setenv TERM xterm-r6
+	endif
+	resize > /tmp/out.$$
+	source /tmp/out.$$
+	rm /tmp/out.$$
+    endif
+endif
+
+# My .cshrc commands
+
+# include EGCS compilers in path in front of /usr/local/bin's normal gcc & g++ -- ??
+#set path = (/usr/local/egcs/bin $path)
+ 
+# Support ncview (added 12/21/00) -- ??
+setenv XAPPLRESDIR $HOME/resources/
+
+# source the gempak file so that garp will run (it's on button3 of pulldowns -- ??
+#if (-r /usr/local/gempak/Gemenviron) \
+#	source /usr/local/gempak/Gemenviron
+
+# set OrbitViewer environment variable
+#alias orbit /home/disk/blitz/src/orbit/orbitUNIX.sh
+alias orbit /home/storm/brodzik/orbit/orbitUNIX.sh
+alias sc 'source ~/.cshrc'
+
+# This causes problems when blitz is causing trouble -- ??
+#setenv MS2GT_HOME /home/disk/blitz/src/ms2gt
+#source $MS2GT_HOME/ms2gt_env.csh
+
+# set stacksize to unlimited
+limit stacksize unlimited
+
+# set sound-related vars -- ??
+##if ( `hostname` == "stellar" ) setenv ALSA_CARD PCH
+
+# read guide5.csh for using IDL/idl_guide5 examples
+##source ~brodzik/IDL/idl_guide5/guide5.csh
+
+# Add PYTHONPATH
+setenv PYTHONPATH $HOME/python:/home/storm/brodzik/python/brody
+
+# load mesoscale groups customizations
+#source /home/storm/meso/.meso-inits
+source /home/storm/brodzik/.meso-inits
+
+alias gstat 'git status'
+alias gcom 'git commit -am \!*'
+alias gpush 'git push'
+alias gpull 'git pull'
+alias gdiff 'git diff '
+alias gdt 'git difftool -g -y -t tkdiff'
+alias h 'history'
+
+
+  
