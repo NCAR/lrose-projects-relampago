@@ -26,8 +26,9 @@ Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 #
 ######################################################################
 # ingesting the RMA1 radar
-InputWatcher      radar_RMA1    start_inst(ingest)    snuff_inst
-RadxBufr          RMA1          start_inst(ingest)    snuff_inst
+InputWatcher      radar_RMA1      start_inst(ingest)    snuff_inst
+RadxBufr          RMA1            start_inst(ingest)    snuff_inst
+RadxPartRain      RMA1.long_range start_inst(alg)       snuff_inst
 ######################################################################
 # ingesting the quicklooks from the DOW radars
 InputWatcher      radar_dow6    start_inst(ingest)    snuff_inst
