@@ -219,10 +219,10 @@ CSURAW_KDP    CSURAW_KDP    mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/
 CSURAW_SQI    CSURAW_SQI    mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&SQI     ncp.colors     -    -5 80 5 radial 1 0
 
 CSURAW_DBZT   CSURAW_DBZT   mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&DBZ_TOT dbz.colors     dBZ  -5 80 5 radial 1 0
-CSURAW_HCLASS CSURAW_HCLASS mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&HCLASS pid.colors     -    -5 80 5 radial 1 0
 CSU_PID       CSU_PID   mdvp::pid//181.30.169.202:0:relampago/cfradial/csu_pid/sur&PID    pid.colors     -    -5 80 5 radial 1 0
 CSU_TEMP      CSU_TEMP  mdvp:://181.30.169.202:0:relampago/cfradial/csu_pid/sur&TEMP_FOR_PID    temp.colors     C    -5 80 5 radial 1 0
-========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+CSU_PID       CSU_PID   mdvp::pid//181.30.169.202:0:relampago/cfradial/csu_pid/sur&PID    pid.colors     -    -5 80 5 radial 1 0
+CSU_KDP2      CSU_KDP2  mdvp:://181.30.169.202:0:relampago/cfradial/csu_pid/sur&KDP      kdp.colors     deg/km    -5 80 5 radial 1 0
 ========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
@@ -239,11 +239,12 @@ RMA1_DBZ_COMP RMA1_DBZ_COMP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/lo
 RMA1_DBZT     RMA1_DBZT     mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&DBZT   dbz.colors   dBZ   -5 80 5 radial 1 0
 RMA1_SNR      RMA1_SNR      mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/long_range&SNR    snr.colors   dB    -5 80 5 radial 1 0
 RMA1_PID      RMA1_PID      mdvp::pid//181.30.169.202:0:relampago/cfradial/RMA1_pid&PID           pid.colors    -    -5 80 5 radial 1 0
-RMA1_TEMP     RMA1_TEMP     mdvp:://181.30.169.202:0:relampago/cfradial/RMA1_pid&TEMP_FOR_PID  temp.colors   -    -5 80 5 radial 1 0
-RMA1_KDP2     RMA1_KDP2     mdvp:://181.30.169.202:0:relampago/cfradial/RMA1_pid&KDP           kdp.colors    -    -5 80 5 radial 1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
-========   ========    mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+#RMA1_TEMP     RMA1_TEMP     mdvp:://181.30.169.202:0:relampago/cfradial/RMA1_pid&TEMP_FOR_PID  temp.colors   -    -5 80 5 radial 1 0
+RMA1_KDP2     RMA1_KDP2     mdvp:://181.30.169.202:0:relampago/cfradial/RMA1_pid&KDP           kdp.colors    deg/km    -5 80 5 radial 1 0
+RMA1_RATE_ZH  RMA1_RATE_ZH    mdvp:://181.30.169.202:0:relampago/cfradial/RMA1_pid&RATE_ZH       precip.colors mm/hr   -5 80 5 cont  1 0
+RMA1_RATE_ZZDR RMA1_RATE_ZZDR mdvp:://181.30.169.202:0:relampago/cfradial/RMA1_pid&RATE_Z_ZDR    precip.colors mm/hr   -5 80 5 cont  1 0
+RMA1_RATE_KDP  RMA1_RATE_KDP  mdvp:://181.30.169.202:0:relampago/cfradial/RMA1_pid&RATE_KDP      precip.colors mm/hr   -5 80 5 cont  1 0
+RMA1_RATE_HYBRID  RMA1_RATE_HYBRID mdvp:://181.30.169.202:0:relampago/cfradial/RMA1_pid&RATE_HYBRID precip.colors mm/hr   -5 80 5 cont  1 0
 
 RMA1_DBZ_SR   RMA1_DBZ_SR   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
 RMA1_VEL_SR   RMA1_VEL_SR   mdvp:://181.30.169.202:0:relampago/cfradial/RMA1/short_range&VEL   vel.colors   m/s   -5 80 5 radial 1 0
