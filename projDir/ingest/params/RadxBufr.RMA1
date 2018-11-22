@@ -1247,6 +1247,18 @@ set_output_fields = TRUE;
 
 output_fields = {
   {
+    input_field_name = "TH",
+    output_field_name = "DBZT",
+    long_name = "unfiltered_reflectivity_horizontal_channel",
+    standard_name = "equivalent_reflectivity_factor",
+    output_units = "dBZ",
+    encoding = OUTPUT_ENCODING_INT16,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+  ,
+  {
     input_field_name = "DBZH",
     output_field_name = "DBZH",
     long_name = "reflectivity_horizontal_channel",
@@ -1299,6 +1311,18 @@ output_fields = {
     output_field_name = "ZDR",
     long_name = "differential_reflectivity",
     standard_name = "differential_reflectivity_hv",
+    output_units = "dB",
+    encoding = OUTPUT_ENCODING_ASIS,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+  ,
+  {
+    input_field_name = "TDR",
+    output_field_name = "SNR",
+    long_name = "signal_to_noise_ratio",
+    standard_name = "signal_to_noise_ratio",
     output_units = "dB",
     encoding = OUTPUT_ENCODING_ASIS,
     output_scaling = SCALING_DYNAMIC,
