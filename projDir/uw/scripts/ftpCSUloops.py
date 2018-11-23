@@ -25,7 +25,8 @@ ncarServer = '192.168.1.40'
 ncarUser = 'relamp'
 ncarPasswd = 'relamp18!!'
 ncarSourceDirBase = '/data/relamp/data.server/relampago/cfradial/CSU_CHIVO/radar_data/figures'
-targetDirBase = '/home/storm/relops/radar/CSU_CHIVO'
+homeDir = os.getenv('HOME')
+targetDirBase = os.path.join(homeDir, 'radar/CSU_CHIVO')
 tmpDir = '/tmp/CSU_CHIVO_RHI'
 tmpDirHold = tmpDir+'/hold'
 image = 'rhi_true_aspect'
@@ -120,7 +121,7 @@ for dateStr in dateStrList:
             ftpFileList.append(tmpFile)
     #remove last volume or partial volume from list - we'll get them next time
     ftpFileList.sort()
-    sweep = 99
+    sweepNum = 99
     while sweepNum != 0:
         ftpFileList.remove(ftpFileList[-1])
         tmpFile = ftpFileList[-1]

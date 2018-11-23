@@ -7,9 +7,10 @@ from ftplib import FTP
 ftpServer = 'ftp.eol.ucar.edu'
 ftpUser = 'relampago18'
 ftpPasswd = 'gr@N!20'
-tmpDir = '/home/storm/relops/soundings/SMN/tmp'
+homeDir = os.getenv('HOME')
+tmpDir = os.path.join(homeDir, 'soundings/SMN/tmp')
 sourceDir = 'sounding/SMN/COR'
-targetDir = '/home/storm/relops/soundings/SMN/COR'
+targetDir = os.path.join(homeDir, 'soundings/SMN/COR')
 
 fileToDownload = '181101_12_87344.lst'
 

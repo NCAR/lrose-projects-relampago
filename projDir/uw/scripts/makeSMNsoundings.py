@@ -11,17 +11,17 @@ from datetime import timedelta
 import subprocess
 
 debug = 1
-pastSecs = 108000
+pastSecs = 1080000
 ftpServer = 'ftp.eol.ucar.edu'
 ftpUser = 'relampago18'
 ftpPasswd = 'gr@N!20'
-gifDir = '/home/storm/relops/soundings/SMN/gifs'
+homeDir = os.getenv('HOME')
+gifDir = os.path.join(homeDir, 'soundings/SMN/gifs')
 sites = ['COR','MDZ','SIS','VMRS']
-#sites = ['VMRS']
+#sites = ['SIS']
 ftpCatalogServer = 'catalog.eol.ucar.edu'
 ftpCatalogUser = 'anonymous'
 catalogDestDir = '/pub/incoming/catalog/relampago'
-homeDir = os.getenv('HOME')
 pythonPath = os.getenv('PYTHONPATH')
 print >>sys.stderr, "  PYTHONPATH: ", pythonPath
 
@@ -53,7 +53,7 @@ for i in range(0,len(sites)):
     if debug:
         print >>sys.stderr, "Processing ",sites[i]," Data"
     sourceDir = '/sounding/SMN/'+sites[i]
-    targetDir = '/home/storm/relops/soundings/SMN/'+sites[i]
+    targetDir = os.path.join(homeDir, 'soundings/SMN/' + sites[i])
     tmpDir = '/tmp/soundings/'+sites[i]
     if not os.path.exists(tmpDir):
         os.makedirs(tmpDir)
@@ -123,7 +123,6 @@ for i in range(0,len(sites)):
                         print >>sys.stderr, "  startDateTimeStr:  ", startDateTimeStr
                 else:
                     if (localFileName not in localFileList):
-#                    if (True):
                         if debug:
                             print >>sys.stderr, localFileName," not in localFileList -- get file"
                         tmpPath = os.path.join(tmpDir, localFileName)
@@ -141,7 +140,11 @@ for i in range(0,len(sites)):
                         # Create sounding
                         if debug:
                             print >>sys.stderr, "  creating skewt plot"
-                        cmd = 'python -W ignore '+homeDir+'/python/skewplot_relampago.py --filepath '+tmpDir+' --outpath . --format lst'
+                        cmd = 'python -W ignore ' + \
+                              homeDir + \
+                              '/python/skewplot_relampago.py --filepath ' + \
+                              tmpDir + \
+                              ' --outpath . --format lst'
                         if debug:
                             print >>sys.stderr, " cmd = ",cmd                        
                         os.system(cmd)
@@ -153,7 +156,8 @@ for i in range(0,len(sites)):
                         if len(soundingFiles) != 0:
                             soundingFile = soundingFiles[0]
                         if debug:
-                            print >>sys.stderr, "  Done with skewt -- soundingFile = ", soundingFile
+                            print >>sys.stderr, \
+                                "  Done with skewt -- soundingFile = ", soundingFile
 
                         # Convert png to gif and remove old png file
                         (soundingPrefix,soundingExt) = os.path.splitext(soundingFile)
@@ -164,11 +168,8 @@ for i in range(0,len(sites)):
                         soundingFile = soundingPrefix+'.gif'
  
                         if debug:
-                            print >>sys.stderr, " Done converting to gif -- soundingFile = ", soundingFile
-
-                        # Move text file
-                        cmd = "mv " + tmpPath + " ."
-                        os.system(cmd)
+                            print >>sys.stderr, \
+                                " Done converting to gif -- soundingFile = ", soundingFile
 
                         # Ftp sounding to catalog
                         if debug:
@@ -190,12 +191,15 @@ for i in range(0,len(sites)):
                         os.system(cmd)
                         if debug:
                             print >>sys.stderr, "  done ftp'ing skewt plot to ", gifDir
+
+                        # Move text file
+                        cmd = "mv " + tmpPath + " ."
+                        os.system(cmd)
+
                     else:
                         if debug:
                             print >>sys.stderr, "  File ",ftpFileName," already in catalog"
-            #else:
-                #print >>sys.stderr, "  wrong date"
-                        
+
     # close ftp connection
     myFTP.quit()
     

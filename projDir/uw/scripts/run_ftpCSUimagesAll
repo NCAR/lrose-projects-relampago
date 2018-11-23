@@ -1,0 +1,7 @@
+#! /bin/csh
+#
+
+cd ~/python
+
+python ./ftpCSUimagesAll.py |& \
+    LogFilter -d $HOME/logs -p ftpCSUimagesAll -i relampago >& /dev/null &

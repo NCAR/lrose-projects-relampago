@@ -135,27 +135,20 @@ for fname in sounding_files:
 
     elif pargs.format == 'EDT' or pargs.format == 'raw':
 
-
-
         dash_ind = fbase.index('-')
 
         snd_id = fbase[dash_ind+4:dash_ind+6]
 
-
         si = variable_snd_info[snd_id]
-
-
 
         file_snd_id = fbase[:14]
         file_time_string = fbase[15:28]
         file_time = datetime.datetime.strptime(file_time_string, file_in_dt_fmt_edt)
         #out_fname = '{fsi}.{dt}.png'.format(fsi=file_snd_id, dt=file_time.strftime(file_out_dt_fmt))
         out_fname = 'upperair.DOE_{sn}_sonde.{dt}.skewT.png'.format(fsi=file_snd_id, sn=si['shortname'], dt=file_time.strftime(file_out_dt_fmt))
-        figtitle = '{sn} {ln} {dt} sounding ({lat:.3f}, {lon:.3f})'.format(sn=si['shortname'], ln=si['longname'], 
-                            dt=file_time.strftime(title_dt_fmt), lat=si['lat'], lon=si['lon'])
+        figtitle = '{sn} {ln} {dt} sounding ({lat:.3f}, {lon:.3f})'.format(sn=si['shortname'], ln=si['longname'], dt=file_time.strftime(title_dt_fmt), lat=si['lat'], lon=si['lon'])
 
-
-
+    print 'fname: ', fname
 
     S = SkewT.Sounding(fname, fmt=pargs.format, station_name=pargs.station, flip_barb=True)
 

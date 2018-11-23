@@ -1,0 +1,7 @@
+#! /bin/csh
+#
+
+cd ~/python
+
+python ./ftpCSapr2Images.py |& \
+    LogFilter -d $HOME/logs -p ftpCSapr2Images -i relampago >& /dev/null &

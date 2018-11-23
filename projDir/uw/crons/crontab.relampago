@@ -1,13 +1,11 @@
-*/5      *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/makeSMNsoundings.py > /dev/null 2>&1
-*/7      *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/makeSMNsoundings_fromBUFR.py > /dev/null 2>&1
-*/15     *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/makeDOEsoundings.py > /dev/null 2>&1
-*/15     *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpBrazilSoundings.py > /dev/null 2>&1
-15     *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpCSapr2Images_ppi.py > /dev/null 2>&1
-15     *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpCSapr2Images.py > /dev/null 2>&1
-15     *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpKaSacrImages.py > /dev/null 2>&1
-15     *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpXSacrImages.py > /dev/null 2>&1
-15     *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpKazrImages.py > /dev/null 2>&1
-#*/10   *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpCSUimages.py > /dev/null 2>&1
-#*/10   *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpCSUimages2.py > /dev/null 2>&1
-*/10   *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpCSUimagesAll.py > /dev/null 2>&1
-*/10   *       *       *       *       /usr/bin/python /home/storm/brodzik/python/relampago/python/ftpCSUloops.py > /dev/null 2>&1
+*/5  * * * * /home/storm/relops/python/run_makeSMNsoundings          > /dev/null 2>&1
+*/7  * * * * /home/storm/relops/python/run_makeSMNsoundings_fromBUFR > /dev/null 2>&1
+*/15 * * * * /home/storm/relops/python/run_makeDOEsoundings          > /dev/null 2>&1
+*/15 * * * * /home/storm/relops/python/run_ftpBrazilSoundings        > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpCSapr2Images_ppi       > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpCSapr2Images           > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpKaSacrImages           > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpXSacrImages            > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpKazrImages             > /dev/null 2>&1
+*/10 * * * * /home/storm/relops/python/run_ftpCSUimagesAll           > /dev/null 2>&1
+*/10 * * * * /home/storm/relops/python/run_ftpCSUloops               > /dev/null 2>&1

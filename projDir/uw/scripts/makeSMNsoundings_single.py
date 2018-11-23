@@ -27,7 +27,8 @@ elif siteNum == '87244':
 
 # User inputs
 debug = 1
-baseDir = '/home/storm/relops/soundings/SMN'
+homeDir = os.getenv('HOME')
+baseDir = os.path.join(homeDir, 'soundings/SMN')
 targetDir = baseDir+'/'+siteName
 gifDir = baseDir+'/gifs'
 ftpCatalogServer = 'catalog.eol.ucar.edu'

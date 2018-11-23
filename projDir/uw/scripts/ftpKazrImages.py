@@ -23,7 +23,8 @@ hour = date_1_hour_ago.strftime("%H")
 
 url = 'https://engineering.arm.gov/~radar/amf1_kazr_incoming_images/'+date+'/'
 ext = 'png'
-outDir = '/home/storm/relops/radar/kazr/'+date
+homeDir = os.getenv('HOME')
+outDir = os.path.join(homeDir, 'radar/kazr/' + date)
 category = 'radar'
 platform = 'DOE_KAZR'
 ftpCatalogServer = 'catalog.eol.ucar.edu'

@@ -18,14 +18,15 @@ def find_nth(string, substring, n):
         return string.find(substring, find_nth(string, substring, n - 1) + 1)
 
 # User inputs
-debug = 0
+debug = 1
 secsPerDay = 86400
 pastSecs = 108000
 ncarServer = '192.168.1.40'
 ncarUser = 'relamp'
 ncarPasswd = 'relamp18!!'
 ncarSourceDirBase = '/data/relamp/data.server/relampago/cfradial/CSU_CHIVO/radar_data/figures'
-targetDirBase = '/home/storm/relops/radar/CSU_CHIVO'
+homeDir = os.getenv('HOME')
+targetDirBase = os.path.join(homeDir, 'radar/CSU_CHIVO')
 tmpDir = '/tmp/CSU_CHIVO'
 imageTypes = ['cappi',
               'rain',
