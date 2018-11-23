@@ -20,6 +20,10 @@
 #
 */5 * * * * csh -c "run_rsync_to_usb_drive.relampago" 1> /dev/null 2> /dev/null
 ######################################################################
+# retrieve the RMA1 data via ftp
+#
+*/5 * * * * csh -c "run_GetRMARadarsByFtp" 1> /dev/null 2> /dev/null
+######################################################################
 # ingest hail drone posn
 #
 */5 * * * * csh -c "getHailDronePosn" 1> /dev/null 2> /dev/null

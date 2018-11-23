@@ -24,6 +24,8 @@ def main():
     global ftpDebugLevel
     global tmpDir
     global startTime, endTime
+    global count
+    count = 0
 
     global thisScriptName
     thisScriptName = os.path.basename(__file__)
@@ -80,100 +82,22 @@ def main():
 
     # set up list of days to be checked
 
-    nSecs = endTime - startTime
+    timeInterval = endTime - startTime
     if (options.debug):
-        print >>sys.stderr, "  nSecs: ", nSecs
+        print >>sys.stderr, "  startTime: ", startTime
+        print >>sys.stderr, "  endTime: ", endTime
+        print >>sys.stderr, "  timeInterval: ", timeInterval
+        print >>sys.stderr, "  nDays: ", timeInterval.days
 
-    sys.exit(0)
+    # loop through the hours
 
-    nDays = (pastSecs / 86400) + 1
-    dateStrList = []
-    for iDay in range(0, nDays):
-        deltaSecs = timedelta(0, iDay * 86400)
-        dayTime = now - deltaSecs
-        dateStr = dayTime.strftime("%Y%m%d")
-        dateStrList.append(dateStr)
-
-    # debug print
-
-    if (options.debug):
-        print >>sys.stderr, "  time now: ", nowDateTimeStr
-        print >>sys.stderr, "  getting data after: ", startDateTimeStr
-        print >>sys.stderr, "  nDays: ", nDays
-        print >>sys.stderr, "  dateStrList: ", dateStrList
-
-    if (options.skipFtp):
-        print "skipping FTP of", options.sourceDir, " to", options.targetDir
-        sys.exit(0)
-
-    # open ftp connection
-    
-    ftp = ftplib.FTP(options.ftpServer, options.ftpUser, options.ftpPasswd)
-    ftp.set_debuglevel(ftpDebugLevel)
-
-    # got to radar directory on the ftp site
-
-    ftp.cwd(options.sourceDir)
-    ftpDateList = ftp.nlst()
-
-    # loop through days
-
-    count = 0
-    for dateStr in dateStrList:
-
-        if (dateStr not in ftpDateList):
-            if (options.verbose):
-                print >>sys.stderr, "WARNING: ignoring date, does not exist on ftp site"
-                print >>sys.stderr, "  dateStr: ", dateStr
-            continue
-
-        # make the target directory
-
-        localDayDir = os.path.join(options.targetDir, dateStr)
-        try:
-            os.makedirs(localDayDir)
-        except OSError as exc:
-            if (options.verbose):
-                print >>sys.stderr, "WARNING: trying to create dir: ", localDayDir
-                print >>sys.stderr, "  ", exc
-        os.chdir(localDayDir)
-
-        # get local file list - i.e. those which have already been downloaded
-
-        localFileList = os.listdir('.')
-        localFileList.reverse()
-        if (options.verbose):
-            print >>sys.stderr, "  localFileList: ", localFileList
-            
-        # get ftp server file list, for day dir
+    thisTime = startTime
+    while (thisTime <= endTime):
+        if (options.debug):
+            print >>sys.stderr, "  thisTime: ", thisTime
+        thisTime = thisTime + timedelta(0, 3600, 0)
+        getDataForHour(thisTime)
         
-        ftpDayDir = os.path.join(options.sourceDir, dateStr)
-        ftp.cwd(ftpDayDir)
-        ftpFileList = ftp.nlst()
-        ftpFileList.reverse()
-        if (options.verbose):
-            print >>sys.stderr, "  ftpFileList: ", ftpFileList
-
-        # loop through the ftp file list, downloading those that have
-        # not yet been downloaded
-
-        for ftpFileName in ftpFileList:
-            fileTimeStr = ftpFileName[0:6]
-            fileDateTimeStr = dateStr + fileTimeStr
-            localFileName = dateStr + '_' + ftpFileName
-            if (int(fileDateTimeStr) < int(startDateTimeStr)):
-                if (options.verbose):
-                    print >>sys.stderr, "  file time too old: ", fileDateTimeStr
-                    print >>sys.stderr, "  startDateTimeStr:  ", startDateTimeStr
-            else:
-                if (localFileName not in localFileList):
-                    downloadFile(ftp, dateStr, ftpFileName)
-                    count = count + 1
-                    
-    # close ftp connection
-    
-    ftp.quit()
-
     if (count == 0):
         print "---->> No files to download"
         
@@ -184,17 +108,100 @@ def main():
     sys.exit(0)
 
 ########################################################################
+# Get the data for a specified hour
+
+def getDataForHour(dataTime):
+
+    global count
+
+    if (options.debug):
+        print >>sys.stderr, "====>> getting data for time: ", dataTime
+        print >>sys.stderr, "  year: ", dataTime.year
+        print >>sys.stderr, "  month: ", dataTime.month
+        print >>sys.stderr, "  day: ", dataTime.day
+        print >>sys.stderr, "  hour: ", dataTime.hour
+
+    # make the target directory and go there
+    
+    dateStr = dataTime.strftime("%Y%m%d")
+    timeStr = dataTime.strftime("%Y%m%d%H%M%S")
+    localDayDir = os.path.join(options.targetDir, dateStr)
+    try:
+        os.makedirs(localDayDir)
+    except OSError as exc:
+        if (options.verbose):
+            print >>sys.stderr, "WARNING: trying to create dir: ", localDayDir
+            print >>sys.stderr, "  ", exc
+    os.chdir(localDayDir)
+
+    # get local file list - i.e. those which have already been downloaded
+    
+    localFileList = os.listdir('.')
+    localFileList.reverse()
+    if (options.verbose):
+        print >>sys.stderr, "  localFileList: ", localFileList
+            
+    # open ftp connection
+    
+    ftp = ftplib.FTP(options.ftpServer, options.ftpUser, options.ftpPasswd)
+    ftp.set_debuglevel(ftpDebugLevel)
+
+    # got to source directory on the ftp site
+
+    hourStr = dataTime.strftime("%Y/%m/%d/%H")
+    hourDir = options.sourceDir + "/" + hourStr
+
+    if (options.debug):
+        print >>sys.stderr, "====>> cd to hourDir: ", hourDir
+
+    ftp.cwd(hourDir)
+
+    # get list of volume times in this hour
+
+    hourDirList = ftp.nlst()
+    if (options.debug):
+        print >>sys.stderr, "====>> times in this hour: ", dataTime
+    
+    # loop through the vol times
+
+    for volTimeStr in hourDirList:
+        
+        # go there
+
+        volDir = hourDir + "/" + volTimeStr
+
+        if (options.debug):
+            print >>sys.stderr, "  volTimeStr: ", volTimeStr
+            print >>sys.stderr, "  volDir: ", volDir
+
+        ftp.cwd(volDir)
+
+        # get list of files
+
+        fileList = ftp.nlst()
+
+        # loop through file list, getting the files
+
+        for fileName in fileList:
+            if (fileName not in localFileList):
+                downloadFile(ftp, dateStr, timeStr, fileName)
+                count = count + 1
+
+    # close ftp connection
+    
+    ftp.quit()
+
+########################################################################
 # Download a file into the current directory
 
-def downloadFile(ftp, dateStr, fileName):
+def downloadFile(ftp, dateStr, timeStr, fileName):
     
     if (options.debug):
         print >>sys.stderr, "  downloading file: ", fileName
         
     # get file, store in tmp
 
-    localFileName = dateStr + '_' + fileName
-    tmpPath = os.path.join(options.tmpDir, localFileName)
+    tmpPath = os.path.join(options.tmpDir, fileName)
 
     if (options.verbose):
         print >>sys.stderr, "retrieving file, storing as tmpPath: ", tmpPath
@@ -207,15 +214,12 @@ def downloadFile(ftp, dateStr, fileName):
 
     # write latest_data_info
     
-    fileTimeStr = fileName[0:6]
-    fileDateTimeStr = dateStr + fileTimeStr
-    
-    relPath = os.path.join(dateStr, localFileName)
+    relPath = os.path.join(dateStr, fileName)
     cmd = "LdataWriter -dir " + options.targetDir \
           + " -rpath " + relPath \
-          + " -ltime " + fileDateTimeStr \
+          + " -ltime " + timeStr \
           + " -writer " + thisScriptName \
-          + " -dtype mdv"
+          + " -dtype bufr"
     runCommand(cmd)
 
 ########################################################################
@@ -297,8 +301,6 @@ def parseArgs():
         print >>sys.stderr, "  sourceDir: ", options.sourceDir
         print >>sys.stderr, "  targetDir: ", options.targetDir
         print >>sys.stderr, "  tmpDir: ", options.tmpDir
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime: ", endTime
 
 ########################################################################
 # Run a command in a shell, wait for it to complete
