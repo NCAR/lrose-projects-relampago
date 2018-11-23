@@ -1,11 +1,11 @@
-*/5  * * * * /usr/bin/python /home/storm/relops/python/makeSMNsoundings.py          > /dev/null 2>&1
-*/7  * * * * /usr/bin/python /home/storm/relops/python/makeSMNsoundings_fromBUFR.py > /dev/null 2>&1
-*/15 * * * * /usr/bin/python /home/storm/relops/python/makeDOEsoundings.py          > /dev/null 2>&1
-*/15 * * * * /usr/bin/python /home/storm/relops/python/ftpBrazilSoundings.py        > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/ftpCSapr2Images_ppi.py       > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/ftpCSapr2Images.py           > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/ftpKaSacrImages.py           > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/ftpXSacrImages.py            > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/ftpKazrImages.py             > /dev/null 2>&1
-*/10 * * * * /usr/bin/python /home/storm/relops/python/ftpCSUimagesAll.py           > /dev/null 2>&1
-*/10 * * * * /usr/bin/python /home/storm/relops/python/ftpCSUloops.py               > /dev/null 2>&1
+*/5  * * * * /usr/bin/python /home/storm/relops/python/run_makeSMNsoundings.py          > /dev/null 2>&1
+*/7  * * * * /usr/bin/python /home/storm/relops/python/run_makeSMNsoundings_fromBUFR.py > /dev/null 2>&1
+*/15 * * * * /usr/bin/python /home/storm/relops/python/run_makeDOEsoundings.py          > /dev/null 2>&1
+*/15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpBrazilSoundings.py        > /dev/null 2>&1
+  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpCSapr2Images_ppi.py       > /dev/null 2>&1
+  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpCSapr2Images.py           > /dev/null 2>&1
+  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpKaSacrImages.py           > /dev/null 2>&1
+  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpXSacrImages.py            > /dev/null 2>&1
+  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpKazrImages.py             > /dev/null 2>&1
+*/10 * * * * /usr/bin/python /home/storm/relops/python/run_ftpCSUimagesAll.py           > /dev/null 2>&1
+*/10 * * * * /usr/bin/python /home/storm/relops/python/run_ftpCSUloops.py               > /dev/null 2>&1
