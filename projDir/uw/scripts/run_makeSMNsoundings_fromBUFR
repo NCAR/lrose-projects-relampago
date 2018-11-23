@@ -1,0 +1,7 @@
+#! /bin/csh
+#
+
+cd ~/python
+
+python ./makeSMNsoundings_fromBUFR.py |& \
+    LogFilter -d $HOME/logs -p makeSMNsoundings_fromBUFR -i relampago >& /dev/null &

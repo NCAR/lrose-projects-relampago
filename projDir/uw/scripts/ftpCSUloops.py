@@ -120,7 +120,7 @@ for dateStr in dateStrList:
             ftpFileList.append(tmpFile)
     #remove last volume or partial volume from list - we'll get them next time
     ftpFileList.sort()
-    sweep = 99
+    sweepNum = 99
     while sweepNum != 0:
         ftpFileList.remove(ftpFileList[-1])
         tmpFile = ftpFileList[-1]

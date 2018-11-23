@@ -10,7 +10,7 @@ import datetime
 from datetime import timedelta
 import subprocess
 
-debug = 0
+debug = 1
 ftpServer = '181.30.169.202'
 ftpUser = 'relopsftp'
 ftpPasswd = 'rayos2018'

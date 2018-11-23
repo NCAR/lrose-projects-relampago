@@ -1,0 +1,7 @@
+#! /bin/csh
+#
+
+cd ~/python
+
+python ./makeDOEsoundings.py |& \
+    LogFilter -d $HOME/logs -p makeDOEsoundings -i relampago >& /dev/null &

@@ -18,7 +18,7 @@ def find_nth(string, substring, n):
         return string.find(substring, find_nth(string, substring, n - 1) + 1)
 
 # User inputs
-debug = 0
+debug = 1
 secsPerDay = 86400
 pastSecs = 108000
 ncarServer = '192.168.1.40'

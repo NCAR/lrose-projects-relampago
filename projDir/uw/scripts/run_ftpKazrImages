@@ -1,0 +1,7 @@
+#! /bin/csh
+#
+
+cd ~/python
+
+python ./ftpKazrImages.py |& \
+    LogFilter -d $HOME/logs -p ftpKazrImages -i relampago >& /dev/null &

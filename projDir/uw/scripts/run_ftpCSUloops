@@ -1,0 +1,7 @@
+#! /bin/csh
+#
+
+cd ~/python
+
+python ./ftpCSUloops.py |& \
+    LogFilter -d $HOME/logs -p ftpCSUloops -i relampago >& /dev/null &
