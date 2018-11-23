@@ -208,8 +208,9 @@ import glob
 
 # bufr_file = 'radiosondeos_00155437'
 
-path_in = '/home/storm/relops/soundings/SMN_bufr/'
-path_out = '/home/storm/relops/soundings/SMN_bufr/'
+homeDir = os.getenv('HOME')
+path_in = os.path.join(homeDir, 'soundings/SMN_bufr/')
+path_out = os.path.join(homeDir, 'soundings/SMN_bufr/')
 
 bufr_list = glob.iglob(f'{path_in}radiosondeos_*')
 

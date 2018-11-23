@@ -25,14 +25,14 @@ doeServer = 'research-amfc1.amf.arm.gov'
 doeUser = 'avarble'
 doePasswd = 'science1992arm'
 doeSourceDirBase = '/data/collection/cor'
-targetDirBase = '/home/storm/relops/soundings/DOE'
+homeDir = os.getenv('HOME')
+targetDirBase = os.path.join(homeDir, 'soundings/DOE')
 sites = ['corsondeM1.00','corsondeS1.00']
 suffix = ['curM1','curS1']
-gifDir = '/home/storm/relops/soundings/DOE/gifs'
+gifDir = os.path.join(homeDir, 'soundings/DOE/gifs')
 ftpCatalogServer = 'catalog.eol.ucar.edu'
 ftpCatalogUser = 'anonymous'
 catalogDestDir = '/pub/incoming/catalog/relampago'
-homeDir = os.getenv('HOME')
 
 # get current date and time
 nowTime = time.gmtime()

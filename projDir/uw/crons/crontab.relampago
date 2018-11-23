@@ -1,11 +1,11 @@
-*/5  * * * * /usr/bin/python /home/storm/relops/python/run_makeSMNsoundings.py          > /dev/null 2>&1
-*/7  * * * * /usr/bin/python /home/storm/relops/python/run_makeSMNsoundings_fromBUFR.py > /dev/null 2>&1
-*/15 * * * * /usr/bin/python /home/storm/relops/python/run_makeDOEsoundings.py          > /dev/null 2>&1
-*/15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpBrazilSoundings.py        > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpCSapr2Images_ppi.py       > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpCSapr2Images.py           > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpKaSacrImages.py           > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpXSacrImages.py            > /dev/null 2>&1
-  15 * * * * /usr/bin/python /home/storm/relops/python/run_ftpKazrImages.py             > /dev/null 2>&1
-*/10 * * * * /usr/bin/python /home/storm/relops/python/run_ftpCSUimagesAll.py           > /dev/null 2>&1
-*/10 * * * * /usr/bin/python /home/storm/relops/python/run_ftpCSUloops.py               > /dev/null 2>&1
+*/5  * * * * /home/storm/relops/python/run_makeSMNsoundings          > /dev/null 2>&1
+*/7  * * * * /home/storm/relops/python/run_makeSMNsoundings_fromBUFR > /dev/null 2>&1
+*/15 * * * * /home/storm/relops/python/run_makeDOEsoundings          > /dev/null 2>&1
+*/15 * * * * /home/storm/relops/python/run_ftpBrazilSoundings        > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpCSapr2Images_ppi       > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpCSapr2Images           > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpKaSacrImages           > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpXSacrImages            > /dev/null 2>&1
+  15 * * * * /home/storm/relops/python/run_ftpKazrImages             > /dev/null 2>&1
+*/10 * * * * /home/storm/relops/python/run_ftpCSUimagesAll           > /dev/null 2>&1
+*/10 * * * * /home/storm/relops/python/run_ftpCSUloops               > /dev/null 2>&1

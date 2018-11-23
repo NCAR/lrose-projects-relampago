@@ -15,13 +15,13 @@ pastSecs = 1080000
 ftpServer = 'ftp.eol.ucar.edu'
 ftpUser = 'relampago18'
 ftpPasswd = 'gr@N!20'
-gifDir = '/home/storm/relops/soundings/SMN/gifs'
+homeDir = os.getenv('HOME')
+gifDir = os.path.join(homeDir, 'soundings/SMN/gifs')
 sites = ['COR','MDZ','SIS','VMRS']
 #sites = ['SIS']
 ftpCatalogServer = 'catalog.eol.ucar.edu'
 ftpCatalogUser = 'anonymous'
 catalogDestDir = '/pub/incoming/catalog/relampago'
-homeDir = os.getenv('HOME')
 pythonPath = os.getenv('PYTHONPATH')
 print >>sys.stderr, "  PYTHONPATH: ", pythonPath
 
@@ -53,7 +53,7 @@ for i in range(0,len(sites)):
     if debug:
         print >>sys.stderr, "Processing ",sites[i]," Data"
     sourceDir = '/sounding/SMN/'+sites[i]
-    targetDir = '/home/storm/relops/soundings/SMN/'+sites[i]
+    targetDir = os.path.join(homeDir, 'soundings/SMN/' + sites[i])
     tmpDir = '/tmp/soundings/'+sites[i]
     if not os.path.exists(tmpDir):
         os.makedirs(tmpDir)
