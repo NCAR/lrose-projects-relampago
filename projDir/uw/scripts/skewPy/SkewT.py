@@ -16,6 +16,7 @@ from copy import deepcopy
 from scipy import interpolate
 import json
 import pandas as pd
+import math
 
 from thermodynamics import VirtualTemp,Latentc,SatVap,MixRatio,GammaW,\
 	VirtualTempFromMixR,MixR2VaporPress,DewPoint,Theta,TempK,VaporPressure
@@ -815,6 +816,8 @@ class Sounding(UserDict):
         vdiff = wspd6km*np.sin(np.radians(270-wdir6km)) - self.data['sknt'][3]*np.sin(np.radians(270-self.data['drct'][3]))
         # print udiff, vdiff
         shear6km = np.sqrt(udiff**2 + vdiff**2)
+        if (math.isnan(shear6km)):
+            shear6km = 0
 
         # 850mb-200mb Shear
         wspd850mb = self.data['sknt'][np.argmin(abs(self.data['pres']-850))]
@@ -826,6 +829,8 @@ class Sounding(UserDict):
         vdiff = wspd200mb*np.sin(np.radians(270-wdir200mb)) - wspd850mb*np.sin(np.radians(270-wdir850mb))
         # print udiff, vdiff
         shear850200mb = np.sqrt(udiff**2 + vdiff**2)
+        if (math.isnan(shear850200mb)):
+            shear850200mb = 0
 
         # SFC-700mb Shear
         wspd700mb = self.data['sknt'][np.argmin(abs(self.data['pres']-700))]
@@ -835,7 +840,8 @@ class Sounding(UserDict):
         vdiff = wspd700mb*np.sin(np.radians(270-wdir700mb)) - self.data['sknt'][3]*np.sin(np.radians(270-self.data['drct'][3]))
         # print udiff, vdiff
         shear700mb = np.sqrt(udiff**2 + vdiff**2)
-
+        if (math.isnan(shear700mb)):
+            shear700mb = 0
 
 
         self.fig.text(0.84, 0.88, '0%s: %d m'%(degC, h0))
