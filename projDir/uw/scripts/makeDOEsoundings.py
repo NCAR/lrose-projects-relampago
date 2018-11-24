@@ -159,6 +159,7 @@ for i in range(0,len(sites)):
                         print >>sys.stderr, "    localFileName:    ", localFileName
                         print >>sys.stderr, "    localFileList:    ", localFileList
                     if (localFileName not in localFileList):
+#                    if (True):
                         if debug:
                             print >>sys.stderr, localFileName," not in localFileList -- get file"
                         doeSourceFile = doeSourceDir+'/'+ftpFileName
@@ -193,17 +194,20 @@ for i in range(0,len(sites)):
                         # Ftp sounding to catalog
                         if debug:
                             print >>sys.stderr, "  ftp'ing skewt plot to catalog"
-                        catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
-                        catalogFTP.cwd(catalogDestDir)
-                        soundingPath = os.path.join(localDayDir,soundingFile)
-                        if debug:
-                            print >>sys.stderr, "  soundingPath = ", soundingPath
-                        file = open(soundingPath,'rb')
-                        catalogFTP.storbinary('STOR '+soundingFile,file)
-                        file.close()
-                        catalogFTP.quit()
-                        if debug:
-                            print >>sys.stderr, "  done ftp'ing skewt plot to catalog"
+                        try:
+                            catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
+                            catalogFTP.cwd(catalogDestDir)
+                            soundingPath = os.path.join(localDayDir,soundingFile)
+                            if debug:
+                                print >>sys.stderr, "  soundingPath = ", soundingPath
+                            file = open(soundingPath,'rb')
+                            catalogFTP.storbinary('STOR '+soundingFile,file)
+                            file.close()
+                            catalogFTP.quit()
+                            if debug:
+                                print >>sys.stderr, "  done ftp'ing skewt plot to catalog"
+                        except exception, e:
+                            print >>sys.stderr, "FTP failed, exception: ", e
                     
                         # Move skewt file
                         cmd = "mv " + soundingFile + ' ' + gifDir

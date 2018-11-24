@@ -59,14 +59,17 @@ for i in range(0,len(sites)):
         os.makedirs(tmpDir)
 
     # log into NCAR ftp server and look for new soundings
-    myFTP = FTP(ftpServer)
-    myFTP.set_debuglevel = 2   # verbose
-    myFTP.login(ftpUser,ftpPasswd)
-    myFTP.cwd(sourceDir)
-    ftpFileList = myFTP.nlst()
-    ftpDateList = []
-    for j in range(0,len(ftpFileList)):
-        ftpDateList.append('20'+ftpFileList[j][0:6])
+    try:
+        myFTP = FTP(ftpServer)
+        myFTP.set_debuglevel = 2   # verbose
+        myFTP.login(ftpUser,ftpPasswd)
+        myFTP.cwd(sourceDir)
+        ftpFileList = myFTP.nlst()
+        ftpDateList = []
+        for j in range(0,len(ftpFileList)):
+            ftpDateList.append('20'+ftpFileList[j][0:6])
+    except exception, e:
+        print >>sys.stderr, "FTP failed, exception: ", e
 
     # loop through days
     count = 0
@@ -123,6 +126,7 @@ for i in range(0,len(sites)):
                         print >>sys.stderr, "  startDateTimeStr:  ", startDateTimeStr
                 else:
                     if (localFileName not in localFileList):
+#                    if (True):
                         if debug:
                             print >>sys.stderr, localFileName," not in localFileList -- get file"
                         tmpPath = os.path.join(tmpDir, localFileName)
@@ -174,17 +178,20 @@ for i in range(0,len(sites)):
                         # Ftp sounding to catalog
                         if debug:
                             print >>sys.stderr, "  ftp'ing skewt plot to catalog"
-                        catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
-                        catalogFTP.cwd(catalogDestDir)
-                        soundingPath = os.path.join(localDayDir,soundingFile)
-                        if debug:
-                            print >>sys.stderr, "  soundingPath = ", soundingPath
-                        file = open(soundingPath,'rb')
-                        catalogFTP.storbinary('STOR '+soundingFile,file)
-                        file.close()
-                        catalogFTP.quit()
-                        if debug:
-                            print >>sys.stderr, "  done ftp'ing skewt plot to catalog"
+                        try:
+                            catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
+                            catalogFTP.cwd(catalogDestDir)
+                            soundingPath = os.path.join(localDayDir,soundingFile)
+                            if debug:
+                                print >>sys.stderr, "  soundingPath = ", soundingPath
+                            file = open(soundingPath,'rb')
+                            catalogFTP.storbinary('STOR '+soundingFile,file)
+                            file.close()
+                            catalogFTP.quit()
+                            if debug:
+                                print >>sys.stderr, "  done ftp'ing skewt plot to catalog"
+                        except exception, e:
+                            print >>sys.stderr, "FTP failed, exception: ", e
                     
                         # Move skewt file
                         cmd = "mv " + soundingFile + ' ' + gifDir
