@@ -96,7 +96,10 @@ def main():
         if (options.debug):
             print >>sys.stderr, "  thisTime: ", thisTime
         thisTime = thisTime + timedelta(0, 3600, 0)
-        getDataForHour(thisTime)
+        try:
+            getDataForHour(thisTime)
+        except:
+            print >>sys.stderr, "FTP failed"
         
     if (count == 0):
         print "---->> No files to download"
