@@ -11,7 +11,7 @@ from datetime import timedelta
 import subprocess
 
 debug = 1
-pastSecs = 1080000
+pastSecs = 86400 * 3
 ftpServer = 'ftp.eol.ucar.edu'
 ftpUser = 'relampago18'
 ftpPasswd = 'gr@N!20'
@@ -59,18 +59,21 @@ for i in range(0,len(sites)):
         os.makedirs(tmpDir)
 
     # log into NCAR ftp server and look for new soundings
+    ftpFileList = []
     try:
-        myFTP = FTP(ftpServer)
-        myFTP.set_debuglevel = 2   # verbose
-        myFTP.login(ftpUser,ftpPasswd)
-        myFTP.cwd(sourceDir)
-        ftpFileList = myFTP.nlst()
-        ftpDateList = []
-        for j in range(0,len(ftpFileList)):
-            ftpDateList.append('20'+ftpFileList[j][0:6])
-    except exception, e:
+        inFTP = FTP(ftpServer)
+        inFTP.set_debuglevel = 2   # verbose
+        inFTP.login(ftpUser,ftpPasswd)
+        inFTP.cwd(sourceDir)
+        ftpFileList = inFTP.nlst()
+    except Exception as e:
         print >>sys.stderr, "FTP failed, exception: ", e
+        continue
 
+    ftpDateList = []
+    for j in range(0,len(ftpFileList)):
+        ftpDateList.append('20'+ftpFileList[j][0:6])
+    
     # loop through days
     count = 0
     for dateStr in dateStrList:
@@ -99,8 +102,8 @@ for i in range(0,len(sites)):
 
         # get ftp server file list, for day dir
         #ftpDayDir = os.path.join(sourceDir, dateStr)
-        #myFTP.cwd(sourceDir)
-        #ftpFileList = myFTP.nlst()
+        #inFTP.cwd(sourceDir)
+        #ftpFileList = inFTP.nlst()
         ftpDateList.reverse()
         ftpFileList.reverse()
         if debug:
@@ -136,7 +139,13 @@ for i in range(0,len(sites)):
                         file = open(tmpPath, 'w')
                         if debug:
                             print >>sys.stderr, " Done opening file"
-                        myFTP.retrbinary('RETR '+ ftpFileName, file.write)
+
+                        try:
+                            inFTP.retrbinary('RETR '+ ftpFileName, file.write)
+                        except Exception as e:
+                            print >>sys.stderr, "FTP RETR failed, exception: ", e
+                            continue
+
                         file.close()
                         if debug:
                             print sys.stderr, "  ftped file to ", tmpPath
@@ -153,10 +162,10 @@ for i in range(0,len(sites)):
                             print >>sys.stderr, " cmd = ",cmd                        
                         os.system(cmd)
                         #localFileList = os.listdir('.')
-                        #soundingFile = localFileList[0]
                         included_extensions = ['jpg', 'bmp', 'png', 'gif']
                         soundingFiles = [fn for fn in os.listdir('.')
                                          if any(fn.endswith('png') for ext in included_extensions)]
+                        soundingFile = "not_yet_set"
                         if len(soundingFiles) != 0:
                             soundingFile = soundingFiles[0]
                         if debug:
@@ -178,7 +187,9 @@ for i in range(0,len(sites)):
                         # Ftp sounding to catalog
                         if debug:
                             print >>sys.stderr, "  ftp'ing skewt plot to catalog"
+
                         try:
+
                             catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
                             catalogFTP.cwd(catalogDestDir)
                             soundingPath = os.path.join(localDayDir,soundingFile)
@@ -190,47 +201,26 @@ for i in range(0,len(sites)):
                             catalogFTP.quit()
                             if debug:
                                 print >>sys.stderr, "  done ftp'ing skewt plot to catalog"
-                        except exception, e:
-                            print >>sys.stderr, "FTP failed, exception: ", e
                     
-                        # Move skewt file
-                        cmd = "mv " + soundingFile + ' ' + gifDir
-                        os.system(cmd)
-                        if debug:
-                            print >>sys.stderr, "  done ftp'ing skewt plot to ", gifDir
+                            # Move skewt file
+                            cmd = "mv " + soundingFile + ' ' + gifDir
+                            os.system(cmd)
+                            if debug:
+                                print >>sys.stderr, "  done ftp'ing skewt plot to ", gifDir
 
-                        # Move text file
-                        cmd = "mv " + tmpPath + " ."
-                        os.system(cmd)
+                            # Move text file
+                            cmd = "mv " + tmpPath + " ."
+                            os.system(cmd)
+
+                        except Exception as e:
+                            print >>sys.stderr, "FTP failed, exception: ", e
 
                     else:
                         if debug:
                             print >>sys.stderr, "  File ",ftpFileName," already in catalog"
 
     # close ftp connection
-    myFTP.quit()
-    
-
-
-
-
-
-
-
-# OLD STUFF
-    
-    #data = []
-    #myFTP.dir(data.append)
-    #myFTP.quit()
-    #for line in data:
-        #contents = line[29:].strip().split(' ')
-        #month=contents[1]
-        #day=contents[2]
-        #hour=contents[3].split(':')[0]
-        #minute=contents[3].split(':')[1]
-        #filename=contents[4]
-        #print 'month=',month,' day=',day,' hour=',hour,' minute=',minute,' filename=',filename
-
+    inFTP.quit()
     
 
                               
