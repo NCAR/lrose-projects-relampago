@@ -20,7 +20,7 @@ def find_nth(string, substring, n):
 # User inputs
 debug = 1
 secsPerDay = 86400
-pastSecs = 108000
+pastSecs = 86400 * 3
 doeServer = 'research-amfc1.amf.arm.gov'
 doeUser = 'avarble'
 doePasswd = 'science1992arm'
@@ -65,23 +65,29 @@ for i in range(0,len(sites)):
         os.makedirs(targetDir)
 
     # log into DOE server and look for new soundings
-    ssh = paramiko.SSHClient()
-    ssh.set_missing_host_key_policy( paramiko.AutoAddPolicy() )
-    ssh.connect(doeServer, username=doeUser, password=doePasswd)
-    ftp = ssh.open_sftp()
+
     ftpFileList = []
     ftpDateList = []
     ftpDateTimeList = []
-    for file in ftp.listdir(doeSourceDir):
-        if file.endswith('.raw'):
-            if suffix[i] in file:
-                print file
-                ftpFileList.append(file)
-                idx1 = find_nth(file,suffix[i],1)
-                idx2 = find_nth(file,'.raw',2)
-                (junk,date,time) = file[idx1+len(suffix[i]):idx2].split('.')
-                ftpDateList.append(date)
-                ftpDateTimeList.append(date+time)
+    
+    try:
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy( paramiko.AutoAddPolicy() )
+        ssh.connect(doeServer, username=doeUser, password=doePasswd)
+        ftp = ssh.open_sftp()
+        for file in ftp.listdir(doeSourceDir):
+            if file.endswith('.raw'):
+                if suffix[i] in file:
+                    print file
+                    ftpFileList.append(file)
+                    idx1 = find_nth(file,suffix[i],1)
+                    idx2 = find_nth(file,'.raw',2)
+                    (junk,date,time) = file[idx1+len(suffix[i]):idx2].split('.')
+                    ftpDateList.append(date)
+                    ftpDateTimeList.append(date+time)
+    except Exception as e:
+        print >>sys.stderr, "sftp failed, exception: ", e
+        continue
 
     if debug:
         print >>sys.stderr, "ftpFileList = ", ftpFileList
@@ -168,7 +174,11 @@ for i in range(0,len(sites)):
                         if debug:
                             print >>sys.stderr, "  doeSourceFile = ", doeSourceFile
                             print >>sys.stderr, "  localFile     = ", localFile
-                        ftp.get(doeSourceFile,localFile)
+                        try:
+                            ftp.get(doeSourceFile,localFile)
+                        except Exception as e:
+                            print sys.stderr, "  ftp get failed, exception: ", e
+                            continue
 
                         if debug:
                             print sys.stderr, "  ftped file to ", localDayDir
@@ -194,6 +204,7 @@ for i in range(0,len(sites)):
                         # Ftp sounding to catalog
                         if debug:
                             print >>sys.stderr, "  ftp'ing skewt plot to catalog"
+
                         try:
                             catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
                             catalogFTP.cwd(catalogDestDir)
@@ -206,14 +217,17 @@ for i in range(0,len(sites)):
                             catalogFTP.quit()
                             if debug:
                                 print >>sys.stderr, "  done ftp'ing skewt plot to catalog"
-                        except exception, e:
+
+                            # Move skewt file
+                            cmd = "mv " + soundingFile + ' ' + gifDir
+                            os.system(cmd)
+                            if debug:
+                                print >>sys.stderr, "  done ftp'ing skewt plot to ", gifDir
+
+                        except Exception as e:
                             print >>sys.stderr, "FTP failed, exception: ", e
+                            continue
                     
-                        # Move skewt file
-                        cmd = "mv " + soundingFile + ' ' + gifDir
-                        os.system(cmd)
-                        if debug:
-                            print >>sys.stderr, "  done ftp'ing skewt plot to ", gifDir
                     else:
                         if debug:
                             print >>sys.stderr, "  File ",ftpFileName," already in catalog"
