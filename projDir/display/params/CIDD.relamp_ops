@@ -221,8 +221,8 @@ CSURAW_SQI    CSURAW_SQI    mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/
 CSURAW_DBZT   CSURAW_DBZT   mdvp:://181.30.169.202:0:relampago/cfradial/csu_raw/sur&DBZ_TOT dbz.colors     dBZ  -5 80 5 radial 1 0
 CSU_PID       CSU_PID   mdvp::pid//181.30.169.202:0:relampago/cfradial/csu_pid/sur&PID    pid.colors     -    -5 80 5 radial 1 0
 CSU_TEMP      CSU_TEMP  mdvp:://181.30.169.202:0:relampago/cfradial/csu_pid/sur&TEMP_FOR_PID    temp.colors     C    -5 80 5 radial 1 0
-CSU_PID       CSU_PID   mdvp::pid//181.30.169.202:0:relampago/cfradial/csu_pid/sur&PID    pid.colors     -    -5 80 5 radial 1 0
 CSU_KDP2      CSU_KDP2  mdvp:://181.30.169.202:0:relampago/cfradial/csu_pid/sur&KDP      kdp.colors     deg/km    -5 80 5 radial 1 0
+========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========     mdvp::static//181.30.169.202:0:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
@@ -406,6 +406,8 @@ SanMartinRings SanMartinRings san_martin_rings.map        0  0.0 1000000.0  whit
 SanRafaelRings SanRafaelRings san_rafael_rings.map        0  0.0 1000000.0  white
 
 Points         Points         relampago_points.map        1  0.0 1000000.0  yellow
+
+HailPads1      HailPads1      hailpads_1.map              0  0.0 1000000.0  red
 
 </MAPS>
 
