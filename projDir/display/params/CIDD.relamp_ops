@@ -407,6 +407,8 @@ SanRafaelRings SanRafaelRings san_rafael_rings.map        0  0.0 1000000.0  whit
 
 Points         Points         relampago_points.map        1  0.0 1000000.0  yellow
 
+HailPads1      HailPads1      hailpads_1.map              0  0.0 1000000.0  red
+
 </MAPS>
 
 <WINDS>
