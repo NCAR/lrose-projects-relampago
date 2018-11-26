@@ -20,7 +20,7 @@ def find_nth(string, substring, n):
 # User inputs
 debug = 1
 secsPerDay = 86400
-pastSecs = 108000
+pastSecs = 86400 * 5
 ncarServer = '192.168.1.40'
 ncarUser = 'relamp'
 ncarPasswd = 'relamp18!!'
@@ -39,7 +39,7 @@ imageTypes = ['cappi',
               'self_consistency_scatter_cs']
 prodNames_raw = ['variables',
                  'rraccum',
-                 'ppi_sweep0',
+                 'ppi_sweep1',
                  'ppi',
                  'ppi',
                  'rhi',
@@ -96,11 +96,19 @@ for idx,image in enumerate(imageTypes,0):
         os.makedirs(targetDir)
 
     # log into NCAR server and look for new images
-    ssh = paramiko.SSHClient()
-    ssh.set_missing_host_key_policy( paramiko.AutoAddPolicy() )
-    ssh.connect(ncarServer, username=ncarUser, password=ncarPasswd)
-    ftp = ssh.open_sftp()
-    ftpDateList = ftp.listdir(ncarSourceDir)
+
+    ftpDateList = []
+    
+    try:
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy( paramiko.AutoAddPolicy() )
+        ssh.connect(ncarServer, username=ncarUser, password=ncarPasswd)
+        ftp = ssh.open_sftp()
+        ftpDateList = ftp.listdir(ncarSourceDir)
+    except Exception as e:
+        print >>sys.stderr, "sftp failed, exception: ", e
+        continue
+        
     ftpDateList.sort()
     ftpDateList.reverse()
     if debug:
@@ -155,7 +163,13 @@ for idx,image in enumerate(imageTypes,0):
                         print >>sys.stderr, "    localFileName = ", localFileName, " NOT in localFileList"
                     ftpFileNameFull = ftpDayDir+'/'+ftpFileName
                     localFileNameFull = localDayDir+'/'+ftpFileName
-                    ftp.get(ftpFileNameFull,localFileNameFull)
+
+                    try:
+                        ftp.get(ftpFileNameFull,localFileNameFull)
+                    except Exception as e:
+                        print sys.stderr, "  ftp get failed, exception: ", e
+                        continue
+                        
                     if debug:
                         print sys.stderr, "    ftped file to ", localDayDir
                     
@@ -178,20 +192,25 @@ for idx,image in enumerate(imageTypes,0):
                     os.system(cmd)
                     
                     #ftp to catalog
-                    catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
-                    catalogFTP.cwd(catalogDestDir)
-                    if debug:
-                        print >>sys.stderr, "    ftp'ing newFileNameFull = ", newFileNameFull
-                    file = open(newFileNameFull,'rb')
-                    catalogFTP.storbinary('STOR '+newFileName,file)
-                    file.close()
-                    catalogFTP.quit()
+                    try:
+                        catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
+                        catalogFTP.cwd(catalogDestDir)
+                        if debug:
+                            print >>sys.stderr, "    ftp'ing newFileNameFull = ", newFileNameFull
+                        file = open(newFileNameFull,'rb')
+                        catalogFTP.storbinary('STOR '+newFileName,file)
+                        file.close()
+                        catalogFTP.quit()
                     
-                    #remove file from tmpDir
-                    cmd = '/bin/rm '+tmpDir+'/'+newFileName
-                    if debug:
-                        print >>sys.stderr, "    cmd = ", cmd
-                    os.system(cmd)
+                        #remove file from tmpDir
+                        cmd = '/bin/rm '+tmpDir+'/'+newFileName
+                        if debug:
+                            print >>sys.stderr, "    cmd = ", cmd
+                            os.system(cmd)
+                    except Exception as e:
+                        print >>sys.stderr, "FTP failed, exception: ", e
+                        continue
+
                 else:
                     if debug:
                         print >>sys.stderr, "    localFileName = ", localFileName, " in localFileList"

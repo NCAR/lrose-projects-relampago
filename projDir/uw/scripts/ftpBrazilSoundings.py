@@ -56,10 +56,15 @@ for i in range(0,len(sites)):
         os.makedirs(targetDir)
 
     # log into NCAR ftp server and look for new soundings
-    myFTP = FTP(ftpServer)
-    myFTP.login(ftpUser,ftpPasswd)
-    myFTP.cwd(sourceDir)
-    tmpFileList = myFTP.nlst()
+    tmpFileList = []
+    try:
+        myFTP = FTP(ftpServer)
+        myFTP.login(ftpUser,ftpPasswd)
+        myFTP.cwd(sourceDir)
+        tmpFileList = myFTP.nlst()
+    except Exception as e:
+        print >>sys.stderr, "ftp failed, exception: ", e
+
     ftpFileList = []
     for file in tmpFileList:
         if file.endswith('.txt') or file.endswith('.png'):
@@ -190,7 +195,11 @@ for i in range(0,len(sites)):
                             print >>sys.stderr, localFileName," not in localFileList -- get file"
                         tmpPath = os.path.join(localDayDir+'/'+ftpFileName)
                         file = open(tmpPath, 'wb')
-                        myFTP.retrbinary('RETR '+ localFileName, file.write)
+                        try:
+                            myFTP.retrbinary('RETR '+ localFileName, file.write)
+                        except Exception as e:
+                            print >>sys.stderr, "ftp failed, exception: ", e
+                            continue
                         file.close()
                         if localFileName.endswith('.png'):
                             #rename file
@@ -202,18 +211,21 @@ for i in range(0,len(sites)):
 
                             #ftp to catalog
                             print >>sys.stderr, "  ftp'ing skewt plot"
-                            catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
-                            catalogFTP.cwd(catalogDestDir)
-                            tmpFile = localDayDir+'/'+file_cat
-                            file = open(tmpFile,'rb')
-                            catalogFTP.storbinary('STOR '+file_cat,file)
-                            file.close()
-                            catalogFTP.quit()
- 
-                            #move to gifs directory
-                            cmd = "mv " + file_cat + ' ' + gifDir
-                            print >>sys.stderr, "  cmd = ", cmd
-                            os.system(cmd)
+                            try:
+                                catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
+                                catalogFTP.cwd(catalogDestDir)
+                                tmpFile = localDayDir+'/'+file_cat
+                                file = open(tmpFile,'rb')
+                                catalogFTP.storbinary('STOR '+file_cat,file)
+                                file.close()
+                                catalogFTP.quit()
+                                #move to gifs directory
+                                cmd = "mv " + file_cat + ' ' + gifDir
+                                print >>sys.stderr, "  cmd = ", cmd
+                                os.system(cmd)
+                            except Exception as e:
+                                print >>sys.stderr, "ftp failed, exception: ", e
+                                continue
  
                     else:
                         print >>sys.stderr, "  File ",ftpFileName," already in catalog"

@@ -20,7 +20,7 @@ def find_nth(string, substring, n):
 # User inputs
 debug = 1
 secsPerDay = 86400
-pastSecs = 108000
+pastSecs = 2 * 86400
 ncarServer = '192.168.1.40'
 ncarUser = 'relamp'
 ncarPasswd = 'relamp18!!'
@@ -77,13 +77,20 @@ if not os.path.exists(targetDir):
     os.makedirs(targetDir)
 
 # log into NCAR server and look for new images
-ssh = paramiko.SSHClient()
-ssh.set_missing_host_key_policy( paramiko.AutoAddPolicy() )
-ssh.connect(ncarServer, username=ncarUser, password=ncarPasswd)
-ftp = ssh.open_sftp()
-ftpDateList = ftp.listdir(ncarSourceDir)
+ftpDateList = []
+try:
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy( paramiko.AutoAddPolicy() )
+    ssh.connect(ncarServer, username=ncarUser, password=ncarPasswd)
+    ftp = ssh.open_sftp()
+    ftpDateList = ftp.listdir(ncarSourceDir)
+except Exception as e:
+    print >>sys.stderr, "sftp open failed, exception: ", e
+    sys.exit(1)
+    
 ftpDateList.sort()
 ftpDateList.reverse()
+
 if debug:
     print >>sys.stderr, "ftpDateList: ", ftpDateList
 
@@ -150,7 +157,13 @@ for dateStr in dateStrList:
                     print >>sys.stderr, "    localFileName = ", localFileName, " NOT in localFileList"
                 ftpFileNameFull = ftpDayDir+'/'+ftpFileName
                 localFileNameFull = localDayDir+'/'+ftpFileName
-                ftp.get(ftpFileNameFull,localFileNameFull)
+
+                try:
+                    ftp.get(ftpFileNameFull,localFileNameFull)
+                except Exception as e:
+                    print sys.stderr, "  ftp get failed, exception: ", e
+                    continue
+
                 if debug:
                     print sys.stderr, "    ftped file to ", localDayDir
                 #copy/rename file to tmpDir
@@ -223,27 +236,31 @@ for dateStr in dateStrList:
                 os.system(cmd)
                     
                 # ftp animated gif to catalog
-                #catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
-                #catalogFTP.cwd(catalogDestDir)
-                if debug:
-                    print >>sys.stderr, "    ftp'ing loopFileFull = ", loopFileFull
-                #file = open(loopFileFull,'rb')
-                #catalogFTP.storbinary('STOR '+loopFile,file)
-                #file.close()
-                #catalogFTP.quit()
+                try:
+                    catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
+                    catalogFTP.cwd(catalogDestDir)
+                    if debug:
+                        print >>sys.stderr, "    ftp'ing loopFileFull = ", loopFileFull
+                    file = open(loopFileFull,'rb')
+                    catalogFTP.storbinary('STOR '+loopFile,file)
+                    file.close()
+                    catalogFTP.quit()
                     
-                # remove all files in tmpDirHold
-                cmd = '/bin/rm '+tmpDirHold+'/*'
-                if debug:
-                    print >>sys.stderr, "    cmd = ", cmd
-                os.system(cmd)
+                    # remove all files in tmpDirHold
+                    cmd = '/bin/rm '+tmpDirHold+'/*'
+                    if debug:
+                        print >>sys.stderr, "    cmd = ", cmd
+                    os.system(cmd)
                     
-                # move new file to tmpDirHold
-                cmd = 'mv '+tmpFileFull+' '+tmpDirHold
-                if debug:
-                    print >>sys.stderr, "    cmd = ", cmd
-                os.system(cmd)
-                lastSweepNum = sweepNum
+                    # move new file to tmpDirHold
+                    cmd = 'mv '+tmpFileFull+' '+tmpDirHold
+                    if debug:
+                        print >>sys.stderr, "    cmd = ", cmd
+                    os.system(cmd)
+                    lastSweepNum = sweepNum
+                except Exception as e:
+                    print >>sys.stderr, "ftp error, exception: ", e
+                    
 
 # close sftp connection
 ftp.close()
