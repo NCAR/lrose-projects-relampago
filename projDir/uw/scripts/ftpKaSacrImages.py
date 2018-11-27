@@ -92,12 +92,15 @@ for file in os.listdir(outDir):
         os.system(cmd)
     
         # ftp file
-        catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
-        catalogFTP.cwd(catalogDestDir)
-        file = open(file_cat,'rb')
-        catalogFTP.storbinary('STOR '+file_cat,file)
-        file.close()
-        catalogFTP.quit()
+        try:
+            catalogFTP = FTP(ftpCatalogServer,ftpCatalogUser)
+            catalogFTP.cwd(catalogDestDir)
+            file = open(file_cat,'rb')
+            catalogFTP.storbinary('STOR '+file_cat,file)
+            file.close()
+            catalogFTP.quit()
+        except Exception as e:
+            print >>sys.stderr, "FTP failed, exception: ", e
 
 
     
