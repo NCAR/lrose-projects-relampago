@@ -26,6 +26,7 @@ def main():
     global sites
     global ftpCatalogServer, ftpCatalogUser
     global startDateTimeStr, startDateStr
+    global catalogDestDir
 
     debug = True
     pastSecs = 86400 * 3
@@ -34,7 +35,7 @@ def main():
     ftpPasswd = 'gr@N!20'
     homeDir = os.getenv('HOME')
     gifDir = os.path.join(homeDir, 'soundings/SMN/gifs')
-    ftpCatalogServer = 'catalog11.eol.ucar.edu'
+    ftpCatalogServer = 'catalog.eol.ucar.edu'
     ftpCatalogUser = 'anonymous'
     catalogDestDir = '/pub/incoming/catalog/relampago'
     pythonPath = os.getenv('PYTHONPATH')
@@ -64,8 +65,8 @@ def main():
         dateStr = dayTime.strftime("%Y%m%d")
         dateStrList.append(dateStr)
 
-    # sites = ['COR','MDZ','SIS','VMRS']
-    sites = ['VMRS']
+    sites = ['COR','MDZ','SIS','VMRS']
+    #sites = ['VMRS']
     for site in sites:
         processSite(site, dateStrList)
 
@@ -117,7 +118,7 @@ def processSite(site, dateStrList):
 
         if (dateStr not in ftpDateList):
             if debug:
-                print >>sys.stderr, "WARNING: ignoring date, does not exist on ftp site"
+                print >>sys.stderr, "Ignoring date, does not exist on ftp site"
                 print >>sys.stderr, "  dateStr: ", dateStr
             continue
 
@@ -182,12 +183,12 @@ def processDate(site, dateStr, tmpDir, targetDir, ftpDateList, ftpFileList):
 
         # process this file
 
-        processFile(localFileName, ftpFileName, tmpDir)
+        processFile(localDayDir, localFileName, ftpFileName, tmpDir)
 
 ########################################################################
 # Process a specific file
 
-def processFile(localFileName, ftpFileName, tmpDir):
+def processFile(localDayDir, localFileName, ftpFileName, tmpDir):
 
     if debug:
         print >>sys.stderr, "Processing file: ", localFileName
