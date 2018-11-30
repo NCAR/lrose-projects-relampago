@@ -214,6 +214,7 @@ for i in range(0,len(sites)):
 
                         except Exception as e:
                             print >>sys.stderr, "FTP failed, exception: ", e
+                            continue
 
                     else:
                         if debug:
