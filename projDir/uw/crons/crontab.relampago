@@ -1,4 +1,5 @@
-*/5  * * * * /home/storm/relops/python/run_makeSMNsoundings          > /dev/null 2>&1
+#*/5  * * * * /home/storm/relops/python/run_makeSMNsoundings          > /dev/null 2>&1
+*/5  * * * * /home/storm/relops/python/run_makeSMNsoundings.new      > /dev/null 2>&1
 */7  * * * * /home/storm/relops/python/run_makeSMNsoundings_fromBUFR > /dev/null 2>&1
 */15 * * * * /home/storm/relops/python/run_makeDOEsoundings          > /dev/null 2>&1
 */15 * * * * /home/storm/relops/python/run_ftpBrazilSoundings        > /dev/null 2>&1

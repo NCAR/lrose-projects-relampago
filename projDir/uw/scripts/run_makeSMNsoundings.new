@@ -1,0 +1,7 @@
+#! /bin/csh
+#
+
+cd ~/python
+
+python ./makeSMNsoundings.new.py |& \
+    LogFilter -d $HOME/logs -p makeSMNsoundings.new -i relampago >& /dev/null &
