@@ -85,7 +85,7 @@ def processSite(site, dateStrList):
         os.makedirs(tmpDir)
 
     sourceDir = '/sounding/SMN/' + site
-    targetDir = os.path.join(homeDir, 'soundings/SMN/' + site)
+    localCopyDir = os.path.join(homeDir, 'soundings/SMN/' + site)
 
     # log into NCAR ftp server and look for new soundings
 
@@ -125,7 +125,7 @@ def processSite(site, dateStrList):
         if debug:
             print >>sys.stderr, " dateStr = ", dateStr
 
-        processDate(site, dateStr, tmpDir, targetDir, ftpDateList, ftpFileList)
+        processDate(site, dateStr, tmpDir, localCopyDir, ftpDateList, ftpFileList)
 
     # close ftp connection
 
@@ -134,18 +134,18 @@ def processSite(site, dateStrList):
 ########################################################################
 # Process a given date
 
-def processDate(site, dateStr, tmpDir, targetDir, ftpDateList, ftpFileList):
+def processDate(site, dateStr, tmpDir, localCopyDir, ftpDateList, ftpFileList):
 
     if debug:
         print >>sys.stderr, "Processing site ", site, " for date: ", dateStr
         
     # make target directory
-    localDayDir = os.path.join(targetDir, dateStr)
+    localDayDir = os.path.join(localCopyDir, dateStr)
     if not os.path.exists(localDayDir):
         os.makedirs(localDayDir)
-        os.chdir(localDayDir)
     if debug:
         print >>sys.stderr, "  localDayDir = ", localDayDir
+    os.chdir(localDayDir)
 
     # get local file list - i.e. those which have already been downloaded
     localFileList = os.listdir('.')
@@ -237,11 +237,12 @@ def processFile(localDayDir, localFileName, ftpFileName, tmpDir):
 
     # Convert png to gif and remove old png file
     (soundingPrefix,soundingExt) = os.path.splitext(soundingFile)
-    cmd = 'convert ' + soundingPrefix+soundingExt + ' ' + soundingPrefix + '.gif'
-    os.system(cmd)
-    cmd = 'rm '+soundingFile
-    os.system(cmd)
-    soundingFile = soundingPrefix+'.gif'
+    gifPath = soundingPrefix + '.gif'
+    cmd = 'convert ' + soundingFile + ' ' + gifPath
+    runCommand(cmd)
+    cmd = '/bin/rm -f ' + soundingFile
+    runCommand(cmd)
+    soundingFile = gifPath
  
     if debug:
         print >>sys.stderr, \
