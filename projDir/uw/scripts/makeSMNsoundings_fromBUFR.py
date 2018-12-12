@@ -71,7 +71,7 @@ for ftpFile in newFileList:
     myFTP.retrbinary('RETR '+ ftpFile, file.write)
     file.close()
     if debug:
-        print sys.stderr, "  ftped file to: ", tmpPath
+        print >>sys.stderr, "  ftped file to: ", tmpPath
 
 # convert new BUFR files to ascii format
 cmd = 'python -W ignore /home/storm/brodzik/python/relampago/parse_bufr.py '+targetDir+' '+tmpDir
