@@ -76,10 +76,10 @@ for ftpFile in newFileList:
 # convert new BUFR files to ascii format
 cmd = 'python -W ignore /home/storm/brodzik/python/relampago/parse_bufr.py '+targetDir+' '+tmpDir
 if debug:
-    print sys.stderr, "   cmd = ", cmd
+    print >>sys.stderr, "   cmd = ", cmd
 os.system(cmd)
 if debug:
-    print sys.stderr, "Done converting BUFR files to ascii format"
+    print >>sys.stderr, "Done converting BUFR files to ascii format"
 
 for i in range(0,len(sites)):
     if debug:
@@ -99,7 +99,7 @@ for i in range(0,len(sites)):
             fileFullPath = sourceDir+'/'+file
             cmd = 'python -W ignore /home/storm/brodzik/python/brody/skewplot_relampago.py --file '+fileFullPath+' --outpath '+sourceDir+' --format lst'
             if debug:
-                print sys.stderr, "   cmd = ", cmd
+                print >>sys.stderr, "   cmd = ", cmd
             os.system(cmd)
             # move ascii file to final location
             finalDir = targetDir+'/'+sites[i]
@@ -107,20 +107,20 @@ for i in range(0,len(sites)):
                 os.makedirs(finalDir)
             cmd = 'mv '+sourceDir+'/'+file+' '+finalDir+'/'+file
             if debug:
-                print sys.stderr, "   cmd = ", cmd
+                print >>sys.stderr, "   cmd = ", cmd
             os.system(cmd)
             # convert png to gif skewt move to gifsDir
             for skewtFile in glob.glob(sourceDir+'/upperair*.png'):
                 if debug:
-                    print sys.stderr, "   skewtFile = ", skewtFile
+                    print >>sys.stderr, "   skewtFile = ", skewtFile
                 (skewtPrefix,skewtExt) = os.path.splitext(skewtFile)
                 cmd = 'convert '+skewtPrefix+skewtExt+' '+skewtPrefix+'.gif'
                 if debug:
-                    print sys.stderr, "   cmd = ", cmd      
+                    print >>sys.stderr, "   cmd = ", cmd      
                 os.system(cmd)
                 cmd = 'rm '+skewtFile
                 if debug:
-                    print sys.stderr, "   cmd = ", cmd      
+                    print >>sys.stderr, "   cmd = ", cmd      
                 os.system(cmd)
                 skewtFullPath = skewtPrefix+'.gif'
                 
@@ -142,7 +142,7 @@ for i in range(0,len(sites)):
                 # Move skewt file
                 cmd = "mv " + skewtFullPath + ' ' + gifDir
                 if debug:
-                    print sys.stderr, "   cmd = ", cmd      
+                    print >>sys.stderr, "   cmd = ", cmd      
                 os.system(cmd)
                         
 # close ftp connection
