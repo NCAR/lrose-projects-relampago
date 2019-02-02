@@ -1,6 +1,0 @@
-#! /bin/csh
-
-/bin/cp ./pound.cfg /etc
-
-systemctl restart pound
-
