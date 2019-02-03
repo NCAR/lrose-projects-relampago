@@ -61,6 +61,11 @@ The OpenJdk download page is [here](https://openjdk.java.net/install/).
 
 2. Download the start script:
 
+You can either go to the GitHub site:
+
+```
+```
+
 ```
   wget https://raw.githubusercontent.com/NCAR/lrose-projects-eolbase/master/projDir/display/scripts/start_Jazz.relampago
 ```
