@@ -76,4 +76,7 @@ The OpenJdk download page is [here](https://openjdk.java.net/install/).
 ```
   ./start_Jazz.relampago
 ```
+
+BTW - if you go to 'Realtime' - i.e. the current time - using the time controller at the bottom, you will need to click on a time in the time slider to get the data to retrieve and display correctly.
+
       
