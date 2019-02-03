@@ -35,7 +35,7 @@ The OpenJdk download page is [here](https://openjdk.java.net/install/).
 2. Download the start script:
 
 ```
-  wget https://github.com/NCAR/lrose-projects-eolbase/blob/master/projDir/display/scripts/start_CIDD.relampago
+  wget https://raw.githubusercontent.com/NCAR/lrose-projects-eolbase/master/projDir/display/scripts/start_CIDD.relampago
 ```
 
 3. Make the start script executable:
@@ -62,7 +62,7 @@ The OpenJdk download page is [here](https://openjdk.java.net/install/).
 2. Download the start script:
 
 ```
-  wget https://github.com/NCAR/lrose-projects-eolbase/blob/master/projDir/display/scripts/start_Jazz.relampago
+  wget https://raw.githubusercontent.com/NCAR/lrose-projects-eolbase/master/projDir/display/scripts/start_Jazz.relampago
 ```
 
 3. Make the start script executable:
@@ -76,4 +76,4 @@ The OpenJdk download page is [here](https://openjdk.java.net/install/).
 ```
   ./start_Jazz.relampago
 ```
-
+      
