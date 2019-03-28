@@ -887,7 +887,8 @@ class Sounding(UserDict):
             hodo_sc = self.hodoax.scatter(rad_angle[pres_mask], self.data['sknt'][pres_mask], c=rounded_height, \
             edgecolors='none', s=3, cmap=plt.cm.hsv, vmin=0, vmax=max_height)
             cb_ax = self.fig.add_axes([0.585, 0.665, 0.17, 0.005])
-            hodo_cb = plt.colorbar(hodo_sc, cax=cb_ax, orientation='horizontal', fraction=0.06, pad=0.01, drawedges=False)
+            hodo_cb = plt.colorbar(hodo_sc, cax=cb_ax, orientation='horizontal', drawedges=False)
+            #hodo_cb = plt.colorbar(hodo_sc, cax=cb_ax, orientation='horizontal', fraction=0.06, pad=0.01, drawedges=False)
             hodo_cb.outline.set_visible(False)
             hodo_cb.ax.set_xticklabels((np.arange(0, max_height+round_val, round_val*2)/1000.0).astype(int))
             hodo_cb.ax.tick_params(labelsize=6, axis='x', which='both',length=0)
