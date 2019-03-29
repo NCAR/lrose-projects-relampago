@@ -132,9 +132,9 @@ for i in range(0,len(sites)):
                 skewtFile = os.path.basename(skewtFullPath)
                 if debug:
                     print >>sys.stderr, "  skewtFile = ", skewtFile
-                #file = open(skewtFullPath,'rb')
-                #catalogFTP.storbinary('STOR '+skewtFile,file)
-                #file.close()
+                file = open(skewtFullPath,'rb')
+                catalogFTP.storbinary('STOR '+skewtFile,file)
+                file.close()
                 catalogFTP.quit()
                 if debug:
                     print >>sys.stderr, "  done ftp'ing skewt plot to catalog"
