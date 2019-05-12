@@ -181,42 +181,6 @@ SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?
 #############################
 # RADAR DATA
 
-CSU_DBZ      CSU_DBZ      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&DBZ2   dbz.colors   dBZ    -5 80 5 radial 1 0
-CSU_DBZ_QC   CSU_DBZ_QC   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&DZQC   dbz.colors   dBZ    -5 80 5 radial 1 0
-CSU_DBZ_QCC  CSU_DBZ_QCC  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&DZQCC  dbz.colors   dBZ    -5 80 5 radial 1 0
-CSU_VEL      CSU_VEL      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&VEL2   vel.colors   m/s    -5 80 5 radial 1 0
-CSU_WIDTH    CSU_WIDTH    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&WIDTH2 width.colors m/s    -5 80 5 radial 1 0
-CSU_ZDR_QC   CSU_ZDR_QC   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&ZDRC   zdr.colors   dB     -5 80 5 radial 1 0
-CSU_ZDR      CSU_ZDR      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&ZDR2   zdr.colors   dB     -5 80 5 radial 1 0
-CSU_RHOHV    CSU_RHOHV    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&RHOHV2 rhohv.colors -      -5 80 5 radial 1 0
-
-CSU_PHIDP    CSU_PHIDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&PHIDP2  phidp_360.colors deg    -5 80 5 radial 1 0
-CSU_FDP      CSU_FDP      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&FDP     phidp.colors deg    -5 80 5 radial 1 0
-CSU_KDP      CSU_KDP      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&KDP     kdp.colors   deg/km -5 80 5 radial 1 0
-CSU_KDP2     CSU_KDP2     mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&KDP2    kdp.colors   deg/km -5 80 5 radial 1 0
-CSU_SQI      CSU_SQI      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&SQI2    ncp.colors   -      -5 80 5 radial 1 0
-CSU_SNR      CSU_SNR      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&SNR16   snr.colors   dB     -5 80 5 radial 1 0
-CSU_HCA      CSU_HCA      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&HCLASS2 pid.colors   -      -5 80 5 radial 1 0
-CSU_SDP      CSU_SDP      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true&SDP   phidp.colors   deg/km -5 80 5 radial 1 0
-
-CSURAW_DBZ    CSURAW_DBZ    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true&DBZ     dbz.colors     dBZ  -5 80 5 radial 1 0
-CSURAW_VEL    CSURAW_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true&VEL     vel.colors     m/s  -5 80 5 radial 1 0
-CSURAW_WIDTH  CSURAW_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true&WIDTH   width.colors   m/s  -5 80 5 radial 1 0
-CSURAW_ZDR    CSURAW_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true&ZDR     zdr.colors     dB   -5 80 5 radial 1 0
-CSURAW_RHOHV  CSURAW_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true&RHOHV   rhohv.colors   -    -5 80 5 radial 1 0
-CSURAW_PHIDP  CSURAW_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true&PHIDP   phidp_360.colors -  -5 80 5 radial 1 0
-CSURAW_KDP    CSURAW_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true&KDP     kdp.colors     -    -5 80 5 radial 1 0
-CSURAW_SQI    CSURAW_SQI    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true&SQI     ncp.colors     -    -5 80 5 radial 1 0
-
-CSURAW_DBZT   CSURAW_DBZT   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true&DBZ_TOT dbz.colors     dBZ  -5 80 5 radial 1 0
-CSU_PID       CSU_PID   mdvp::pid//front.eol.ucar.edu:8080:relampago/cfradial/csu_pid/sur?use_http=true&PID    pid.colors     -    -5 80 5 radial 1 0
-CSU_TEMP      CSU_TEMP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_pid/sur?use_http=true&TEMP_FOR_PID    temp.colors     C    -5 80 5 radial 1 0
-CSU_KDP2      CSU_KDP2  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_pid/sur?use_http=true&KDP      kdp.colors     deg/km    -5 80 5 radial 1 0
-========   ========     mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
-========   ========     mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
-========   ========     mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
-========   ========     mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
-
 RMA1_DBZ      RMA1_DBZ      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/long_range?use_http=true&DBZH   dbz.colors   dBZ   -5 80 5 radial 1 0
 RMA1_VEL      RMA1_VEL      mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/long_range?use_http=true&VEL   vel.colors   m/s   -5 80 5 radial 1 0
 RMA1_WIDTH    RMA1_WIDTH    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/long_range?use_http=true&WIDTH width.colors m/s   -5 80 5 radial 1 0
@@ -290,6 +254,33 @@ PER_WIDTH PER_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/PER?use_
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
 
+CSU_DBZ    CSU_DBZ    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_moments/sur?use_http=true&DBZ     dbz.colors     dBZ  -5 80 5 radial 1 0
+CSU_VEL    CSU_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_moments/sur?use_http=true&VEL     vel.colors     m/s  -5 80 5 radial 1 0
+CSU_WIDTH  CSU_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_moments/sur?use_http=true&WIDTH   width.colors   m/s  -5 80 5 radial 1 0
+CSU_ZDR    CSU_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_moments/sur?use_http=true&ZDR     zdr.colors     dB   -5 80 5 radial 1 0
+CSU_RHOHV  CSU_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_moments/sur?use_http=true&RHOHV   rhohv.colors   -    -5 80 5 radial 1 0
+CSU_PHIDP  CSU_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_moments/sur?use_http=true&PHIDP   phidp_360.colors deg  -5 80 5 radial 1 0
+CSU_KDP    CSU_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_moments/sur?use_http=true&KDP     kdp.colors     deg/km -5 80 5 radial 1 0
+CSU_SQI    CSU_SQI    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_moments/sur?use_http=true&SQI     ncp.colors     -    -5 80 5 radial 1 0
+
+CSU_DBZT   CSU_DBZT   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_moments/sur?use_http=true&DBZ_TOT dbz.colors     dBZ  -5 80 5 radial 1 0
+CSU_PID       CSU_PID   mdvp::pid//front.eol.ucar.edu:8080:relampago/cfradial/csu_pid/sur?use_http=true&PID    pid.colors     -    -5 80 5 radial 1 0
+CSU_TEMP      CSU_TEMP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_pid/sur?use_http=true&TEMP_FOR_PID    temp.colors     C    -5 80 5 radial 1 0
+CSU_KDP2      CSU_KDP2  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_pid/sur?use_http=true&KDP      kdp.colors     deg/km    -5 80 5 radial 1 0
+========   ========     mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========     mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========     mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========     mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+
+CSAPR_DBZ    CSAPR_DBZ    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/doe/csapr/ppi?use_http=true&reflectivity  dbz.colors     dBZ  -5 80 5 radial 1 0
+CSAPR_VEL    CSAPR_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/doe/csapr/ppi?use_http=true&mean_dopple_velocity  vel.colors     m/s  -5 80 5 radial 1 0
+CSAPR_WIDTH  CSAPR_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/doe/csapr/ppi?use_http=true&spectral_width  width.colors   m/s  -5 80 5 radial 1 0
+CSAPR_ZDR    CSAPR_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/doe/csapr/ppi?use_http=true&differential_reflectivity  zdr.colors  dB   -5 80 5 radial 1 0
+CSAPR_RHOHV  CSAPR_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/doe/csapr/ppi?use_http=true&copol_correlation_coeff rhohv.colors  -    -5 80 5 radial 1 0
+CSAPR_PHIDP  CSAPR_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/doe/csapr/ppi?use_http=true&differential_phase phidp_360.colors deg  -5 80 5 radial 1 0
+CSAPR_KDP    CSAPR_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/doe/csapr/ppi?use_http=true&specific_differential_phase kdp.colors deg/km - -5 80 5 radial 1 0
+CSAPR_SNRHC  CSAPR_SNRHC  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/doe/csapr/ppi?use_http=true&signal_to_noise_ratio_copolar_h snr.colors db -5 80 5 radial 1 0
+
 DOW6_DBZHC DOW6_DBZHC  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow6/high/sur?use_http=true&DBZHC  dbz.colors   dBZ -5 80 5 radial 1 0
 DOW6_VEL   DOW6_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow6/high/sur?use_http=true&VEL    vel.colors   m/s -5 80 5 radial 1 0
 DOW6_WIDTH DOW6_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow6/high/sur?use_http=true&WIDTH  width.colors m/s -5 80 5 radial 1 0
@@ -317,9 +308,9 @@ DOW7_DBZHC DOW7_DBZHC  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/d
 DOW7_VEL   DOW7_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&VEL    vel.colors   m/s -5 80 5 radial 1 0
 DOW7_WIDTH DOW7_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&WIDTH  width.colors m/s -5 80 5 radial 1 0
 DOW7_ZDR   DOW7_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&ZDR    zdr.colors   dB -5 80 5 radial 1 0
-DOW7_RHOHV DOW7_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&RHOHV  rhohv.colors   dB -5 80 5 radial 1 0
-DOW7_PHIDP DOW7_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&PHIDP  phidp_360.colors   dB -5 80 5 radial 1 0
-DOW7_KDP   DOW7_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&KDP    kdp.colors   dB -5 80 5 radial 1 0
+DOW7_RHOHV DOW7_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&RHOHV  rhohv.colors  - -5 80 5 radial 1 0
+DOW7_PHIDP DOW7_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&PHIDP  phidp_360.colors deg -5 80 5 radial 1 0
+DOW7_KDP   DOW7_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&KDP    kdp.colors   deg/km -5 80 5 radial 1 0
 DOW7_NCP   DOW7_NCP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&NCP    ncp.colors   -   -5 80 5 radial 1 0
 
 DOW7_SNRHC DOW7_SNRHC  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dow7/high/sur?use_http=true&SNRHC  snr.colors   dB -5 80 5 radial 1 0
@@ -349,9 +340,9 @@ DOWC_DBZHC DOWC_DBZHC  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/d
 DOWC_VEL   DOWC_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&VEL_F    vel.colors   m/s -5 80 5 radial 1 0
 DOWC_WIDTH DOWC_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&WIDTH_F  width.colors m/s -5 80 5 radial 1 0
 DOWC_ZDR   DOWC_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&ZDR_F    zdr.colors   dB -5 80 5 radial 1 0
-DOWC_RHOHV DOWC_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&RHOHV_F  rhohv.colors   dB -5 80 5 radial 1 0
-DOWC_PHIDP DOWC_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&PHIDP_F  phidp_360.colors   dB -5 80 5 radial 1 0
-DOWC_KDP   DOWC_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&KDP_F    kdp.colors   dB -5 80 5 radial 1 0
+DOWC_RHOHV DOWC_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&RHOHV_F  rhohv.colors - -5 80 5 radial 1 0
+DOWC_PHIDP DOWC_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&PHIDP_F  phidp_360.colors deg -5 80 5 radial 1 0
+DOWC_KDP   DOWC_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&KDP_F    kdp.colors   deg/km -5 80 5 radial 1 0
 DOWC_NCP   DOWC_NCP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&NCP_F    ncp.colors   -   -5 80 5 radial 1 0
 
 DOWC_SNRHC DOWC_SNRHC  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cswr/dowc/high/sur?use_http=true&SNRHC_F  snr.colors   dB -5 80 5 radial 1 0
