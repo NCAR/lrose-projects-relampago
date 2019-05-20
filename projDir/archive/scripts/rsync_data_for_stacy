@@ -1,9 +1,10 @@
 #! /bin/csh
 #
 
-cd /run/media/mdtest/RSF0002/rsf/relampago
+cd /run/media/mdtest/RSF0001/rsf/relampago
 
 mkdir -p cfradial
+mkdir -p cfradial/RMA1
 
 #rsync -av /scr/snow1/rsfdata/projects/relampago/cfradial/csu_moments cfradial
 #rsync -av /scr/snow1/rsfdata/projects/relampago/cfradial/doe cfradial
@@ -14,7 +15,8 @@ mkdir -p cfradial
 rsync -av /scr/snow1/rsfdata/projects/relampago/cfradial/ANG cfradial
 rsync -av /scr/snow1/rsfdata/projects/relampago/cfradial/PAR cfradial
 rsync -av /scr/snow1/rsfdata/projects/relampago/cfradial/PER cfradial
-rsync -av /scr/snow1/rsfdata/projects/relampago/cfradial/RMA1 cfradial
+rsync -av /scr/snow1/rsfdata/projects/relampago/cfradial/RMA1/long_range cfradial/RMA1
+rsync -av /scr/snow1/rsfdata/projects/relampago/cfradial/RMA1/short_range cfradial/RMA1
 rsync -av /scr/snow1/rsfdata/projects/relampago/cfradial/RMA2 cfradial
 
 
