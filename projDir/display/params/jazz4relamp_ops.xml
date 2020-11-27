@@ -837,7 +837,6 @@
 ####################################################################################################################################
 -->
 
-<!-- 
 <SkewT location="mdvp:://181.30.169.202:0:relampago/mdv/wrf/illinois"
        temperatureField="Temp"
        rhField="RH"
@@ -845,6 +844,7 @@
        vField="V">
 </SkewT>
 
+<!-- 
 <SkewT location="mdvp:://181.30.169.202:0:relampago/mdv/gfs/relampago"
        temperatureField="TMP"
        rhField="RH"
